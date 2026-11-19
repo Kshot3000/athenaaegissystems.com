@@ -1,0 +1,28 @@
+/* Four-mode terminal marketing feature used on home / editions. */
+.mode-marketing{padding:4.5rem 0;position:relative;background:linear-gradient(180deg,#070e1a,#101b2b 52%,#080d18);border-block:1px solid #ad8a5654}
+.mode-marketing .mode-header{text-align:center;max-width:780px;margin:0 auto 2.1rem}
+.mode-marketing .mode-kicker{font:800 .68rem/1.5 Manrope,sans-serif;letter-spacing:.21em;color:#e2be85;margin:0 0 .9rem}
+.mode-marketing h2{font:500 clamp(2rem,4vw,3.65rem)/1.17 Cinzel,Georgia,serif;color:#fff0d5;margin:0 0 1rem}
+.mode-marketing .mode-header p:last-child{font:.94rem/1.8 Manrope,sans-serif;color:#c1cad5}
+.mode-marketing .mode-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.mode-marketing .mode-card{display:flex;flex-direction:column;min-height:350px;border:1px solid #c8aa765e;border-radius:15px;overflow:hidden;background:#060b13;box-shadow:0 15px 30px #0005;transition:transform .2s,border-color .2s}
+.mode-marketing .mode-card:hover,.mode-marketing .mode-card:focus-within{transform:translateY(-5px);border-color:#efcc89}
+.mode-marketing .mode-visual{height:215px;position:relative;overflow:hidden;background-size:cover;background-position:center}
+.mode-marketing .mode-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,#060c19)}
+.mode-marketing .mode-visual>span{position:absolute;z-index:1;bottom:.8rem;left:.9rem;display:inline-block;border:1px solid #dcb77e7a;background:#050d1bc2;backdrop-filter:blur(8px);color:#eacb97;font:700 .6rem Manrope,sans-serif;letter-spacing:.13em;padding:.45rem .65rem;border-radius:20px}
+.mode-marketing .mode-visual.athena-pc{background-image:linear-gradient(160deg,#0b2d4c66,#07172890),url("./assets/athena-cybernetic.svg")}
+.mode-marketing .mode-visual.aegis-pc{background-image:linear-gradient(160deg,#48111455,#1b0d18b2),url("./assets/aegis-cybernetic.svg")}
+.mode-marketing .mode-visual.athena-mobile{background-image:linear-gradient(160deg,#0a22427a,#071728b3),url("./assets/athena-goddess.webp")}
+.mode-marketing .mode-visual.aegis-mobile{background-image:linear-gradient(160deg,#42100f63,#1b0d18ae),url("./assets/aegis-spartan-guardian.avif")}
+.mode-marketing .mode-details{padding:1.15rem;display:flex;flex-direction:column;flex:1}
+.mode-marketing .mode-details h3{font:600 1.18rem Cinzel,Georgia,serif;color:#f4dfb6;margin:.2rem 0 .6rem}
+.mode-marketing .mode-details p{color:#c7d1dc;font:.74rem/1.7 Manrope,sans-serif;margin:0 0 1rem}
+.mode-marketing .mode-details a{margin-top:auto;color:#ffe0aa;font:800 .75rem Manrope,sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem}
+.mode-marketing .mode-details a:hover{text-decoration:underline}
+.mode-marketing .mode-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.85rem;margin:2rem auto .6rem}
+.mode-marketing .mode-footer a{display:inline-flex;justify-content:center;align-items:center;text-decoration:none;min-height:45px;padding:.7rem 1.3rem;border:1px solid #e1bf81;border-radius:8px;color:#f9e3bb;background:#21344b}
+.mode-marketing .mode-footer a:first-child{background:linear-gradient(110deg,#725330,#2a4663);color:#fff4da}
+.mode-marketing .mode-fineprint{text-align:center;color:#b2bcc5;font:.69rem/1.7 Manrope,sans-serif;margin:1rem auto;max-width:700px}
+@media(max-width:1020px){.mode-marketing .mode-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.mode-marketing .mode-card{min-height:320px}}
+@media(max-width:560px){.mode-marketing{padding:3.4rem 0}.mode-marketing .mode-gallery{gap:.7rem}.mode-marketing .mode-card{min-height:275px}.mode-marketing .mode-visual{height:165px}.mode-marketing .mode-details{padding:.85rem}.mode-marketing .mode-details h3{font-size:.85rem}.mode-marketing .mode-details p{font-size:.65rem}.mode-marketing .mode-details a{font-size:.63rem}.mode-marketing .mode-footer a{width:100%}}
+@media(prefers-reduced-motion:reduce){.mode-marketing .mode-card{transition:none}}
