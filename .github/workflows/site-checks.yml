@@ -21,3 +21,11 @@ jobs:
       - name: Check JavaScript syntax
         run: |
           for file in *.js; do node --check "$file"; done
+      - name: Save short-lived browser QA snapshot
+        if: github.event_name == 'push'
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-qa-site-source
+          path: .
+          retention-days: 1
+          if-no-files-found: error
