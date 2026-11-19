@@ -330,3 +330,14 @@ p { margin: 0; }
 @media (max-width: 960px) {
   .primary-nav { max-height: calc(100dvh - 4rem); overflow-y: auto; }
 }
+
+/* November 2026 review: anchor comfort, clear keyboard state, touch targets. */
+html { scroll-padding-top: 6rem; }
+:where(section,article)[id] { scroll-margin-top: 6rem; }
+.primary-nav a[aria-current="page"]:not(.button) { color: var(--gold); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .45em; }
+.nav-toggle { min-width: 44px; min-height: 44px; }
+:where(a,button,summary,input,textarea,select):focus-visible { outline-offset: 4px; }
+@media (max-width: 680px) {
+  .world-motion-toggle, #motion-toggle { min-height: 44px; }
+  #inquiry-form input, #inquiry-form select, #inquiry-form textarea { font-size: 16px; }
+}
