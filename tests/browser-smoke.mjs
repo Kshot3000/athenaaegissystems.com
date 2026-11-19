@@ -66,6 +66,8 @@ try {
     assert.equal(await page.locator("body").getAttribute("data-preview-mode"),"athena");
     await page.locator("#device-switch [data-device=desktop]").click();
     assert.equal(await page.locator("body").getAttribute("data-preview-device"),"desktop");
+    await page.locator('#terminal-actions [data-workflow="build"]').click();
+    assert.equal(await page.locator('#terminal-actions [data-workflow="build"]').getAttribute("aria-pressed"),"true","selected workflow button should be announced");
     await page.locator("#terminal-input").fill("Plan a new desktop AI app");
     await page.locator("#terminal-compose-form button[type=submit]").click();
     const answer=await page.locator("#terminal-response-text").innerText();
