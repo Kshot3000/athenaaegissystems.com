@@ -15,7 +15,7 @@ try {
     await sleep(200);
   }
   await mkdir("qa-screenshots",{recursive:true});
-  browser = await chromium.launch({headless:true});
+  browser = await chromium.launch({headless:true,channel:"chrome"});
   for (const width of [390,768,1440]) {
     const context = await browser.newContext({
       viewport: {width,height:width===1440?900:width===768?1024:844},
