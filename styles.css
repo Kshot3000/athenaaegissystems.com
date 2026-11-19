@@ -341,3 +341,10 @@ html { scroll-padding-top: 6rem; }
   .world-motion-toggle, #motion-toggle { min-height: 44px; }
   #inquiry-form input, #inquiry-form select, #inquiry-form textarea { font-size: 16px; }
 }
+
+/* Tri-color Greek wordmark + medallion emblem (2026-11-19, owner direction) */
+.brand-symbol { background: none; border-radius: 0; width: 2.15rem; height: 2.15rem; }
+.brand-symbol img { width: 100%; height: 100%; display: block; }
+.wm-athena { color: #5db4ff; }
+.wm-aegis { color: #ff7059; }
+.brand-lockup small.wm-systems { color: #e7c78e; }
