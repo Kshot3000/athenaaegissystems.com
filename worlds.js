@@ -32,19 +32,29 @@
   // Optional decorative motion switch. No network, storage, or microphone.
   var motionToggle = document.getElementById("world-motion-toggle");
   if (motionToggle) {
-    var paused = !!(reduceMotion && reduceMotion.matches);
+    var motionKey = "athena-aegis-ambient-motion-paused";
+    var paused = false;
+    try { paused = window.localStorage.getItem(motionKey) === "1"; }
+    catch (err) { /* preferences still work without storage */ }
     function updateMotion() {
-      document.body.classList.toggle("world-paused", paused);
-      motionToggle.setAttribute("aria-pressed", String(paused));
-      motionToggle.textContent = paused ? "Resume ambient motion" : "Pause ambient motion";
+      var systemReduced = !!(reduceMotion && reduceMotion.matches);
+      var effectivePaused = paused || systemReduced;
+      document.body.classList.toggle("world-paused", effectivePaused);
+      motionToggle.setAttribute("aria-pressed", String(effectivePaused));
+      motionToggle.disabled = systemReduced;
+      motionToggle.textContent = systemReduced
+        ? "Motion reduced by device settings"
+        : (paused ? "Resume ambient motion" : "Pause ambient motion");
     }
     motionToggle.addEventListener("click", function () {
+      if (reduceMotion && reduceMotion.matches) return;
       paused = !paused;
+      try { window.localStorage.setItem(motionKey, paused ? "1" : "0"); }
+      catch (err) { /* no persistence in restricted browsers */ }
       updateMotion();
     });
     if (reduceMotion) {
-      var onPreferenceChange = function (event) {
-        paused = event.matches;
+      var onPreferenceChange = function () {
         updateMotion();
       };
       if (reduceMotion.addEventListener) reduceMotion.addEventListener("change", onPreferenceChange);
