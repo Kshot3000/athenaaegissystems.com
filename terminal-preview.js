@@ -41,8 +41,8 @@ function render() {
     button.setAttribute("aria-pressed", String(active));
   });
   const isAthena = mode === "athena";
-  $("#terminal-portrait").src = isAthena ? "./assets/athena-cybernetic.svg" : "./assets/aegis-cybernetic.svg";
-  $("#terminal-portrait").alt = isAthena ? "Illustrated cybernetic Athena portrait" : "Illustrated cybernetic Aegis guardian";
+  $("#terminal-portrait").src = isAthena ? "./assets/athena-canon.jpg" : "./assets/aegis-canon.jpg";
+  $("#terminal-portrait").alt = isAthena ? "Athena in luminous marble and gold armor - concept portrait" : "Aegis Spartan guardian in bronze armor - concept portrait";
   $("#terminal-kicker").textContent = isAthena ? "THE DIGITAL ACROPOLIS" : "THE SPARTAN CITADEL";
   $("#terminal-heading").innerHTML = isAthena ? "Athena <span>Intelligence mode</span>" : "Aegis <span>Security mode</span>";
   $("#terminal-subtitle").textContent = isAthena ? "Research with purpose. Create with precision. Build on evidence." : "Review risky operations. Keep humans in command. Defend in depth.";

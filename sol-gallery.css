@@ -3,7 +3,7 @@
 /* App-showcase cards: rich concept renders replace the flat SVG terminal art. */
 .mode-marketing .mode-visual.athena-pc{background-image:linear-gradient(160deg,#0b2d4c22,#07172835),url("./assets/athena-pc-concept.webp")}
 .mode-marketing .mode-visual.aegis-pc{background-image:linear-gradient(160deg,#48111422,#1b0d1835),url("./assets/aegis-pc-concept.webp")}
-.mode-marketing .mode-visual.athena-mobile{background-image:linear-gradient(160deg,#0a224225,#07172820),url("./assets/athena-mobile-concept-crop.webp")}
+.mode-marketing .mode-visual.athena-mobile{background-image:linear-gradient(160deg,#0a224225,#07172820),url("./assets/athena-mobile-concept.webp")}
 .mode-marketing .mode-visual.aegis-mobile{background-image:linear-gradient(160deg,#42100f23,#1b0d1820),url("./assets/aegis-mobile-concept.webp")}
 /* Concept gallery section + editions poster. */
 .sol-gallery .sol-figure{margin:0}
