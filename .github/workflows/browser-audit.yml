@@ -1,10 +1,10 @@
 name: Browser visual and functional QA
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [main]
   push:
-    paths:
-      - '.github/workflows/browser-audit.yml'
-      - 'tests/browser-smoke.mjs'
+    branches: [main]
 permissions:
   contents: read
 jobs:
@@ -19,7 +19,7 @@ jobs:
       - name: Install Playwright Chromium (QA-only)
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.1
-          which google-chrome || which google-chrome-stable\n          google-chrome --version || google-chrome-stable --version
+          google-chrome --version
       - name: Audit pages at desktop, tablet, and mobile sizes
         run: node tests/browser-smoke.mjs
       - name: Save visual review screenshots
