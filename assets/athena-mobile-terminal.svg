@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="560" height="900" viewBox="0 0 560 900" role="img" aria-label="ATHENA mode concept in an Android mobile application">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#082b4a"/><stop offset=".6" stop-color="#061426"/><stop offset="1" stop-color="#02050b"/></linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#082b4a"/><stop offset="1" stop-color="#090f1d"/></linearGradient>
+  <linearGradient id="emblem" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0c2"/><stop offset=".45" stop-color="#e1b66a"/><stop offset="1" stop-color="#44c9ff"/></linearGradient>
+  <radialGradient id="halo"><stop stop-color="#44c9ff" stop-opacity=".4"/><stop offset="1" stop-color="#44c9ff" stop-opacity="0"/></radialGradient>
+  <filter id="shine"><feGaussianBlur stdDeviation="5"/></filter>
+  <pattern id="key" width="32" height="17" patternUnits="userSpaceOnUse"><path d="M0 15V1H15V10H8V6H11" stroke="#e1b66a" stroke-opacity=".34" fill="none" stroke-width="1.5"/></pattern>
+  </defs>
+<rect width="560" height="900" fill="url(#sky)"/><circle cx="290" cy="348" r="310" fill="url(#halo)"/>
+<g fill="none" stroke="#e1b66a" stroke-opacity=".25"><path d="M0 765h560M60 0v900M503 0v900"/></g>
+<rect x="95" y="35" width="370" height="817" rx="58" fill="#02050b" stroke="#cba579" stroke-width="10"/>
+<rect x="110" y="55" width="340" height="776" rx="44" fill="url(#glass)" stroke="#44c9ff" stroke-width="2"/>
+<rect x="207" y="69" width="147" height="20" rx="11" fill="#02050b"/>
+<text x="141" y="108" font-size="14" font-family="Arial" fill="#e8dcce">9:41</text><text x="354" y="108" font-size="14" font-family="Arial" fill="#e8dcce">● ◕ ▰</text>
+<text x="281" y="156" font-size="26" text-anchor="middle" font-family="Georgia" fill="#e1b66a">ATHENA AEGIS</text><text x="281" y="174" font-size="9" text-anchor="middle" font-family="Arial" letter-spacing="5" fill="#d8d1bb">SYSTEMS</text>
+<rect x="143" y="198" width="272" height="54" rx="27" fill="#060d19" stroke="#e1b66a" stroke-width="2"/>
+<rect x="148" y="203" width="130" height="44" rx="23" fill="#194b70" stroke="#44c9ff" stroke-width="2"/>
+<text x="171" y="230" font-size="20" font-family="Georgia" fill="#fff3db">◈ Athena</text><text x="308" y="230" font-size="20" font-family="Georgia" fill="#a7b4c1">⛨ Aegis</text>
+<circle cx="282" cy="367" r="118" fill="url(#halo)"/><circle cx="282" cy="350" r="86" fill="#091829" fill-opacity=".88" stroke="#44c9ff" stroke-width="3"/><circle cx="282" cy="350" r="77" fill="none" stroke="#e1b66a" stroke-dasharray="2 12"/><g transform="translate(282 350)" stroke="#e1b66a" fill="none"><circle r="58" stroke-width="2.5"/><path d="M-33.64 34.8 L-29 -6.96 Q0 -46.400000000000006 33.059999999999995 -8.7 V34.8 M-15.66 -23.200000000000003L0 -39.440000000000005L17.4 -23.200000000000003 M-17.4 5.22H17.98" stroke-width="3" stroke-linecap="round"/></g>
+<text x="282" y="475" text-anchor="middle" font-size="40" font-family="Georgia" fill="#f3dfbe">ATHENA</text><text x="282" y="502" text-anchor="middle" font-size="11" font-family="Arial" fill="#44c9ff" letter-spacing="3">WISDOM / CREATE / BUILD</text>
+<rect x="137" y="531" width="139" height="69" rx="11" fill="#082b4a" stroke="#e1b66a" stroke-opacity=".72"/><text x="151" y="557" font-size="20" fill="#e1b66a" font-family="Georgia">✧</text><text x="177" y="558" font-family="Arial" font-size="15" fill="#f7e6d4">Research</text><text x="151" y="581" font-family="Arial" font-size="10" fill="#bbcdda">WORKFLOW</text><rect x="286" y="531" width="139" height="69" rx="11" fill="#082b4a" stroke="#e1b66a" stroke-opacity=".72"/><text x="300" y="557" font-size="20" fill="#e1b66a" font-family="Georgia">✧</text><text x="326" y="558" font-family="Arial" font-size="15" fill="#f7e6d4">Analyze</text><text x="300" y="581" font-family="Arial" font-size="10" fill="#bbcdda">WORKFLOW</text><rect x="137" y="611" width="139" height="69" rx="11" fill="#082b4a" stroke="#e1b66a" stroke-opacity=".72"/><text x="151" y="637" font-size="20" fill="#e1b66a" font-family="Georgia">✧</text><text x="177" y="638" font-family="Arial" font-size="15" fill="#f7e6d4">Create</text><text x="151" y="661" font-family="Arial" font-size="10" fill="#bbcdda">WORKFLOW</text><rect x="286" y="611" width="139" height="69" rx="11" fill="#082b4a" stroke="#e1b66a" stroke-opacity=".72"/><text x="300" y="637" font-size="20" fill="#e1b66a" font-family="Georgia">✧</text><text x="326" y="638" font-family="Arial" font-size="15" fill="#f7e6d4">Build</text><text x="300" y="661" font-family="Arial" font-size="10" fill="#bbcdda">WORKFLOW</text>
+<rect x="137" y="703" width="286" height="52" rx="17" fill="#0b1a2c" stroke="#44c9ff" stroke-width="3"/><text x="158" y="734" font-family="Arial" font-size="16" fill="#ecdfce">Ask Athena anything...</text>
+<path d="M151 773H411" stroke="#e1b66a" stroke-opacity=".35"/><text x="176" y="795" fill="#e1b66a" font-size="14" font-family="Arial">⌂　 ◇　 ▤　 ⚙</text>
+<rect x="232" y="813" width="100" height="7" rx="4" fill="#c5c7cc"/>
+<text x="280" y="884" font-family="Arial" font-size="15" fill="#e1b66a" text-anchor="middle" letter-spacing="3">ANDROID • VISUAL CONCEPT</text>
+</svg>
