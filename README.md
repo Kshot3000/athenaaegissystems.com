@@ -10,7 +10,7 @@ Static, multi-page website for **Athena** (AI intelligence) and **Aegis** (defen
 | `athena.html` | Digital Acropolis: intelligence, evidence and model orchestration |
 | `aegis.html` | Spartan Citadel: security principles and a **static** gate illustration |
 | `experience.html` | Decorative Athena avatar and optional **prewritten browser** narration |
-| `editions.html` | Planned Qwen-first PC and Android application editions |
+| `editions.html` | Planned Qwen-first PC and Android application editions |\n| `terminal-preview.html` | Interactive four-way PC/mobile Athena/Aegis terminal concept with static demo tasks |
 | `integration.html` | Private Python developer-preview integration guidance |
 | `legal.html` | Preview disclosures, limitations and terms |
 | `404.html` | Branded not-found fallback |
@@ -55,3 +55,9 @@ The `CNAME` file targets `athenaaegissystems.com`; DNS and GitHub Pages settings
 Before announcing public release, confirm: working HTTPS/custom domain; browser and mobile layout; all links; voice behavior; contact-email receipt; privacy/terms; license for bundled model weights; installer signing; download integrity; and accessibility.
 
 Website changes do **not** deploy the Windows or Android applications, change DNS, or implement checkout.
+
+## Interactive PC / Android app showcase
+
+The homepage and Editions page contain a four-card Athena PC, Aegis PC, Athena Android, and Aegis Android preview gallery. Links open `terminal-preview.html` with `device` and `mode` URL parameters. The terminal includes a working mode toggle, device switch, workflow examples, responsive desktop and phone frames, keyboard-operable controls, and a local-only prompt demonstration. Scripts do not call a model, track visitor data or claim to perform security scans. The real Qwen-first Windows/Android applications remain separate development projects.
+
+Original cinematic concept renders and cutouts are packaged separately for marketing as a downloadable asset kit. The live web demo currently uses the lightweight checked-in SVG/WEBP Greek-world assets; it does not upload the multi-megabyte source renders automatically.
