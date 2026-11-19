@@ -362,7 +362,7 @@
 .world-site .page-body pre {border:1px solid #d1b58440;background:#0e192b;border-radius:5px;}
 .world-site .page-body a {color:#e3c28b;}
 .world-site .edition-hero {position:relative;isolation:isolate;}
-.world-site .edition-hero::before {content:"";position:absolute;inset:-3rem -10vw;z-index:-1;background:url('./assets/digital-acropolis.svg') center / cover;opacity:.13;pointer-events:none;}
+.world-site .edition-hero::before {content:"";position:absolute;inset:0;z-index:-1;background:url('./assets/digital-acropolis.svg') center / cover;opacity:.13;pointer-events:none;}
 .world-site .edition-hero h1 {font-family:"Cinzel",Georgia,serif;font-weight:500;}
 .world-site .edition-card {border-color:#d2b27c55;}
 .world-site .edition-card h3 {font-family:"Cinzel",Georgia,serif;font-weight:500;}
