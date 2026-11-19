@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="1160" viewBox="0 0 920 1160" role="img" aria-label="AEGIS cybernetic sentinel portrait">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#230b16"/><stop offset=".55" stop-color="#1c0b16"/><stop offset="1" stop-color="#030710"/></linearGradient>
+<linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ecf5ec"/><stop offset=".2" stop-color="#bfb2a3"/><stop offset=".48" stop-color="#b77b69"/><stop offset=".78" stop-color="#283747"/><stop offset="1" stop-color="#bfb2a3"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2=".6"><stop stop-color="#fbe9b5"/><stop offset=".38" stop-color="#dd8d37"/><stop offset=".7" stop-color="#76573b"/><stop offset="1" stop-color="#d5b776"/></linearGradient>
+<radialGradient id="aura"><stop stop-color="#ff6d51" stop-opacity=".31"/><stop offset=".52" stop-color="#dd8d37" stop-opacity=".10"/><stop offset="1" stop-color="#ff6d51" stop-opacity="0"/></radialGradient>
+<pattern id="mesh" width="72" height="72" patternUnits="userSpaceOnUse"><path d="M72 0H0V72" fill="none" stroke="#ff6d51" stroke-opacity=".13"/><circle cx="0" cy="0" r="2" fill="#ff6d51" fill-opacity=".37"/></pattern>
+<filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="920" height="1160" fill="url(#sky)"/>
+<rect width="920" height="1160" fill="url(#mesh)"/>
+<ellipse cx="490" cy="414" rx="470" ry="490" fill="url(#aura)"/>
+<g stroke="#ff6d51" stroke-opacity=".38" fill="none"><circle cx="494" cy="452" r="318" stroke-width="2"/><circle cx="494" cy="452" r="345" stroke-dasharray="3 26"/><path d="M494 55V166M494 737V895M104 452H218M770 452H852" stroke-width="3"/></g>
+<g opacity=".5" fill="none" stroke="#ff6d51" stroke-width="2"><path d="M50 1020H210L288 932H353 M867 995H756L675 925H605 M44 258H153L241 338 M865 232H759L692 291"/><circle cx="288" cy="932" r="5" fill="#ff6d51"/><circle cx="759" cy="232" r="5" fill="#ff6d51"/></g>
+<g>
+<path d="M133 1160 155 980Q216 864 354 815L426 754 494 770 566 749 648 814Q784 860 836 980L868 1160Z" fill="url(#metal)" stroke="#dd8d37" stroke-width="10"/>
+<path d="M155 1024 333 869 403 913 359 1160H114Z M842 1024 661 868 593 908 635 1160H883Z" fill="#1e2e40" stroke="#dd8d37" stroke-width="8"/>
+<path d="M393 798 496 863 598 799 655 890 610 1160H382L335 891Z" fill="url(#gold)" stroke="#dd8d37" stroke-width="9"/>
+<path d="M496 867 550 953 497 1082 443 956Z" fill="#092438" stroke="#ff6d51" stroke-width="7"/>
+<path d="M496 919 526 971 498 1041 469 971Z" fill="#ff6d51" fill-opacity=".6" filter="url(#glow)"/>
+<path d="M214 971 328 950 350 995 253 1054Z M778 971 662 950 641 995 738 1054Z" fill="url(#gold)" stroke="#dd8d37" stroke-width="5"/>
+<path d="M420 741 432 831 497 868 568 828 578 743Z" fill="#344c59" stroke="#dd8d37" stroke-width="7"/>
+
+<path d="M364 361 415 336 576 337 628 361 613 586 553 665 498 696 432 661 382 584Z" fill="url(#metal)" stroke="#dd8d37" stroke-width="8"/>
+<path d="M381 490 612 486 582 570 537 597 489 615 432 588Z" fill="#130c16" stroke="#dd8d37" stroke-width="6"/>
+<path d="M398 512 592 509" stroke="#ffb169" stroke-width="10" filter="url(#glow)"/>
+<path d="M438 590 492 638 550 590 537 660 493 690 452 663Z" fill="#6c3b39" stroke="#ff6d51" stroke-opacity=".65" stroke-width="4"/>
+<path d="M415 357 449 423 539 423 580 357 M494 359 495 463" fill="none" stroke="#dd8d37" stroke-width="7" stroke-linejoin="round"/>
+
+<path d="M317 398 345 277 437 228 566 228 649 295 675 396 625 370 565 345 423 345 364 384Z" fill="url(#metal)" stroke="#dd8d37" stroke-width="7"/>
+<path d="M350 264Q425 170 494 120Q581 187 643 278L615 306Q555 249 495 197Q421 271 374 309Z" fill="url(#gold)" stroke="#ff6d51" stroke-width="3"/>
+<path d="M347 398 304 478 312 585 365 626 384 526Z M649 395 690 479 677 591 633 628 609 518Z" fill="url(#metal)" stroke="#dd8d37" stroke-width="6"/>
+<path d="M411 422 579 421 608 452 577 482 415 483 384 454Z" fill="#17090f" stroke="#ff6d51" stroke-width="6"/>
+<path d="M414 454 575 452" stroke="#ff6d51" stroke-width="13" filter="url(#glow)"/>
+<path d="M272 829 311 753 370 747 M719 823 678 751 615 747" fill="none" stroke="#ff6d51" stroke-opacity=".67" stroke-width="5"/>
+</g>
+<g fill="none" stroke="#ff6d51" stroke-width="2" stroke-opacity=".72"><path d="M73 95H191M73 95V200M843 95H724M843 95V200M73 1060V966M73 1060H200M843 1060V966M843 1060H724"/><path d="M114 165H209M705 165H799M114 1098H209M705 1098H799" stroke-dasharray="4 10"/></g>
+<g font-family="Arial,sans-serif" fill="#ff6d51" letter-spacing="5" font-size="18"><text x="72" y="71">AEGIS // DIGITAL REALM</text><text x="72" y="1111">INTELLIGENCE / GUARDIAN</text></g>
+</svg>
