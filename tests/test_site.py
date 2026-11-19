@@ -103,7 +103,8 @@ class SiteIntegrity(unittest.TestCase):
                 if not ref or ref.startswith(("data:", "http:", "https:", "#")):
                     continue
                 with self.subTest(stylesheet=path.name, url=ref):
-                    self.assertTrue((path.parent / unquote(ref)).exists())
+                    asset = unquote(ref).split("?")[0].split("#")[0]
+                    self.assertTrue((path.parent / asset).exists())
 
     def test_sharing_metadata(self):
         for name in PUBLIC:
