@@ -20,7 +20,7 @@
   <meta property="og:site_name" content="Athena Aegis Systems">
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://athenaaegissystems.com/assets/athena-water.webp">
+  <meta property="og:image" content="https://athenaaegissystems.com/assets/athena-aegis-share-card.webp?v=2">
   <meta property="og:image:alt" content="Athena and Aegis, the intelligence and protection modes of Athena Aegis Systems">
 </head>
 <body class="world-site integration-realm">
@@ -57,22 +57,25 @@
 
       <h2>2. Install</h2>
       <p>Requirements: Python 3.11 or newer, git, and (optionally) API keys for the model providers you want to connect. The core framework itself is standard-library only and runs fully offline with its built-in mock provider.</p>
-      <pre><code>git clone https://github.com/Kshot3000/Athena.git
+      <pre tabindex="0" role="region" aria-label="Installation commands"><code id="code-install">git clone https://github.com/Kshot3000/Athena.git
 cd Athena
 python -m pip install -e .</code></pre>
+      <button type="button" class="copy-button" data-copy-target="code-install" hidden>Copy installation commands</button>
 
       <h2>3. Verify your installation</h2>
       <p>Before connecting any provider, run the offline scoreboard and the test suite. Both must pass on a clean checkout — if they don't, stop and tell us what you saw; a broken baseline is a bug report we want.</p>
-      <pre><code>python -m athena eval            # routing scoreboard (train + holdout)
+      <pre tabindex="0" role="region" aria-label="Verification commands"><code id="code-verify">python -m athena eval            # routing scoreboard (train + holdout)
 python -m athena eval-semantic   # semantic routing suite
 python -m athena eval-adversarial
 python -m unittest discover -s tests</code></pre>
+      <button type="button" class="copy-button" data-copy-target="code-verify" hidden>Copy verification commands</button>
 
       <h2>4. Connect model providers</h2>
       <p>Providers are read from environment variables only — never commit keys to the repository. With no keys set, Athena uses an offline mock provider so the full workflow (recall, propose, evaluate, adopt) can be exercised safely.</p>
-      <pre><code># Set only the providers you use, in YOUR environment:
+      <pre tabindex="0" role="region" aria-label="Provider example"><code id="code-provider"># Set only the providers you use, in YOUR environment:
 #   ANTHROPIC_API_KEY / OPENAI_API_KEY / XAI_API_KEY
 python -m athena demo "Route a support ticket"</code></pre>
+      <button type="button" class="copy-button" data-copy-target="code-provider" hidden>Copy provider example</button>
       <p>Model availability depends on your provider account, current model names, and endpoint compatibility. The council pattern lets different models propose and verify, so a single-provider setup works but is not the strongest configuration.</p>
 
       <h2>5. Understand the safety model before you build on it</h2>

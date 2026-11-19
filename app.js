@@ -88,12 +88,14 @@
   document.querySelectorAll(".copy-button").forEach(function (btn) {
     var original = btn.textContent;
     var timer;
+    btn.setAttribute("aria-live", "polite");
+    btn.hidden = false;
     btn.addEventListener("click", function () {
       var target = document.getElementById(btn.getAttribute("data-copy-target"));
       if (!target) return;
       var content = target.textContent;
       function feedback(ok) {
-        btn.textContent = ok ? "Copied ✓" : "Select code to copy";
+        btn.textContent = ok ? "Copied ✓" : "Code selected. Use Copy.";
         if (!ok) {
           var range = document.createRange();
           range.selectNodeContents(target);

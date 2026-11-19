@@ -140,9 +140,11 @@ try {
     console.log("PASS mobile navigation toggle/Escape");
   }catch(err){failures.push("mobile navigation: "+err.message);console.log("FAIL mobile navigation",err.message.slice(0,400));}
   try {
-    for (const [card, value] of [["desktop","Desktop Edition"],["mobile","Android Edition"]]) {
+    for (const [card, interest, value] of [["desktop","windows","Desktop Edition"],["mobile","android","Android Edition"]]) {
       await page.goto(ORIGIN+"/editions.html#"+card);
       await page.locator("#"+card+" a.button").click();
+      await page.waitForURL(url => url.searchParams.get("interest")===interest && url.hash==="#contact");
+      await page.locator("#inquiry-form").waitFor({state:"visible"});
       assert.equal(await page.locator("#inquiry-plan").inputValue(),value);
     }
     await page.locator("#inquiry-name").fill("Browser QA");
@@ -157,6 +159,7 @@ try {
     const draft=page.locator("#inquiry-draft-text");
     await context.grantPermissions(["clipboard-read","clipboard-write"]);
     await page.locator("#inquiry-copy").click();
+    await page.getByText("Email copied, including the recipient and subject.").waitFor();
     assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),await draft.inputValue());
     await page.evaluate(()=>Object.defineProperty(navigator,"clipboard",{value:undefined,configurable:true}));
     await page.locator("#inquiry-copy").click();
@@ -170,6 +173,21 @@ try {
     assert.equal(new URL(await page.locator("#pricing a[href*='stripe.com']").getAttribute("href")).origin,"https://buy.stripe.com");
     console.log("PASS both edition inquiries, prepared email, clipboard and manual copy, FAQ and checkout destination");
   } catch(err) {failures.push("visitor access: "+err.message);console.log("FAIL visitor access",err.message.slice(0,400));}
+  try {
+    await page.goto(ORIGIN+"/integration.html");
+    const block=page.getByRole("region",{name:"Installation commands"});
+    await block.focus();
+    assert.ok(await block.evaluate(el=>el===document.activeElement));
+    await context.grantPermissions(["clipboard-read","clipboard-write"]);
+    const copy=page.getByRole("button",{name:"Copy installation commands"});
+    await copy.click();
+    await page.getByRole("button",{name:"Copied ✓"}).waitFor();
+    assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),await block.locator("code").textContent());
+    await page.evaluate(()=>Object.defineProperty(navigator,"clipboard",{value:undefined,configurable:true}));
+    await page.getByRole("button",{name:"Copy verification commands"}).click();
+    assert.equal(await page.evaluate(()=>getSelection().toString()),await page.locator("#code-verify").textContent());
+    console.log("PASS keyboard access to commands, clipboard copy and manual selection");
+  } catch(err) {failures.push("developer guide: "+err.message);console.log("FAIL developer guide",err.message.slice(0,400));}
   try {
     const offline=await browser.newContext({viewport:{width:360,height:800},javaScriptEnabled:false});
     const plain=await offline.newPage();

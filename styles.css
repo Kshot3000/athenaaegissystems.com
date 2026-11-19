@@ -214,7 +214,7 @@ p { margin: 0; }
 .window-dots i:first-child { background: #7a4a3a; }
 .window-dots i:nth-child(2) { background: #7a653a; }
 .window-dots i:nth-child(3) { background: #3a7a52; }
-.copy-button { margin-left: auto; background: var(--panel-2); color: var(--text); border: 1px solid var(--line-strong); border-radius: 8px; padding: 0.35rem 0.7rem; cursor: pointer; font-size: 0.78rem; font-family: var(--font-body); }
+.copy-button { margin-left: auto; background: var(--panel-2); color: var(--text); border: 1px solid var(--line-strong); border-radius: 8px; padding: 0.35rem 0.7rem; min-height: 44px; cursor: pointer; font-size: 0.88rem; font-family: var(--font-body); }
 .code-window pre { margin: 0; padding: 1.3rem 1.4rem; overflow-x: auto; font-size: 0.88rem; line-height: 1.75; font-family: ui-monospace, "SF Mono", Menlo, monospace; color: #c9d8f5; }
 .code-muted { color: var(--faint); }
 .code-prompt { color: var(--gold); }
@@ -276,7 +276,7 @@ p { margin: 0; }
 .footer-links { display: grid; gap: 0.6rem; align-content: start; }
 .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.95rem; }
 .footer-links a:hover { color: var(--text); }
-.footer-bottom { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; border-top: 1px solid var(--line); margin-top: 2.8rem; padding-top: 1.4rem; color: var(--faint); font-size: 0.74rem; letter-spacing: 0.14em; font-weight: 600; }
+.footer-bottom { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; border-top: 1px solid var(--line); margin-top: 2.8rem; padding-top: 1.4rem; color: var(--muted); font-size: 0.74rem; letter-spacing: 0.14em; font-weight: 600; }
 .footer-bottom a { color: var(--muted); text-decoration: none; }
 
 /* ---------- subpages ---------- */
@@ -322,7 +322,7 @@ p { margin: 0; }
 }
 
 /* Review pass: keyboard focus and menu usability on tablet widths. */
-:where(a, button, summary, input, textarea, select):focus-visible {
+:where(a, button, summary, input, textarea, select, pre[tabindex]):focus-visible {
   outline: 3px solid var(--gold);
   outline-offset: 3px;
 }
@@ -353,6 +353,6 @@ html { scroll-padding-top: 6rem; }
 .brand-symbol { background: none; border-radius: 0; width: 2.15rem; height: 2.15rem; }
 .brand-symbol img { width: 100%; height: 100%; display: block; }
 .wm-athena { color: #eec96f; }
-.wm-aegis { color: #b91c1c; }
+.wm-aegis { color: #ef5e57; }
 .brand-lockup small.wm-systems { color: #eec96f; }
 .brand .brand-lockup b { font-family: "Cinzel Decorative", "Cinzel", Georgia, serif; }
