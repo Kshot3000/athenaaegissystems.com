@@ -1,0 +1,32 @@
+name: Browser visual and functional QA
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/browser-audit.yml'
+      - 'tests/browser-smoke.mjs'
+permissions:
+  contents: read
+jobs:
+  browser-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright Chromium (QA-only)
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Audit pages at desktop, tablet, and mobile sizes
+        run: node tests/browser-smoke.mjs
+      - name: Save visual review screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-qa-screenshots
+          path: qa-screenshots/
+          retention-days: 2
+          if-no-files-found: warn
