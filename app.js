@@ -39,6 +39,18 @@
     });
   }
 
+  // Mark the current page in the mobile and desktop navigation.
+  var activePath = window.location.pathname.replace(/\/$/, "/index.html");
+  document.querySelectorAll("#primary-nav a[href]").forEach(function (link) {
+    try {
+      var destination = new URL(link.href, window.location.href);
+      if (destination.origin === window.location.origin &&
+          destination.pathname === activePath && !destination.hash) {
+        link.setAttribute("aria-current", "page");
+      }
+    } catch (err) { /* ignore malformed optional links */ }
+  });
+
   // Solution tabs: click + arrow-key navigation per the ARIA tabs pattern.
   var tabs = Array.prototype.slice.call(document.querySelectorAll(".solution-tab"));
   function activate(tab, focus) {
@@ -118,7 +130,13 @@
       var feedback = document.getElementById("inquiry-feedback");
       if (feedback) {
         feedback.textContent =
-          "Your mail app should now open with the inquiry addressed to Kshot Applications. If it doesn't, email kcaidevelopment@gmail.com directly.";
+          "Your email app should open with a prepared inquiry. Sending it is still up to you. If nothing opened, ";
+        var fallback = document.createElement("a");
+        fallback.href = "mailto:kcaidevelopment@gmail.com";
+        fallback.textContent = "email us directly";
+        fallback.rel = "nofollow";
+        feedback.appendChild(fallback);
+        feedback.appendChild(document.createTextNode("."));
       }
     });
   }
