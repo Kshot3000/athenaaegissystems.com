@@ -336,6 +336,13 @@ html { scroll-padding-top: 6rem; }
 :where(section,article)[id] { scroll-margin-top: 6rem; }
 .primary-nav a[aria-current="page"]:not(.button) { color: var(--gold); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .45em; }
 .nav-toggle { min-width: 44px; min-height: 44px; }
+.skip-link {position:fixed;z-index:200;}
+@media (max-width: 960px) {
+  .site-header:not(.nav-enhanced) {position:relative;}
+  .site-header:not(.nav-enhanced) .nav-toggle {display:none;}
+  .site-header:not(.nav-enhanced) .nav-wrap {flex-wrap:wrap;}
+  .site-header:not(.nav-enhanced) .primary-nav {display:flex;position:static;flex-flow:row wrap;gap:.25rem .9rem;width:100%;padding:.5rem 0;max-height:none;}
+}
 :where(a,button,summary,input,textarea,select):focus-visible { outline-offset: 4px; }
 @media (max-width: 680px) {
   .world-motion-toggle, #motion-toggle { min-height: 44px; }

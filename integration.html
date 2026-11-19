@@ -13,12 +13,15 @@
   <link rel="stylesheet" href="./styles.css">
   <script src="./app.js" defer></script>
   <link rel="stylesheet" href="./worlds.css">
+  <meta property="og:title" content="ATHENA — Developer Integration Guide">
+  <meta property="og:description" content="Athena developer integration guide: access, installation, provider configuration, evaluation, and the safety model for the private developer preview.">
   <link rel="canonical" href="https://athenaaegissystems.com/integration.html">
   <meta property="og:url" content="https://athenaaegissystems.com/integration.html">
   <meta property="og:site_name" content="Athena Aegis Systems">
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://athenaaegissystems.com/assets/athena-water.webp">
+  <meta property="og:image:alt" content="Athena and Aegis, the intelligence and protection modes of Athena Aegis Systems">
 </head>
 <body class="world-site integration-realm">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -29,13 +32,14 @@
     <div class="nav-wrap shell">
       <a class="brand world-brand" href="./index.html" aria-label="Athena Aegis Systems home"><span class="brand-symbol" aria-hidden="true"><img src="./assets/emblem.webp" alt="" width="34" height="34"></span><span class="brand-lockup"><b><span class="wm-athena">ATHENA</span><span class="brand-dot">.</span><span class="wm-aegis">AEGIS</span></b><small class="wm-systems">SYSTEMS</small></span></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
-      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
-        <a href="./index.html">Home</a>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
         <a href="./athena.html">Athena</a>
         <a href="./aegis.html">Aegis</a>
+        <a href="./terminal-preview.html">App preview</a>
         <a href="./editions.html">Editions</a>
-        <a href="./integration.html">Integrate</a>
-        <a class="button button-sm button-outline" href="./index.html#contact">Request access ↗</a>
+        <a href="./integration.html" aria-current="page">Integrate</a>
+        <a href="./index.html#pricing">Pricing</a>
+        <a class="button button-sm button-outline" href="./index.html#contact">Request access</a>
       </nav>
     </div>
   </header>
@@ -49,7 +53,7 @@
 
     <div class="page-body shell">
       <h2>1. Get access</h2>
-      <p>Athena's source repository is private. Access starts with a pilot inquiry: tell us the workflow you want to improve and how you will measure it. We confirm technical fit, agree scope and licensing, and then grant repository access. No public downloads, checkout, or self-serve signup exist yet.</p>
+      <p>Athena's source repository is private. Access starts with a pilot inquiry: tell us the workflow you want to improve and how you will measure it. We confirm technical fit, agree scope and licensing, and then grant repository access. The <a href="./index.html#pricing">$19.99 monthly subscription</a> uses Stripe checkout. Pilot and installation access are confirmed directly. <a href="./index.html?interest=developer#contact">Ask about developer access</a>.</p>
 
       <h2>2. Install</h2>
       <p>Requirements: Python 3.11 or newer, git, and (optionally) API keys for the model providers you want to connect. The core framework itself is standard-library only and runs fully offline with its built-in mock provider.</p>

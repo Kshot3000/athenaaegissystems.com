@@ -9,12 +9,15 @@
   <meta property="og:title" content="Athena Aegis Systems — Wisdom Has a Guardian">
   <meta property="og:description" content="Enter the Digital Acropolis of intelligence and the Spartan Citadel of AI security. Two forces. One responsible AI system.">
   <meta property="og:image" content="https://athenaaegissystems.com/assets/athena-aegis-share-card.webp?v=2">
+  <meta property="og:image:alt" content="Athena and Aegis, the intelligence and protection modes of Athena Aegis Systems">
   <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <title>Athena Aegis Systems — Wisdom Has a Guardian</title>
   <link rel="icon" type="image/png" href="./assets/emblem.png">
-  <link rel="preload" href="./assets/athena-canon.jpg" as="image" type="image/jpeg">
-  <link rel="preload" href="./assets/aegis-canon.jpg" as="image" type="image/jpeg">
+  <link rel="preload" href="./assets/athena-canon.jpg" as="image" type="image/jpeg" media="(min-width: 681px)">
+  <link rel="preload" href="./assets/athena-hero-mobile.webp" as="image" type="image/webp" media="(max-width: 680px)">
+  <link rel="preload" href="./assets/aegis-canon.jpg" as="image" type="image/jpeg" media="(min-width: 681px)">
+  <link rel="preload" href="./assets/aegis-hero-mobile.webp" as="image" type="image/webp" media="(max-width: 680px)">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -29,7 +32,6 @@
   <link rel="canonical" href="https://athenaaegissystems.com/">
   <meta property="og:url" content="https://athenaaegissystems.com/">
   <meta property="og:site_name" content="Athena Aegis Systems">
-  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="./showcase-marketing.css">
   <link rel="stylesheet" href="./sol-gallery.css">
 </head>
@@ -39,7 +41,7 @@
 
   <header class="site-header world-header" id="top">
     <div class="shell nav-wrap">
-      <a class="brand world-brand" href="./index.html" aria-label="Athena Aegis Systems home">
+      <a class="brand world-brand" href="./index.html" aria-label="Athena Aegis Systems home" aria-current="page">
         <span class="brand-symbol" aria-hidden="true"><img src="./assets/emblem.webp" alt="" width="34" height="34"></span>
         <span class="brand-lockup"><b><span class="wm-athena">ATHENA</span><span class="brand-dot">.</span><span class="wm-aegis">AEGIS</span></b><small class="wm-systems">SYSTEMS</small></span>
       </a>
@@ -47,10 +49,11 @@
       <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
         <a href="./athena.html">Athena</a>
         <a href="./aegis.html">Aegis</a>
-        <a href="#solutions">Applications</a>
-        <a href="./integration.html">Integrate</a>
+        <a href="./terminal-preview.html">App preview</a>
         <a href="./editions.html">Editions</a>
-        <a class="button button-sm button-outline" href="#contact">Request access <span aria-hidden="true">↗</span></a>
+        <a href="./integration.html">Integrate</a>
+        <a href="#pricing">Pricing</a>
+        <a class="button button-sm button-outline" href="#contact">Request access</a>
       </nav>
     </div>
   </header>
@@ -63,18 +66,18 @@
       <div class="elemental-seam" aria-hidden="true"><span>WISDOM</span><span>DEFENSE</span></div>
       <canvas class="realm-canvas threshold-canvas" data-realm="duality" aria-hidden="true"></canvas>
       <div class="shell threshold-inner">
-        <p class="world-kicker world-kicker-center"><span class="kicker-diamond" aria-hidden="true">✦</span> ATHENA AEGIS SYSTEMS <span class="kicker-divider"></span> PRIVATE PRODUCT PREVIEW</p>
+        <p class="world-kicker world-kicker-center"><span class="kicker-diamond" aria-hidden="true">✦</span> WINDOWS &amp; ANDROID <span class="kicker-divider"></span> PRODUCT PREVIEW</p>
         <h1 id="hero-title">Wisdom has<br><em>a guardian.</em></h1>
-        <p class="threshold-lede">Intelligence guided by evidence. Security shaped by discipline. Ancient ideals, engineered for the age of AI.</p>
+        <p class="threshold-lede">Explore a local AI workspace in development. Athena helps you research and build. Aegis reviews sensitive requests and actions.</p>
         <div class="threshold-actions">
-          <a class="world-button world-button-gold" href="./athena.html">Enter Athena's Acropolis <span aria-hidden="true">↗</span></a>
-          <a class="world-button world-button-iron" href="./aegis.html">Enter the Aegis Citadel <span aria-hidden="true">↗</span></a>
+          <a class="world-button world-button-gold" href="./terminal-preview.html#preview-lab-title">Try the app preview <span class="direction-arrow" aria-hidden="true"></span></a>
+          <a class="world-button world-button-iron" href="./editions.html#editions-heading">Compare PC &amp; Android <span class="direction-arrow" aria-hidden="true"></span></a>
         </div>
         <button id="world-motion-toggle" class="world-motion-toggle" type="button" aria-pressed="false">Pause ambient motion</button>
         <div class="threshold-divider" aria-hidden="true"><span></span><i>Α</i><span></span></div>
         <div class="hero-duality" aria-label="Athena and Aegis">
-          <div><span class="duality-mark">01 / ATHENA</span><b>The mind.</b><small>Orchestration · Memory · Learning</small></div>
-          <div><span class="duality-mark bronze">02 / AEGIS</span><b>The shield.</b><small>Screening · Approval · Defense</small></div>
+          <a href="./athena.html"><span class="duality-mark">ATHENA</span><b>The mind.</b><small>Explore the Acropolis <span aria-hidden="true">→</span></small></a>
+          <a href="./aegis.html"><span class="duality-mark bronze">AEGIS</span><b>The shield.</b><small>Explore the Citadel <span aria-hidden="true">→</span></small></a>
         </div>
       </div>
       <div class="hero-bottomline shell" aria-hidden="true"><span>THE DIGITAL ACROPOLIS</span><span>AN INTELLIGENCE WORTH DEFENDING</span><span>THE SPARTAN CITADEL</span></div>
@@ -162,7 +165,7 @@
       <div class="world-section-head reveal"><div><p class="world-kicker">IV / WHERE IT BELONGS</p><h2 id="solutions-title">Your world.<br><em>Our disciplines.</em></h2></div><p>Start with one defined workflow. Validate performance on your own tasks, then expand under review—no claims of production readiness without the supporting deployment work.</p></div>
       <div class="world-use-grid">
         <article class="use-portal reveal"><span class="portal-num">01 / APPLICATIONS</span><span class="portal-glyph">⌘</span><h3>Product copilots</h3><p>Design a branded assistant for your software, backed by evaluated workflows and a reviewable action layer.</p><a href="./integration.html">Developer integration <span aria-hidden="true">↗</span></a></article>
-        <article class="use-portal reveal"><span class="portal-num">02 / OPERATIONS</span><span class="portal-glyph">◇</span><h3>Business workflows</h3><p>Explore routing, triage and research pilots with clearer evidence of what worked and what failed.</p><a href="#contact">Request a pilot <span aria-hidden="true">↗</span></a></article>
+        <article class="use-portal reveal"><span class="portal-num">02 / OPERATIONS</span><span class="portal-glyph">◇</span><h3>Business workflows</h3><p>Explore routing, triage and research pilots with clearer evidence of what worked and what failed.</p><a href="#contact" data-plan="Business Pilot">Request a pilot <span aria-hidden="true">↗</span></a></article>
         <article class="use-portal reveal"><span class="portal-num">03 / DEFENSE</span><span class="portal-glyph">⬡</span><h3>Guarded AI agents</h3><p>Evaluate known prompt-injection patterns, risky actions and output leakage in existing agent workflows.</p><a href="./aegis.html">Explore Aegis <span aria-hidden="true">↗</span></a></article>
       </div>
     </section>
@@ -201,10 +204,10 @@
       <p>Preview Athena intelligence and Aegis protection on both Windows and Android. Each concept shares a Greek-futurist design language with different capabilities and visual identities.</p>
     </div>
     <div class="mode-gallery">
-      <article class="mode-card"><div class="mode-visual athena-pc" role="img" aria-label="Illustrated blue cybernetic Athena in a digital Greek sanctuary"><span>WINDOWS / ATHENA</span></div><div class="mode-details"><h3>Athena for PC</h3><p>Research, code, create and reason with a Qwen-first desktop workspace.</p><a href="./terminal-preview.html?device=desktop&amp;mode=athena">Explore Athena PC ↗</a></div></article>
-      <article class="mode-card"><div class="mode-visual aegis-pc" role="img" aria-label="Illustrated crimson cybernetic Aegis Spartan guardian"><span>WINDOWS / AEGIS</span></div><div class="mode-details"><h3>Aegis for PC</h3><p>Review permissions, evaluate actions and strengthen defense boundaries.</p><a href="./terminal-preview.html?device=desktop&amp;mode=aegis">Explore Aegis PC ↗</a></div></article>
-      <article class="mode-card"><div class="mode-visual athena-mobile" role="img" aria-label="Artistic portrait of Athena used for an Android edition concept"><span>ANDROID / ATHENA</span></div><div class="mode-details"><h3>Athena for Mobile</h3><p>A sapphire-themed companion for research, projects and creative work.</p><a href="./terminal-preview.html?device=mobile&amp;mode=athena">Explore Athena Mobile ↗</a></div></article>
-      <article class="mode-card"><div class="mode-visual aegis-mobile" role="img" aria-label="Artistic Spartan guardian used for an Android edition concept"><span>ANDROID / AEGIS</span></div><div class="mode-details"><h3>Aegis for Mobile</h3><p>A crimson security-focused experience with guarded workflows.</p><a href="./terminal-preview.html?device=mobile&amp;mode=aegis">Explore Aegis Mobile ↗</a></div></article>
+      <article class="mode-card"><div class="mode-visual athena-pc" role="img" aria-label="Illustrated blue cybernetic Athena in a digital Greek sanctuary"><span>WINDOWS / ATHENA</span></div><div class="mode-details"><h3>Athena for PC</h3><p>Research, code, create and reason with a Qwen-first desktop workspace.</p><a href="./terminal-preview.html?device=desktop&amp;mode=athena#preview-lab-title">Explore Athena PC ↗</a></div></article>
+      <article class="mode-card"><div class="mode-visual aegis-pc" role="img" aria-label="Illustrated crimson cybernetic Aegis Spartan guardian"><span>WINDOWS / AEGIS</span></div><div class="mode-details"><h3>Aegis for PC</h3><p>Review permissions, evaluate actions and strengthen defense boundaries.</p><a href="./terminal-preview.html?device=desktop&amp;mode=aegis#preview-lab-title">Explore Aegis PC ↗</a></div></article>
+      <article class="mode-card"><div class="mode-visual athena-mobile" role="img" aria-label="Artistic portrait of Athena used for an Android edition concept"><span>ANDROID / ATHENA</span></div><div class="mode-details"><h3>Athena for Mobile</h3><p>A sapphire-themed companion for research, projects and creative work.</p><a href="./terminal-preview.html?device=mobile&amp;mode=athena#preview-lab-title">Explore Athena Mobile ↗</a></div></article>
+      <article class="mode-card"><div class="mode-visual aegis-mobile" role="img" aria-label="Artistic Spartan guardian used for an Android edition concept"><span>ANDROID / AEGIS</span></div><div class="mode-details"><h3>Aegis for Mobile</h3><p>A crimson security-focused experience with guarded workflows.</p><a href="./terminal-preview.html?device=mobile&amp;mode=aegis#preview-lab-title">Explore Aegis Mobile ↗</a></div></article>
     </div>
     <div class="mode-footer"><a href="./terminal-preview.html">Launch the interactive concept ↗</a><a href="./editions.html">Windows &amp; Android roadmap ↗</a></div>
     <p class="mode-fineprint">Visual concepts only. The interactive preview uses prepared examples; live Qwen inference, app installation and production security features are not available here yet.</p>
@@ -232,7 +235,7 @@
     <section class="world-section purchase-world" id="pricing" aria-labelledby="access-title">
       <div class="shell purchase-layout">
         <div class="reveal"><p class="world-kicker">VII / JOIN THE FOUNDING CIRCLE</p><h2 id="access-title">Power deserves<br><em>a purpose.</em></h2><p>Explore access to Athena and Aegis, whether you're building a personal assistant or evaluating them for a business workflow.</p><div class="purchase-seal" aria-hidden="true">Α<span>◆</span>⛨</div></div>
-        <div class="purchase-card reveal"><span class="purchase-label">ATHENA + AEGIS / BUNDLED</span><h3>One intelligence.<br>One shield.</h3><p class="purchase-price">$19.99 <small>/ month</small></p><p>Checkout is live through Stripe. Subscribe today and your installation access is confirmed directly after purchase - delivery is personal, not automated.</p><ul><li>Evidence-gated agent framework</li><li>Aegis defensive checks and approval controls</li><li>PC / Android editions planned</li><li>Access details confirmed directly</li></ul><a class="world-button world-button-gold" href="https://buy.stripe.com/fZufZj71r1BzbDHcvt6kg00" data-plan="Athena Subscription">Subscribe - $19.99 / month <span aria-hidden="true">↗</span></a><small>Tax calculated at checkout where applicable. Installation access and license terms are confirmed directly after purchase.</small></div>
+        <div class="purchase-card reveal"><span class="purchase-label">ATHENA + AEGIS / BUNDLED</span><h3>One intelligence.<br>One shield.</h3><p class="purchase-price">$19.99 <small>/ month</small></p><p>Checkout is live through Stripe. Subscribe today and your installation access is confirmed directly after purchase - delivery is personal, not automated.</p><ul><li>Evidence-gated agent framework</li><li>Aegis defensive checks and approval controls</li><li>PC / Android editions planned</li><li>Access details confirmed directly</li></ul><a class="world-button world-button-gold" href="https://buy.stripe.com/fZufZj71r1BzbDHcvt6kg00">Subscribe - $19.99 / month <span aria-hidden="true">↗</span></a><small>Tax calculated at checkout where applicable. Installation access and license terms are confirmed directly after purchase.</small></div>
       </div>
     </section>
 
@@ -240,7 +243,7 @@
       <div class="world-section-head reveal"><div><p class="world-kicker">VIII / THE ORACLE ANSWERS</p><h2 id="faq-title">Know before<br><em>you enter.</em></h2></div><p>Clear answers about the real product, not promises borrowed from mythology.</p></div>
       <div class="world-faq reveal">
         <details><summary>Is Athena available to purchase and install immediately?<span aria-hidden="true">+</span></summary><p>You can subscribe today through the secure Stripe checkout on this page at the owner-selected $19.99 monthly price. The Python framework is in private developer preview, so installation access is confirmed personally after purchase rather than delivered as an instant public download.</p></details>
-        <details><summary>Is the digital goddess a live, fully animated AI?<span aria-hidden="true">+</span></summary><p>The current web character is an animated visual portrait with an optional browser-spoken introduction. It is not a rigged 3D person or live conversation. Muse is working on a separate voice upgrade.</p></details>
+        <details><summary>Is the digital goddess a live, fully animated AI?<span aria-hidden="true">+</span></summary><p>The character is an animated portrait. <a href="./experience.html">Meet Athena</a> offers browser narration and a written transcript. The <a href="./terminal-preview.html#preview-lab-title">app preview</a> also includes prerecorded voice samples for both modes.</p></details>
         <details><summary>Can Aegis guarantee my system is secure?<span aria-hidden="true">+</span></summary><p>No. Aegis is defense in depth: pattern screens, instruction boundaries, action gates and output checks. No security tool should be described as invulnerable or a replacement for architecture and independent testing.</p></details>
         <details><summary>How do I integrate Athena with my software?<span aria-hidden="true">+</span></summary><p>Approved pilots use the private Python package and command-line interface with compatible providers. A public hosted API, automatic deployment, and production integrations are not generally available yet. <a href="./integration.html">Read the developer guide</a>.</p></details>
         <details><summary>Are the Windows and Android editions released?<span aria-hidden="true">+</span></summary><p>Both editions are in development. The standard PC release will be one signed Windows installer containing Athena, Aegis, Qwen3.8-27B and its local inference runtime. The Android edition targets Qwen3.5-4B. We will post download details after testing the release packages on supported devices.</p></details>
@@ -252,14 +255,23 @@
         <div class="reveal"><p class="world-kicker">IX / THE GATES ARE OPEN</p><h2 id="contact-title">Begin your<br><em>odyssey.</em></h2><p>Tell us what you want Athena and Aegis to help you build. We can discuss a developer pilot, a business deployment, or access to upcoming editions.</p><div class="contact-motif" aria-hidden="true">ΑΘΗΝΑ <span>✦</span> ΑΙΓΙΣ</div></div>
         <div class="world-form-card reveal">
           <p class="world-kicker">REQUEST ACCESS / ATHENA AEGIS SYSTEMS</p><h3>Tell us what you're building.</h3>
-          <form id="inquiry-form">
+          <p id="inquiry-direct" class="world-form-note">Email <a href="mailto:kcaidevelopment@gmail.com">kcaidevelopment@gmail.com</a> with your edition or pilot inquiry.</p>
+          <form id="inquiry-form" hidden>
             <label for="inquiry-name">Name or company</label><input id="inquiry-name" name="name" type="text" maxlength="120" placeholder="Your company or name" autocomplete="organization" required>
             <label for="inquiry-email">Email address</label><input id="inquiry-email" name="email" type="email" maxlength="160" placeholder="you@company.com" autocomplete="email" required>
             <label for="inquiry-plan">What interests you?</label>
-            <select id="inquiry-plan" name="plan"><option value="Athena Subscription">Athena Subscription</option><option value="Business Pilot">Business Pilot</option><option value="Developer">Developer Preview</option><option value="Aegis Security">Aegis Security</option><option value="Desktop Edition">Athena for PC</option><option value="Android Edition">Athena for Android</option></select>
+            <select id="inquiry-plan" name="plan"><option value="Athena Subscription">Athena Subscription</option><option value="Business Pilot">Business Pilot</option><option value="Developer">Developer Preview</option><option value="Aegis Security">Aegis Security</option><option value="Desktop Edition">Windows PC edition</option><option value="Android Edition">Android edition</option></select>
             <label for="inquiry-message">Your use case</label><textarea id="inquiry-message" name="message" maxlength="1400" rows="4" placeholder="Tell us what you're creating and what success looks like." required></textarea>
-            <button class="world-button world-button-gold world-submit" type="submit">Prepare access inquiry <span aria-hidden="true">↗</span></button>
-            <p id="inquiry-feedback" aria-live="polite" class="world-form-note">This opens your email app with a prepared message. No data is submitted or stored by this page.</p>
+            <button class="world-button world-button-gold world-submit" type="submit">Prepare email draft</button>
+            <p id="inquiry-feedback" role="status" class="world-form-note">Prepare your draft here, then open your email app or copy it to send.</p>
+            <div id="inquiry-draft" class="inquiry-draft" hidden>
+              <label for="inquiry-draft-text">Your email draft</label>
+              <textarea id="inquiry-draft-text" rows="6" readonly></textarea>
+              <div class="draft-actions">
+                <a id="inquiry-mailto" class="world-button world-button-gold">Open email app</a>
+                <button type="button" class="world-button world-button-iron" id="inquiry-copy">Copy email</button>
+              </div>
+            </div>
           </form>
         </div>
       </div>

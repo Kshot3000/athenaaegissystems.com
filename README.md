@@ -6,7 +6,7 @@ Static, multi-page website for **Athena** (AI intelligence) and **Aegis** (defen
 
 | Path | Purpose |
 | --- | --- |
-| `index.html` | Homepage, product overview, previews, FAQ, indicative pricing, inquiry |
+| `index.html` | Homepage, product overview, previews, FAQ, subscription pricing, inquiry |
 | `athena.html` | Digital Acropolis: intelligence, evidence and model orchestration |
 | `aegis.html` | Spartan Citadel: security principles and a **static** gate illustration |
 | `experience.html` | Decorative Athena avatar and optional **prewritten browser** narration |
@@ -45,7 +45,7 @@ World animations are optional, capped and pause when out of view. The motion con
 
 The Python framework is a private developer preview. Desktop (planned **Qwen3.8-27B**) and Android (planned **Qwen3.5-4B**) applications are under development. The intention is a **Qwen-first experience** with locally available models and **direct downloads from this website**, subject to model licensing, installer security, bandwidth, device and performance validation. There is **no downloadable product bundle yet**.
 
-The displayed **$19.99/month** is owner-selected proposed pricing; the site does not run checkout, subscriptions or provisioning. The inquiry form prepares a `mailto:` message in the visitor's own email app. **It does not transmit, store, or guarantee delivery of leads**. Verify recipient and production fulfillment before charging customers.
+The $19.99 monthly subscription opens the owner’s Stripe checkout. Installation access is confirmed personally after purchase. The inquiry form prepares a local email draft that visitors can open in a mail app or copy into webmail.
 
 The Aegis gate example is a fixed demonstration, **not a live security verdict**. Aegis and Athena do not promise complete defense, universal accuracy, or autonomous authorization of financial and production actions.
 
@@ -217,6 +217,6 @@ artwork-focused change.
 
 ## November 19 QA review
 
-The four-way interactive terminal preview is illustrative only. Its local, scripted responses do not provide real model inference, input filtering, approval enforcement, account provisioning or security verdicts. The displayed $19.99 subscription figure is a proposal, not an active checkout or finalized agreement; device licenses, updates and model packaging require validation. The preview deliberately avoids release guarantees.
+The four-way interactive terminal preview is illustrative only. Its local, scripted responses do not provide real model inference, input filtering, approval enforcement, account provisioning or security verdicts. The live subscription checkout is linked from the homepage. Desktop and Android release availability is documented on the Editions page.
 
 GitHub Actions now saves a one-day source snapshot for browser QA in addition to checking markup/assets and JavaScript syntax. Full-device and screen-reader acceptance tests remain separate publication gates.

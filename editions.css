@@ -16,7 +16,8 @@
 .edition-model span { display:inline-block;vertical-align:middle;margin-left:.5rem; font-size:.72rem; font-weight:600; color:var(--muted);border:1px solid var(--line-strong);padding:.15rem .5rem;border-radius:100px; }
 .edition-card > p:not(.overline):not(.edition-model) { color:var(--muted); }
 .edition-card ul { color:#b2c3df; list-style:none; padding:0;display:grid;gap:.7rem;margin:1.8rem 0; }
-.edition-card li::before { content:"✓";color:#f2c14e;font-weight:800;margin-right:.6rem; }
+.edition-card li {position:relative;padding-left:1rem;}
+.edition-card li::before {content:"";position:absolute;left:0;top:.73em;width:.35rem;border-top:2px solid #d9af78;}
 .edition-card .button { margin-top:auto; }
 .edition-sources { color:#9aacc9;font-size:.82rem;line-height:1.8;margin-top:1.5rem; }
 .edition-security { background:#0a1220;border-block:1px solid var(--line); }

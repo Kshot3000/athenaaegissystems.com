@@ -84,8 +84,7 @@ class SiteIntegrity(unittest.TestCase):
                     url = urlsplit(ref)
                     if url.scheme or url.netloc or ref.startswith("//"):
                         continue
-                    relative = unquote(url.path or name).replace("\\", "/")
-                    # Local links use "./", except same-page fragments.
+                    relative = unquote(url.path or name).replace("\\", "/").lstrip("/") or "index.html"
                     target = (ROOT / relative).resolve()
                     self.assertTrue(target.is_relative_to(ROOT), "link escapes site root")
                     self.assertTrue(target.exists(), "missing local link or asset")
@@ -111,10 +110,17 @@ class SiteIntegrity(unittest.TestCase):
             with self.subTest(page=name):
                 content = (ROOT / name).read_text(encoding="utf-8")
                 self.assertIn('<link rel="canonical"', content)
-                self.assertIn('name="twitter:card"', content)
+                self.assertEqual(content.count('name="twitter:card"'), 1)
+                for field in ("og:title", "og:description", "og:image:alt"):
+                    self.assertTrue(self.pages[name].meta.get(field), field)
                 self.assertIn('property="og:image"', content)
                 self.assertIn('property="og:url"', content)
                 self.assertIn("<title>", content)
+
+    def test_nested_not_found_links_resolve_from_site_root(self):
+        for ref in self.pages["404.html"].refs:
+            if not ref.startswith("#"):
+                self.assertTrue(ref.startswith("/"), ref)
 
     def test_paired_art_and_release_clarity(self):
         home = (ROOT / "index.html").read_text(encoding="utf-8")

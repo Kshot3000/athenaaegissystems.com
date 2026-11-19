@@ -16,7 +16,7 @@
     },
     integrations: {
       title: "I fit into your ambitions.",
-      body: "Athena is currently a private Python developer preview. Approved teams can install her framework, connect their supported model providers, evaluate real workflows, and choose how humans review consequential actions. A hosted public API and self-service checkout are not available yet."
+      body: "Athena is currently a private Python developer preview. Approved teams can install her framework, connect their supported model providers, evaluate real workflows, and choose how humans review consequential actions. Subscriptions are available through Stripe. Developer access is arranged directly."
     },
     trust: {
       title: "Trust must be earned.",

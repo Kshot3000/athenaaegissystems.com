@@ -12,6 +12,7 @@
   var toggle = document.querySelector(".nav-toggle");
   var nav = document.getElementById("primary-nav");
   if (toggle && nav) {
+    var header = toggle.closest("header");
     toggle.addEventListener("click", function () {
       var open = nav.classList.toggle("open");
       toggle.setAttribute("aria-expanded", String(open));
@@ -37,6 +38,10 @@
         closeNav(false);
       }
     });
+    header.addEventListener("focusout", function (event) {
+      if (event.relatedTarget && !header.contains(event.relatedTarget)) closeNav(false);
+    });
+    header.classList.add("nav-enhanced");
   }
 
   // Mark the current page in the mobile and desktop navigation.
@@ -81,11 +86,12 @@
 
   // Copy code as plain text. Never report success when clipboard access fails.
   document.querySelectorAll(".copy-button").forEach(function (btn) {
+    var original = btn.textContent;
+    var timer;
     btn.addEventListener("click", function () {
       var target = document.getElementById(btn.getAttribute("data-copy-target"));
       if (!target) return;
       var content = target.textContent;
-      var original = btn.textContent;
       function feedback(ok) {
         btn.textContent = ok ? "Copied ✓" : "Select code to copy";
         if (!ok) {
@@ -94,7 +100,8 @@
           var selection = window.getSelection();
           if (selection) { selection.removeAllRanges(); selection.addRange(range); }
         }
-        setTimeout(function () { btn.textContent = original; }, 2000);
+        clearTimeout(timer);
+        timer = setTimeout(function () { btn.textContent = original; }, 2000);
       }
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(content).then(function () { feedback(true); }, function () { feedback(false); });
@@ -104,40 +111,61 @@
     });
   });
 
-  // Pricing cards preselect the matching plan in the inquiry form.
+  // Edition and pilot links carry only a public interest code.
   var planSelect = document.getElementById("inquiry-plan");
-  document.querySelectorAll("[data-plan]").forEach(function (el) {
-    el.addEventListener("click", function () {
-      if (planSelect) planSelect.value = el.getAttribute("data-plan");
-    });
-  });
-
-  // Inquiry form: build a mailto: email in the visitor's own mail app.
   var form = document.getElementById("inquiry-form");
-  if (form) {
+  if (form && planSelect) {
+    var interests = { windows: "Desktop Edition", android: "Android Edition", business: "Business Pilot", developer: "Developer", aegis: "Aegis Security" };
+    var interest = new URLSearchParams(window.location.search).get("interest");
+    if (Object.prototype.hasOwnProperty.call(interests, interest)) planSelect.value = interests[interest];
+    var recipient = "kcaidevelopment@gmail.com";
+    var draft = document.getElementById("inquiry-draft");
+    var draftText = document.getElementById("inquiry-draft-text");
+    var mailLink = document.getElementById("inquiry-mailto");
+    var feedback = document.getElementById("inquiry-feedback");
+    var help = feedback.textContent;
+    function invalidateDraft() {
+      draft.hidden = true;
+      draftText.value = "";
+      mailLink.removeAttribute("href");
+      feedback.textContent = help;
+    }
+    form.addEventListener("input", function (event) {
+      if (!draft.hidden && !draft.contains(event.target)) invalidateDraft();
+    });
+    document.querySelectorAll("[data-plan]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        planSelect.value = link.getAttribute("data-plan");
+        invalidateDraft();
+      });
+    });
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var name = document.getElementById("inquiry-name").value.trim();
       var email = document.getElementById("inquiry-email").value.trim();
-      var plan = planSelect ? planSelect.value : "Business Pilot";
+      var plan = planSelect.selectedOptions[0].textContent;
       var message = document.getElementById("inquiry-message").value.trim();
-      var subject = encodeURIComponent("Athena subscription inquiry — " + plan);
-      var body = encodeURIComponent(
-        "Name / company: " + name + "\nEmail: " + email +
-        "\nInterested in: " + plan + "\n\n" + message);
-      window.location.href =
-        "mailto:kcaidevelopment@gmail.com?subject=" + subject + "&body=" + body;
-      var feedback = document.getElementById("inquiry-feedback");
-      if (feedback) {
-        feedback.textContent =
-          "Your email app should open with a prepared inquiry. Sending it is still up to you. If nothing opened, ";
-        var fallback = document.createElement("a");
-        fallback.href = "mailto:kcaidevelopment@gmail.com";
-        fallback.textContent = "email us directly";
-        fallback.rel = "nofollow";
-        feedback.appendChild(fallback);
-        feedback.appendChild(document.createTextNode("."));
+      var subject = "Athena Aegis inquiry — " + plan;
+      var body = ["Name / company: " + name, "Email: " + email, "Interested in: " + plan, "", message].join("\r\n");
+      mailLink.href = "mailto:" + recipient + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+      draftText.value = "To: " + recipient + "\nSubject: " + subject + "\n\n" + body;
+      draft.hidden = false;
+      feedback.textContent = "Your draft is ready. Open your email app or copy it to use in webmail.";
+      mailLink.focus();
+    });
+    document.getElementById("inquiry-copy").addEventListener("click", async function () {
+      var text = draftText.value;
+      try {
+        await navigator.clipboard.writeText(text);
+        if (draftText.value === text) feedback.textContent = "Email copied, including the recipient and subject.";
+      } catch (err) {
+        if (draftText.value !== text) return;
+        draftText.focus();
+        draftText.select();
+        feedback.textContent = "Draft selected. Use your device’s Copy command.";
       }
     });
+    document.getElementById("inquiry-direct").hidden = true;
+    form.hidden = false;
   }
 })();
