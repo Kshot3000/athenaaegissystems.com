@@ -1,0 +1,47 @@
+/* Desktop / mobile edition showcase for Athena & Aegis. */
+.edition-hero { display:grid; grid-template-columns: 1.12fr .88fr; align-items:center; gap:clamp(2rem,6vw,6rem); padding:4rem 0 5rem; }
+.edition-hero-copy h1 { margin:1.2rem 0; font-size:clamp(3rem,6vw,5.1rem); letter-spacing:-.05em; }
+.edition-hero-copy > p:not(.overline) { max-width:38rem; color:var(--muted); font-size:1.08rem; }
+.edition-hero-copy .edition-disclaimer { margin-top:1.1rem; color:#c2a96d !important; font-size:.82rem !important; }
+.edition-hero-art { height:480px; position:relative; border:1px solid rgba(176,204,255,.25); border-radius:26px; overflow:hidden; box-shadow:0 40px 100px #000b; background:linear-gradient(120deg,#172a4a,#060d1b); }
+.edition-hero-art img { width:100%;height:100%;object-fit:cover;object-position:50% 26%; }
+.edition-hero-art::after { content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 55%,rgba(5,10,20,.48)); }
+.edition-actions { display:flex; gap:.8rem; flex-wrap:wrap; margin-top:2rem; }
+.edition-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem; }
+.edition-card { display:flex;flex-direction:column;min-width:0; padding:clamp(1.5rem,3.3vw,2.8rem);border:1px solid rgba(169,199,249,.21);border-radius:24px;background:linear-gradient(160deg,#12233a,#0c1525 65%); }
+.edition-card:nth-child(2) { background:linear-gradient(165deg,#241e31,#121526 65%); }
+.edition-icon { width:3.5rem;height:3.5rem;display:grid;place-items:center;color:var(--gold);font-size:2.4rem;border:1px solid var(--line-strong);border-radius:15px;margin-bottom:1.5rem; }
+.edition-card h3 { font-size:clamp(1.8rem,3vw,2.7rem);letter-spacing:-.045em;margin:.75rem 0; }
+.edition-model { color:#f4d08b;font-family:var(--font-display);font-size:1.3rem;font-weight:700;margin:0 0 1.1rem !important; }
+.edition-model span { display:inline-block;vertical-align:middle;margin-left:.5rem; font-size:.72rem; font-weight:600; color:var(--muted);border:1px solid var(--line-strong);padding:.15rem .5rem;border-radius:100px; }
+.edition-card > p:not(.overline):not(.edition-model) { color:var(--muted); }
+.edition-card ul { color:#b2c3df; list-style:none; padding:0;display:grid;gap:.7rem;margin:1.8rem 0; }
+.edition-card li::before { content:"✓";color:#f2c14e;font-weight:800;margin-right:.6rem; }
+.edition-card .button { margin-top:auto; }
+.edition-sources { color:#9aacc9;font-size:.82rem;line-height:1.8;margin-top:1.5rem; }
+.edition-security { background:#0a1220;border-block:1px solid var(--line); }
+.security-layout { display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(2rem,6vw,6rem); }
+.security-layout h2 { margin:1rem 0 1.5rem; }
+.security-layout p:not(.overline) { color:var(--muted);margin-bottom:2rem; }
+.security-stack { display:grid;gap:.75rem; }
+.security-stack > div { border:1px solid var(--line-strong);border-radius:14px;background:#111d30;padding:1rem 1.2rem;display:grid;grid-template-columns:2rem 1fr;column-gap:.7rem;align-items:center; }
+.security-stack span { color:#f2c14e;grid-row:span 2;font-family:ui-monospace,monospace;font-size:.86rem; }
+.security-stack strong { font-weight:700;color:#e9f0fc; }
+.security-stack small { color:var(--muted);font-size:.82rem; }
+.edition-closing { text-align:center;max-width:760px; }
+.edition-closing h2 { margin:1rem 0; }
+.edition-closing p:not(.overline) { color:var(--muted); }
+.edition-closing .edition-actions { justify-content:center; }
+.edition-page-splash { border:1px solid #eec57a55;border-radius:20px;padding:2.5rem;background:linear-gradient(120deg,#12243a,#151c2f); }
+@media (max-width:850px) {
+  .edition-hero { grid-template-columns:1fr;padding:2.5rem 0; }
+  .edition-hero-art { max-width:660px;width:100%;justify-self:center; }
+  .edition-grid,.security-layout { grid-template-columns:1fr; }
+}
+@media (max-width:560px) {
+  .edition-hero-copy h1 { font-size:clamp(2.6rem,10vw,4rem); }
+  .edition-hero-art { height:410px; }
+  .edition-actions .button { width:100%;justify-content:center; }
+  .edition-model span { margin:.4rem 0 0; }
+}
+:where(.edition-actions a,.edition-card a):focus-visible { outline:3px solid #f2c14e;outline-offset:3px; }

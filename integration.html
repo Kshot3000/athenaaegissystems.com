@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070b12">
+  <meta name="description" content="Athena developer integration guide: access, installation, provider configuration, evaluation, and the safety model for the private developer preview.">
+  <title>ATHENA — Developer Integration Guide</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/mark.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="ambient ambient-left" aria-hidden="true"></div>
+  <div class="ambient ambient-right" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <div class="nav-wrap shell">
+      <a class="brand" href="./index.html" aria-label="Athena home">
+        <span class="brand-symbol" aria-hidden="true">Α</span>
+        <span class="brand-name">ATHENA<span class="brand-dot">.</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+        <a href="./index.html#why">Why Athena</a>
+        <a href="./index.html#solutions">Solutions</a>
+        <a href="./index.html#integrate">Integrate</a>
+        <a href="./index.html#pricing">Access</a>
+        <a href="./index.html#faq">FAQ</a>
+        <a class="button button-sm button-outline" href="./index.html#contact">Request a pilot <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero shell">
+      <p class="overline">DEVELOPER GUIDE</p>
+      <h1>Integrate Athena,<br><span class="text-gradient">step by verified step.</span></h1>
+      <p class="section-lede">Athena is a self-hosted Python framework in private developer preview. There is no public API or hosted service yet — this guide describes exactly what approved pilot customers receive and run today.</p>
+    </section>
+
+    <div class="page-body shell">
+      <h2>1. Get access</h2>
+      <p>Athena's source repository is private. Access starts with a pilot inquiry: tell us the workflow you want to improve and how you will measure it. We confirm technical fit, agree scope and licensing, and then grant repository access. No public downloads, checkout, or self-serve signup exist yet.</p>
+
+      <h2>2. Install</h2>
+      <p>Requirements: Python 3.11 or newer, git, and (optionally) API keys for the model providers you want to connect. The core framework itself is standard-library only and runs fully offline with its built-in mock provider.</p>
+      <pre><code>git clone https://github.com/Kshot3000/Athena.git
+cd Athena
+python -m pip install -e .</code></pre>
+
+      <h2>3. Verify your installation</h2>
+      <p>Before connecting any provider, run the offline scoreboard and the test suite. Both must pass on a clean checkout — if they don't, stop and tell us what you saw; a broken baseline is a bug report we want.</p>
+      <pre><code>python -m athena eval            # routing scoreboard (train + holdout)
+python -m athena eval-semantic   # semantic routing suite
+python -m athena eval-adversarial
+python -m unittest discover -s tests</code></pre>
+
+      <h2>4. Connect model providers</h2>
+      <p>Providers are read from environment variables only — never commit keys to the repository. With no keys set, Athena uses an offline mock provider so the full workflow (recall, propose, evaluate, adopt) can be exercised safely.</p>
+      <pre><code># Set only the providers you use, in YOUR environment:
+#   ANTHROPIC_API_KEY / OPENAI_API_KEY / XAI_API_KEY
+python -m athena demo "Route a support ticket"</code></pre>
+      <p>Model availability depends on your provider account, current model names, and endpoint compatibility. The council pattern lets different models propose and verify, so a single-provider setup works but is not the strongest configuration.</p>
+
+      <h2>5. Understand the safety model before you build on it</h2>
+      <ul>
+        <li><strong>Evidence-gated memory.</strong> A lesson enters Athena's memory only with evidence attached — a score, a test result, a measured outcome. Unsupported claims are not remembered as fact.</li>
+        <li><strong>Gated improvement.</strong> Playbook and routing changes are adopted only when they improve the training split without regressing any protected split (train/holdout across every suite in the gate).</li>
+        <li><strong>Constrained self-modification.</strong> The code lab accepts data-only candidates, statically screened — candidate code is never executed during evaluation.</li>
+        <li><strong>Human control.</strong> Core code changes, account actions, and anything touching money require human review and approval. Athena has no blanket permission over your production systems; external actions need integrations you build and approve.</li>
+      </ul>
+
+      <h2>6. Build your evaluation first</h2>
+      <p>Athena improves against a scoreboard, so the highest-value integration work is writing evaluation cases from your own workflow: real tasks, human-labelled expected outcomes, split into train and holdout sets. Start narrow — one workflow, twenty honest cases — and expand only when the loop demonstrates gains on cases it has never seen.</p>
+
+      <h2>Support</h2>
+      <p>Pilot customers get support through <a href="https://kshot.tech" target="_blank" rel="noopener noreferrer">Kshot Applications</a>. Include your Athena version, the exact command you ran, and its full output — the same evidence standard Athena holds herself to.</p>
+
+      <a class="back-link" href="./index.html">← Back to Athena</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-bottom" style="border-top:0;margin-top:0;padding-top:0">
+      <span>© <span id="year">2026</span> ATHENA / KSHOT APPLICATIONS</span>
+      <span>DESIGNED WITH WISDOM · BUILT WITH EVIDENCE</span>
+      <a href="./index.html#top">BACK TO TOP ↑</a>
+    </div>
+  </footer>
+</body>
+</html>

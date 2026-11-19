@@ -1,0 +1,41 @@
+/* Product homepage extension: living Athena persona & desktop/mobile roadmap. */
+.persona-spotlight { margin-block:1.5rem 4rem; border:1px solid rgba(237,193,109,.28); border-radius:26px; background:linear-gradient(125deg,#101b2c,#101827 65%,#1a1a2c); display:grid; grid-template-columns:.78fr 1.22fr; gap:clamp(1.4rem,4vw,4.5rem); align-items:center; overflow:hidden; position:relative; box-shadow:0 25px 80px #0005; }
+.persona-spotlight::after { content:"";position:absolute;inset:0; pointer-events:none;border-radius:26px;box-shadow:inset 0 0 75px rgba(64,123,215,.08); }
+.persona-spotlight-visual { height:370px;position:relative;overflow:hidden;isolation:isolate; background:radial-gradient(circle,#213f61,#09111e); }
+.persona-spotlight-visual img { height:100%;width:100%;object-fit:cover;object-position:50% 22%;filter:saturate(.9) contrast(1.08); animation:athena-spotlight-float 9s ease-in-out infinite alternate; }
+.persona-spotlight-visual::before { content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,transparent 70%,#101b2c),linear-gradient(0deg,#101b2c88,transparent 38%); }
+.persona-pulse { position:absolute;z-index:2;width:58%;aspect-ratio:1;top:15%;left:20%;border:1px solid #f9d59277;border-radius:50%;box-shadow:0 0 35px #83b5ef2f;pointer-events:none;animation:athena-spotlight-ring 12s linear infinite; }
+.persona-spotlight-copy { padding:2rem 2.8rem 2rem 0; }
+.persona-spotlight-copy h2 { margin:.9rem 0 1rem;letter-spacing:-.043em; }
+.persona-spotlight-copy p:not(.overline) { color:var(--muted);max-width:36rem; }
+.persona-spotlight-copy small { color:#91a8cb;display:block;font-size:.76rem;margin-top:1rem;max-width:34rem; }
+.persona-spotlight-actions { display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem; }
+.platform-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem; }
+.platform-card { padding:2rem;display:flex;align-items:start;gap:1.4rem;border:1px solid rgba(173,206,248,.21);border-radius:20px;background:linear-gradient(140deg,#14243b,#0c1524);min-width:0; }
+.platform-card:nth-child(2) { background:linear-gradient(140deg,#201d34,#0d1425); }
+.platform-symbol { border:1px solid var(--line-strong);border-radius:12px;width:3.4rem;height:3.4rem;display:grid;place-items:center;font-size:2.1rem;color:#f0c87b;flex-shrink:0; }
+.platform-card h3 { font-size:1.65rem;margin:.5rem 0; }
+.platform-card p:not(.overline) { color:var(--muted);font-size:.95rem; }
+.platform-card .platform-model { color:#e7bf78 !important;font-weight:700;font-size:1.05rem !important;margin-bottom:.8rem; }
+.platform-card .text-link { display:inline-block;margin-top:1.25rem; }
+.platform-note { margin-top:1rem;color:#95a9c8;font-size:.82rem;line-height:1.7; }
+@keyframes athena-spotlight-float { from { transform:scale(1.03) translateY(0); } to { transform:scale(1.075) translateY(-8px); } }
+@keyframes athena-spotlight-ring { to { transform:rotate(360deg); } }
+@media (max-width:950px) {
+  .persona-spotlight { grid-template-columns:1fr; }
+  .persona-spotlight-visual { height:310px; }
+  .persona-spotlight-visual::before { background:linear-gradient(0deg,#101b2c,transparent 58%); }
+  .persona-spotlight-copy { padding:0 2rem 2rem; }
+  .platform-grid { grid-template-columns:1fr; }
+}
+@media (max-width:560px) {
+  .persona-spotlight { margin-top:0; }
+  .persona-spotlight-visual { height:260px; }
+  .persona-spotlight-copy { padding:0 1.2rem 1.6rem; }
+  .persona-spotlight-actions .button { width:100%;justify-content:center; }
+  .platform-card { padding:1.4rem;gap:1rem; }
+  .platform-symbol { width:2.6rem;height:2.6rem;font-size:1.5rem; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .persona-spotlight-visual img,.persona-pulse { animation:none;transform:none; }
+}
