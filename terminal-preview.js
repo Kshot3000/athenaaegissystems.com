@@ -85,7 +85,7 @@ function render() {
   showExample();
 }
 function showExample() {
-  $("#terminal-actions [data-workflow]").forEach(button => {
+  $$("#terminal-actions [data-workflow]").forEach(button => {
     const selected = button.dataset.workflow === workflow;
     button.setAttribute("aria-pressed", String(selected));
     button.classList.toggle("is-selected", selected);
@@ -198,7 +198,7 @@ $("#terminal-compose-form").addEventListener("submit", event => {
   const prompt = input.value.trim();
   if (!prompt) { input.focus(); return; }
   answerPrompt(prompt);
-  $("#terminal-actions [data-workflow]").forEach(button => {
+  $$("#terminal-actions [data-workflow]").forEach(button => {
     button.setAttribute("aria-pressed", "false");
     button.classList.remove("is-selected");
   });
