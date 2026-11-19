@@ -61,3 +61,155 @@ Website changes do **not** deploy the Windows or Android applications, change DN
 The homepage and Editions page contain a four-card Athena PC, Aegis PC, Athena Android, and Aegis Android preview gallery. Links open `terminal-preview.html` with `device` and `mode` URL parameters. The terminal includes a working mode toggle, device switch, workflow examples, responsive desktop and phone frames, keyboard-operable controls, and a local-only prompt demonstration. Scripts do not call a model, track visitor data or claim to perform security scans. The real Qwen-first Windows/Android applications remain separate development projects.
 
 Original cinematic concept renders and cutouts are packaged separately for marketing as a downloadable asset kit. The live web demo currently uses the lightweight checked-in SVG/WEBP Greek-world assets; it does not upload the multi-megabyte source renders automatically.
+**Future true character animation:** produce an approved, rights-cleared
+loop or a rigged character with facial/eye/hand gestures and synchronized
+mouth shapes. Optimize a short WebM/MP4 loop with a static fallback; never
+start audio automatically. Verify device performance on Windows and Android.
+
+## Digital Greece / Digital Sparta visual system (WEB-3)
+
+Two distinct but connected visual worlds now share one product identity.
+
+- **Athena — the Digital Acropolis:** sapphire, ivory and gold; a
+  holographic temple skyline, divine marble imagery and orbital light.
+- **Aegis — the Spartan Citadel:** obsidian, hematite and bronze;
+  fortified ramparts, defensive shield, scanning light and hard geometry.
+
+The scenes are locally committed vector assets in
+website/assets/digital-acropolis.svg and website/assets/digital-sparta.svg.
+The portrait remains website/assets/athena-goddess.webp. Decorative
+animation is CSS-based. The new worlds.js adds reveal effects, motion
+pause and a curated Aegis gate example; it does not modify voice.
+The gate is a fixed illustration, NOT a live Python security scan.
+
+Buyer path: homepage → Athena or Aegis → integration / editions → inquiry.
+The form is a mail-app handoff configured in app.js, not a real CRM
+submission. Check recipient delivery before any public launch.
+
+Static CI tests local links, asset presence, HTML semantics, accessibility
+markers and product disclaimers; Node checks script syntax. Real browsers,
+screen readers, motion performance, payment/contact delivery and user
+testing are separate release checks, not certified by CI.
+
+The owner controls athenaaegissystems.com and Muse manages DNS.
+Do not modify DNS, public deployment, Stripe billing or Muse-owned audio
+from this design branch. Hosting should isolate the static site from the
+private Python repo and all credentials.
+
+
+## Blue Digital Water / Red Digital Fire — earlier visual iteration
+
+The website uses the owner's **last two approved high-resolution images**:
+
+- `website/assets/athena-water.webp` — Athena with sapphire digital water,
+  a luminous owl, and the Acropolis.
+- `website/assets/aegis-fire.webp` — Aegis as a bronze-armored Spartan
+  guardian with dark red digital fire, spear and shield.
+
+Both are 1122 × 1402 WebP images, approximately 325–356 KB. These were introduced during the first water/fire redesign, before the
+owner selected the two canonical homepage images and later requested varied
+character artwork. They remain available for distinct dedicated pages. No CSS blur is applied to character
+pixels and image scales are kept restrained for sharpness.
+
+`website/living-realms.css` gives the two realms separate identities:
+cool water glows and liquid ambience versus dark-crimson ember energy.
+`website/living-realms.js` draws transparent currents and embers on
+a canvas overlay with no network calls. It caps its drawing to around
+30fps on desktop or 19fps on mobile, limits pixel density and particle
+count, stops when out of view, and obeys reduced-motion and the existing
+pause button. All character images remain visible if JavaScript is off.
+The original Acropolis and Citadel SVGs still support architectural
+backdrops. Muse's voice/AI audio code is unchanged.
+
+**Important distinction:** these are high-resolution cinematic artworks
+enhanced by interactive *2D* environmental motion. They are not
+photorealistic video, skeletal 3D avatars, or lip-synced AI characters.
+For truly lifelike facial animation, a separately licensed video or
+rigged-character pipeline still needs to be integrated and tested.
+
+Run the website tests and syntax checks in GitHub Actions. Real mobile
+GPU/battery behavior, browser visual quality and screen-reader review
+remain separate pre-launch checks. Public DNS, payment and app deployment
+are intentionally outside this visual change.
+
+## Official matched character images — canonical owner uploads (WEB-CANON-1)
+
+The **final approved characters** are the two images the owner uploaded
+on 2026-11-19: **Athena in luminous blue digital water with her owl** and
+**Aegis in dark-red digital fire with the bronze shield and spear**.
+These are the exact uploaded file bytes, not another AI-generated version,
+the previous low-resolution AVIF, or a substitute image.
+
+- `assets/athena-canon.jpg` — 1229 × 1536, 635,508 bytes
+- `assets/aegis-canon.jpg` — 1229 × 1536, 669,696 bytes
+- `assets/athena-aegis-share-card.webp` — 1200 × 630 brand preview
+  constructed from those exact portraits for social link sharing.
+
+Although the original uploads were named `.png`, their underlying
+encoding is JPEG; serving under `.jpg` maintains byte identity and the
+proper browser MIME type. Regression tests pin SHA-256 checksums so
+future edits cannot silently replace the approved faces.
+
+The homepage **opening split hero** retains these two exact canonical images.
+Later cards and pages deliberately use **different** illustrations, preserving
+the owner-approved first impression without repeating the same character
+portrait throughout the experience. `canonical-worlds.css`
+layers blue liquid glows, warm fire currents, a slower architectural
+backdrop, and glowing aura without blurring or upscaling portrait pixels.
+The existing transparent `living-realms.js` canvas adds animated
+water ripples and drifting ember trails.
+
+**Motion / performance:** existing site pause buttons and
+`prefers-reduced-motion` disable ambient animation; artwork remains
+readable without JavaScript. Real browser screenshot testing and
+mobile GPU/thermal checks are still required before public launch.
+The images are beautiful *still character illustrations* over animated
+environments, not full motion-capture, lip-synced, or 3D avatars.
+
+**Non-overlap with other agents:** Muse's voice/TTS code,
+production Aegis security, DNS, and billing are unchanged. The preview
+inquiry remains a mail-app handoff; confirm production deployment
+separately. The older `athena-water.webp` and `aegis-fire.webp` images now serve as
+unique standalone page hero art; `aegis-spartan-guardian.avif` remains a
+legacy asset and is not presented.
+
+## Different character image at each appearance (WEB-ART-VARIETY-1)
+
+**Preserve first fold:** The initial homepage split hero remains the
+owner-selected, unchanged athena-canon.jpg and aegis-canon.jpg. Neither
+is replaced, reprocessed, or reused as a later character illustration.
+The paired share card still uses the original canonical character images.
+
+**Distinct images by placement** (one source image per visible portrait):
+
+| Placement | Athena | Aegis |
+| --- | --- | --- |
+| Homepage opening (unchanged) | athena-canon.jpg | aegis-canon.jpg |
+| Homepage realm cards, first scroll | athena-android-oracle.jpg | aegis-android-sentinel.jpg |
+| Homepage editorial / philosophy | athena-marble-wisdom.jpg | aegis-spartan-patrol.jpg |
+| Standalone Athena and Aegis page heroes | athena-water.webp | aegis-fire.webp |
+| Athena character voice experience | athena-holographic-book.webp | — |
+| Editions / applications | athena-throne-intelligence.webp | — |
+
+The four image assets from the recent user uploads are the robotic
+Athena and Aegis pair, marble Athena and a traditional Spartan guardian.
+Despite three .png upload filenames, all four carry JPEG image data and
+are stored with the browser-correct .jpg extension without re-encoding.
+The extra Holographic Book and Throne scenes are distinct high-resolution
+earlier Athena illustrations encoded as WebP for quick page loading.
+All images are committed locally; no external image endpoints are needed.
+
+Athena retains blue liquid light and gold Greek architectural themes;
+Aegis retains Spartan forms, bronze, and crimson fire. Character image
+URLs in nonhero CSS were replaced with architecture and gradients,
+avoiding accidental duplicate portraits layered under foreground images.
+Existing ambient 2D motion, reduced-motion options, and pause controls
+remain; portraits themselves are still illustrations (no lip sync).
+
+Website tests verify distinct image references across home, dedicated
+pages, voice experience and editions, SHA-256 integrity of the four
+owner uploads, and unchanged canonical opening hero files.
+
+Muse's narration/TTS implementation was not edited. Public deployment,
+Windows and Android installers, security rules and DNS are outside this
+artwork-focused change.
