@@ -22,7 +22,10 @@ const workflowLabels = {
   athena: [["research","◫","Research","Explore & verify"],["analyze","▥","Analyze","Find insights"],["create","✧","Create","Design & draft"],["build","⌘","Build","Plan & code"]],
   aegis: [["research","⛨","Screen","Untrusted inputs"],["analyze","◇","Review","Action scope"],["create","▦","Harden","Guarded workflows"],["build","⚙","Secure","Release checks"]]
 };
-let mode = "athena", device = "desktop", workflow = "build";
+const params = new URLSearchParams(window.location.search);
+let mode = params.get("mode") === "aegis" ? "aegis" : "athena";
+let device = params.get("device") === "mobile" ? "mobile" : "desktop";
+let workflow = mode === "aegis" ? "research" : "build";
 function render() {
   body.dataset.previewMode = mode;
   body.dataset.previewDevice = device;
