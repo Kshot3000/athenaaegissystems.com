@@ -10,7 +10,8 @@ Static, multi-page website for **Athena** (AI intelligence) and **Aegis** (defen
 | `athena.html` | Digital Acropolis: intelligence, evidence and model orchestration |
 | `aegis.html` | Spartan Citadel: security principles and a **static** gate illustration |
 | `experience.html` | Decorative Athena avatar and optional **prewritten browser** narration |
-| `editions.html` | Planned Qwen-first PC and Android application editions |\n| `terminal-preview.html` | Interactive four-way PC/mobile Athena/Aegis terminal concept with static demo tasks |
+| `editions.html` | Planned Qwen-first PC and Android application editions |
+| `terminal-preview.html` | Interactive four-way PC/mobile Athena/Aegis terminal concept with static demo tasks |
 | `integration.html` | Private Python developer-preview integration guidance |
 | `legal.html` | Preview disclosures, limitations and terms |
 | `404.html` | Branded not-found fallback |
@@ -60,7 +61,7 @@ Website changes do **not** deploy the Windows or Android applications, change DN
 
 The homepage and Editions page contain a four-card Athena PC, Aegis PC, Athena Android, and Aegis Android preview gallery. Links open `terminal-preview.html` with `device` and `mode` URL parameters. The terminal includes a working mode toggle, device switch, workflow examples, responsive desktop and phone frames, keyboard-operable controls, and a local-only prompt demonstration. Scripts do not call a model, track visitor data or claim to perform security scans. The real Qwen-first Windows/Android applications remain separate development projects.
 
-Original cinematic concept renders and cutouts are packaged separately for marketing as a downloadable asset kit. The live web demo currently uses the lightweight checked-in SVG/WEBP Greek-world assets; it does not upload the multi-megabyte source renders automatically.
+Original cinematic concept renders and cutouts are packaged separately for marketing as a downloadable asset kit. The live website now includes optimized WEBP PC and Android concept art, alternate portraits, short prerecorded voice samples, and lightweight interface overlays. The terminal remains a local-only scripted preview.
 **Future true character animation:** produce an approved, rights-cleared
 loop or a rigged character with facial/eye/hand gestures and synchronized
 mouth shapes. Optimize a short WebM/MP4 loop with a static fallback; never
@@ -213,3 +214,9 @@ owner uploads, and unchanged canonical opening hero files.
 Muse's narration/TTS implementation was not edited. Public deployment,
 Windows and Android installers, security rules and DNS are outside this
 artwork-focused change.
+
+## November 19 QA review
+
+The four-way interactive terminal preview is illustrative only. Its local, scripted responses do not provide real model inference, input filtering, approval enforcement, account provisioning or security verdicts. The displayed $19.99 subscription figure is a proposal, not an active checkout or finalized agreement; device licenses, updates and model packaging require validation. The preview deliberately avoids release guarantees.
+
+GitHub Actions now saves a one-day source snapshot for browser QA in addition to checking markup/assets and JavaScript syntax. Full-device and screen-reader acceptance tests remain separate publication gates.
