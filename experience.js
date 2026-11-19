@@ -39,6 +39,7 @@
 
   var selectedTopic = "intro";
   var playing = false;
+  var speechRun = 0;
   var speech = ("speechSynthesis" in window && "SpeechSynthesisUtterance" in window)
     ? window.speechSynthesis : null;
 
@@ -59,6 +60,7 @@
   }
 
   function stopSpeech(message) {
+    speechRun += 1; // Invalidate stale voice-engine completion events.
     if (speech) {
       try { speech.cancel(); } catch (err) { /* browser voice engine may be unavailable */ }
     }
@@ -86,6 +88,8 @@
       return;
     }
     // Cancel any other site-owned utterance before starting a fresh one.
+    speechRun += 1;
+    var thisRun = speechRun;
     speech.cancel();
     var utterance = new window.SpeechSynthesisUtterance(scripts[selectedTopic].body);
     utterance.lang = "en-US";
@@ -95,9 +99,11 @@
     var preferred = chooseVoice();
     if (preferred) utterance.voice = preferred;
     utterance.onend = function () {
+      if (thisRun !== speechRun) return;
       updateSpeechState(false, "Narration finished. Select another topic to continue exploring.");
     };
     utterance.onerror = function () {
+      if (thisRun !== speechRun) return;
       updateSpeechState(false, "Audio wasn't available. The full narration is readable on this page.");
     };
     updateSpeechState(true, "Playing a prepared narration with your device's speech voice.");
@@ -149,21 +155,41 @@
     if (playing) stopSpeech("Narration stopped.");
   });
 
+  var motionKey = "athena-aegis-ambient-motion-paused";
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)");
   var motionDisabled = false;
+  try { motionDisabled = window.localStorage.getItem(motionKey) === "1"; }
+  catch (err) { /* persistence is optional */ }
+  function refreshMotionControl() {
+    var systemReduced = !!(reduceMotion && reduceMotion.matches);
+    var paused = motionDisabled || systemReduced;
+    document.body.classList.toggle("motion-off", paused);
+    if (motionButton) {
+      motionButton.disabled = systemReduced;
+      motionButton.textContent = systemReduced
+        ? "Motion reduced by device settings"
+        : (motionDisabled ? "Resume motion" : "Pause motion");
+      motionButton.setAttribute("aria-pressed", String(paused));
+    }
+    if (stage && paused) {
+      stage.style.setProperty("--tilt-x", "0px");
+      stage.style.setProperty("--tilt-y", "0px");
+    }
+  }
   if (motionButton) {
     motionButton.addEventListener("click", function () {
+      if (reduceMotion && reduceMotion.matches) return;
       motionDisabled = !motionDisabled;
-      document.body.classList.toggle("motion-off", motionDisabled);
-      motionButton.textContent = motionDisabled ? "Resume motion" : "Pause motion";
-      motionButton.setAttribute("aria-pressed", String(motionDisabled));
-      if (stage && motionDisabled) {
-        stage.style.setProperty("--tilt-x", "0px");
-        stage.style.setProperty("--tilt-y", "0px");
-      }
+      try { window.localStorage.setItem(motionKey, motionDisabled ? "1" : "0"); }
+      catch (err) { /* persistence is optional */ }
+      refreshMotionControl();
     });
   }
-
-  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (reduceMotion) {
+    if (reduceMotion.addEventListener) reduceMotion.addEventListener("change", refreshMotionControl);
+    else if (reduceMotion.addListener) reduceMotion.addListener(refreshMotionControl);
+  }
+  refreshMotionControl();
   if (stage) {
     stage.addEventListener("pointermove", function (event) {
       if (motionDisabled || (reduceMotion && reduceMotion.matches) || event.pointerType === "touch") return;
