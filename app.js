@@ -109,7 +109,7 @@
       var email = document.getElementById("inquiry-email").value.trim();
       var plan = planSelect ? planSelect.value : "Business Pilot";
       var message = document.getElementById("inquiry-message").value.trim();
-      var subject = encodeURIComponent("Athena private pilot inquiry — " + plan);
+      var subject = encodeURIComponent("Athena subscription inquiry — " + plan);
       var body = encodeURIComponent(
         "Name / company: " + name + "\nEmail: " + email +
         "\nInterested in: " + plan + "\n\n" + message);

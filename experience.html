@@ -16,20 +16,24 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./experience.css">
+  <link rel="stylesheet" href="./avatar-stage.css">
   <script src="./app.js" defer></script>
   <script src="./experience.js" defer></script>
+  <script src="./avatar-stage.js" defer></script>
+  <link rel="stylesheet" href="./worlds.css">
 </head>
-<body class="experience-page">
+<body class="experience-page world-site">
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header" id="top">
+  <header class="site-header world-header" id="top">
     <div class="nav-wrap shell">
-      <a class="brand" href="./index.html" aria-label="Athena home"><span class="brand-symbol" aria-hidden="true">Α</span><span class="brand-name">ATHENA<span class="brand-dot">.</span></span></a>
+      <a class="brand world-brand" href="./index.html" aria-label="Athena Aegis Systems home"><span class="brand-symbol" aria-hidden="true">Α</span><span class="brand-lockup"><b>ATHENA<span class="brand-dot">.</span>AEGIS</b><small>SYSTEMS</small></span></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
       <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
-        <a href="./index.html#why">Advantages</a>
-        <a href="./index.html#solutions">Solutions</a>
+        <a href="./index.html">Home</a>
+        <a href="./athena.html">Athena</a>
+        <a href="./aegis.html">Aegis</a>
+        <a href="./editions.html">Editions</a>
         <a href="./integration.html">Integrate</a>
-        <a href="./index.html#pricing">Licensing</a>
         <a class="button button-sm button-outline" href="./index.html#contact">Request access ↗</a>
       </nav>
     </div>
@@ -39,7 +43,7 @@
       <div class="oracle-copy">
         <p class="overline oracle-kicker"><span class="live-dot" aria-hidden="true"></span> THE ATHENA EXPERIENCE / 01</p>
         <h1 id="oracle-title">The wisdom of <em>ages.</em><br><span>The intelligence of tomorrow.</span></h1>
-        <p class="oracle-lede">A digital goddess for a new kind of intelligence. Athena is an evidence-gated AI agent framework—built to learn from verified results, not promises.</p>
+        <p class="oracle-lede">A digital goddess for a new kind of intelligence. Athena unites timeless wisdom with evidence-based AI engineering—designed to remember what worked and challenge what didn’t.</p>
         <div class="oracle-actions">
           <button class="button button-primary" id="voice-start" type="button" aria-pressed="false"><span class="button-icon" aria-hidden="true">◉</span><span id="voice-label">Hear Athena introduce herself</span></button>
           <button class="button button-quiet" id="motion-toggle" type="button" aria-pressed="false">Pause motion</button>
@@ -49,19 +53,25 @@
       </div>
       <div class="oracle-stage" id="oracle-stage" aria-label="Motion-enhanced portrait of Athena">
         <div class="star-field" aria-hidden="true"></div>
+        <div class="oracle-lattice" aria-hidden="true"></div>
+        <div class="oracle-sigil" aria-hidden="true"></div>
+        <div class="oracle-nameplate" aria-hidden="true"><span class="symbol">Α</span><span>ATHENA / DIGITAL PRESENCE</span></div>
         <div class="oracle-ring ring-one" aria-hidden="true"></div>
         <div class="oracle-ring ring-two" aria-hidden="true"></div>
         <div class="oracle-ring ring-three" aria-hidden="true"></div>
         <div class="oracle-portrait" id="oracle-portrait">
           <img src="./assets/athena-goddess.webp" width="640" height="800" alt="A marble-and-gold digital statue of Athena with glowing blue eyes, a spear, and a mechanical owl." fetchpriority="high">
           <div class="oracle-glow" aria-hidden="true"></div>
+          <div class="oracle-light-beam" aria-hidden="true"></div>
         </div>
+        <canvas class="oracle-atmosphere" id="avatar-atmosphere" aria-hidden="true"></canvas>
         <div class="oracle-equalizer" aria-hidden="true">
           <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
         <div class="oracle-status"><span class="status-light" aria-hidden="true"></span><span id="stage-status">ATHENA // VISUAL PREVIEW</span></div>
         <div class="oracle-corner oracle-corner-top" aria-hidden="true">ATH-01 / WISDOM</div>
         <div class="oracle-corner oracle-corner-bottom" aria-hidden="true">HONOR THE EVIDENCE</div>
+        <span class="oracle-snapshot" aria-hidden="true">PRESENCE ENGINE / VISUAL ONLY</span>
       </div>
     </section>
 

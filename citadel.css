@@ -1,0 +1,72 @@
+/* Spartan Citadel: bronze, hematite, obsidian. Visual system only. */
+.realm-page-aegis {
+  --gold:#dd9e7b;
+  --blue:#c47e64;
+  --blue-soft:#edb69a;
+  --line:rgba(211,145,110,.2);
+  --line-strong:rgba(224,159,120,.35);
+  background:#0c1119;
+}
+.realm-page-aegis .site-sky {
+  background:radial-gradient(ellipse 60% 50% at 78% 10%,#7a42302c,transparent),radial-gradient(ellipse 50% 70% at 20% 85%,#4d27312a,transparent);
+}
+.realm-page-aegis .world-header {background:rgba(13,13,21,.9);border-bottom-color:#bf85664d;}
+.realm-page-aegis .world-kicker {color:#e2a07a;}
+.realm-page-aegis .world-section h2 em,.realm-page-aegis .realm-page-hero h1 em {
+  color:#e6a986;
+  background:linear-gradient(90deg,#f4c7a4,#c77e5a);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.realm-page-aegis .realm-page-hero {min-height:660px;}
+.realm-page-aegis .realm-page-hero::after {background:linear-gradient(90deg,#0b111a 6%,#0b111acd 45%,transparent 94%),linear-gradient(0deg,#0b111a 0%,transparent 38%);}
+.realm-page-aegis .realm-hero-figure .realm-figure-halo {
+  box-shadow:0 0 90px #e79b6745;
+  border-color:#d99e74c0;
+}
+.realm-page-aegis .world-pillar .pillar-icon {color:#efac84;}
+.realm-page-aegis .world-pillar:hover {border-color:#e5a78199;}
+.realm-page-aegis .world-ticker {background:linear-gradient(90deg,#34252d,#392526,#211c26);border-color:#bb826342;}
+.realm-page-aegis .world-bridge {background:radial-gradient(ellipse at center,#60393869,transparent 65%),#141821;}
+.gate-preview-section {border-block:1px solid rgba(223,151,109,.33);background:radial-gradient(ellipse 75% 70% at 80% 10%,#552f322f,transparent),#111622;}
+.citadel-console {border:1px solid #df9d7966;border-radius:6px;overflow:hidden;background:linear-gradient(110deg,#141923,#191820);box-shadow:0 30px 80px #0007;}
+.citadel-console-head {display:flex;gap:1rem;align-items:center;justify-content:space-between;background:#271f26;border-bottom:1px solid #c5836560;padding:1.2rem 1.6rem;font:800 .65rem "Manrope",sans-serif;letter-spacing:.16em;color:#f4d2bd;}
+.citadel-console-head strong {margin-right:auto;}
+.citadel-console-head>span:last-child {font-size:.54rem;color:#c9a99e;}
+.console-dot {width:8px;height:8px;border-radius:50%;background:#d49b76;box-shadow:0 0 15px #d49b76;}
+.citadel-console-body {display:grid;grid-template-columns:.8fr 1.2fr;min-height:370px;}
+.console-controls {padding:2rem;border-right:1px solid #b977573c;}
+.console-controls>.world-kicker {font-size:.6rem;}
+.gate-scenario {width:100%;display:flex;align-items:center;gap:1rem;background:#151a25;color:#e7d9d5;text-align:left;border:1px solid #9c6b5b4b;padding:1.15rem 1rem;margin:1rem 0;cursor:pointer;font-family:"Manrope",sans-serif;transition:border-color .2s,background .2s;}
+.gate-scenario:hover {border-color:#e5a57f;}
+.gate-scenario.is-active {border-color:#efa77b;background:#40302f;box-shadow:inset 3px 0 0 #eeb18c;}
+.gate-scenario>span:nth-child(2) {display:flex;flex-direction:column;gap:.25rem;}
+.gate-scenario b {font-size:.84rem;}
+.gate-scenario small {font-size:.68rem;color:#cbaea5;}
+.gate-icon {font-size:1.6rem;color:#d8a180;}
+.console-note {font-size:.73rem;color:#aebbc7;line-height:1.75;margin:1.4rem 0 0;}
+.console-result {padding:2rem 2.2rem;display:flex;flex-direction:column;}
+.console-result-top {display:flex;justify-content:space-between;gap:1rem;color:#e3b39d;font:800 .63rem "Manrope",sans-serif;letter-spacing:.12em;}
+.console-result blockquote {background:#0e1620;border-left:2px solid #a77e68;padding:1.45rem;margin:1.4rem 0;font-family:ui-monospace,Consolas,monospace;font-size:.83rem;color:#d6e1eb;line-height:1.8;min-height:94px;}
+.gate-result {display:flex;gap:1rem;align-items:flex-start;border:1px solid #a965586c;background:linear-gradient(135deg,#3c2228,#251b21);padding:1.3rem 1.4rem;margin-top:auto;}
+.gate-result-icon {font-size:1.9rem;color:#f0a48a;}
+.gate-result strong {font:800 .83rem "Manrope",sans-serif;letter-spacing:.08em;color:#ffb4a0;}
+.gate-result p {color:#d3b5b3;font-size:.8rem;margin:.5rem 0 0;line-height:1.7;}
+.gate-result.is-allowed {background:linear-gradient(135deg,#163631,#152529);border-color:#85b7a777;}
+.gate-result.is-allowed .gate-result-icon,.gate-result.is-allowed strong {color:#9ed9c3;}
+.gate-result.is-allowed p {color:#c0ded2;}
+.gate-criteria {margin:.8rem 0 0;color:#a48e90;font-size:.6rem;letter-spacing:.13em;font-weight:700;}
+@media(max-width:800px) {
+  .citadel-console-body {grid-template-columns:1fr;}
+  .console-controls {border-right:0;border-bottom:1px solid #b977573c;}
+}
+@media(max-width:520px) {
+  .citadel-console-head {padding:.9rem;font-size:.56rem;}
+  .citadel-console-head>span:last-child {display:none;}
+  .console-controls,.console-result {padding:1.3rem;}
+  .gate-scenario {padding:.85rem;}
+}
+@media(prefers-reduced-motion:reduce) {
+  .gate-scenario {transition:none;}
+}

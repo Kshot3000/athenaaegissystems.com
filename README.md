@@ -26,6 +26,7 @@ Visit \`http://localhost:8000\` and open \`experience.html\` or \`editions.html\
 python -m unittest discover -s tests -v
 node --check website/app.js
 node --check website/experience.js
+node --check website/worlds.js
 \`\`\`
 
 Automated checks cover local asset/link integrity, headings, basic navigation markup, transcript availability, no microphone access, reduced-motion CSS, model labeling, and existing agent functionality. **They are not** automated cross-browser, Android WebView, screen-reader, Lighthouse, WCAG certification, or sales/lead-delivery tests. Verify on actual devices before publishing.
@@ -40,7 +41,7 @@ Narration uses the visitor's browser \`speechSynthesis\` implementation only aft
 
 The current form is a \`mailto:\` handoff, **not** a stored/sent CRM submission. It requires a configured email app and does not guarantee delivery. Before a public paid launch: owner-approve contact email, verify receipt, adopt terms, and implement a secure lead endpoint and payment/provisioning flow if desired.
 
-Published numbers are **price hypotheses**, not checkout offers; the private Python framework remains an approved pilot. Neither standalone app, public Google Play listing, nor installer is currently delivered from the website.
+The owner selected **$19.99/month** for Athena + Aegis, but this static site does not have self-service checkout or automatic license provisioning. Verify payment and fulfillment before accepting orders. The private Python framework remains an approved pilot. Neither standalone app, public Google Play listing, nor installer is currently delivered from the website.
 
 ## Publishing and security
 
@@ -49,3 +50,56 @@ Do not deploy the private-source website publicly without the owner's explicit a
 ## Image attribution
 
 Athena visual is an original generated asset created for this project, committed as \`website/assets/athena-goddess.webp\`. The newer cinematic 16:9 illustration prepared in ChatGPT can be integrated later through a proper artwork commit; no external stock-photo dependency is used in the experience.
+
+## Athena visual-presence layer (AVATAR-VISUAL-1)
+
+`experience.html` now loads `avatar-stage.css` and `avatar-stage.js` as a
+**purely visual** extension. It adds layered gold/blue glows, orbit/sigil
+lighting, a deterministic constellation canvas, and pointer-aware lighting.
+The art is still a 2D image: this is a higher-quality *visual presentation*,
+not a rigged 3D face, viseme-driven lip-sync, photorealistic motion capture,
+or a real-time talking avatar. The atmosphere runs at approximately 30fps,
+uses at most 58 particles, pauses when offscreen/hidden, honors
+reduced-motion settings, and can be stopped by the existing motion button.
+The portrait remains visible if JavaScript or canvas support is absent.
+
+**Voice ownership:** Muse owns future voice recording, TTS, and voice
+integration. This visual extension neither imports nor changes the existing
+speech engine (`experience.js`). If Muse introduces a richer audio service,
+keep audio separate from the visual engine, require explicit user activation,
+and leave captions/transcripts accessible.
+
+**Future true character animation:** produce an approved, rights-cleared
+loop or a rigged character with facial/eye/hand gestures and synchronized
+mouth shapes. Optimize a short WebM/MP4 loop with a static fallback; never
+start audio automatically. Verify device performance on Windows and Android.
+
+## Digital Greece / Digital Sparta visual system (WEB-3)
+
+Two distinct but connected visual worlds now share one product identity.
+
+- **Athena — the Digital Acropolis:** sapphire, ivory and gold; a
+  holographic temple skyline, divine marble imagery and orbital light.
+- **Aegis — the Spartan Citadel:** obsidian, hematite and bronze;
+  fortified ramparts, defensive shield, scanning light and hard geometry.
+
+The scenes are locally committed vector assets in
+website/assets/digital-acropolis.svg and website/assets/digital-sparta.svg.
+The portrait remains website/assets/athena-goddess.webp. Decorative
+animation is CSS-based. The new worlds.js adds reveal effects, motion
+pause and a curated Aegis gate example; it does not modify voice.
+The gate is a fixed illustration, NOT a live Python security scan.
+
+Buyer path: homepage → Athena or Aegis → integration / editions → inquiry.
+The form is a mail-app handoff configured in app.js, not a real CRM
+submission. Check recipient delivery before any public launch.
+
+Static CI tests local links, asset presence, HTML semantics, accessibility
+markers and product disclaimers; Node checks script syntax. Real browsers,
+screen readers, motion performance, payment/contact delivery and user
+testing are separate release checks, not certified by CI.
+
+The owner controls athenaaegissystems.com and Muse manages DNS.
+Do not modify DNS, public deployment, Stripe billing or Muse-owned audio
+from this design branch. Hosting should isolate the static site from the
+private Python repo and all credentials.
