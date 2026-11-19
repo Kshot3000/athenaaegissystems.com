@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="1160" viewBox="0 0 920 1160" role="img" aria-label="ATHENA cybernetic sentinel portrait">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#081a34"/><stop offset=".55" stop-color="#07172c"/><stop offset="1" stop-color="#030710"/></linearGradient>
+<linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ecf5ec"/><stop offset=".2" stop-color="#c9e8ec"/><stop offset=".48" stop-color="#78b8d0"/><stop offset=".78" stop-color="#283747"/><stop offset="1" stop-color="#c9e8ec"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2=".6"><stop stop-color="#fbe9b5"/><stop offset=".38" stop-color="#4e88ff"/><stop offset=".7" stop-color="#76573b"/><stop offset="1" stop-color="#d5b776"/></linearGradient>
+<radialGradient id="aura"><stop stop-color="#5ce8ff" stop-opacity=".31"/><stop offset=".52" stop-color="#4e88ff" stop-opacity=".10"/><stop offset="1" stop-color="#5ce8ff" stop-opacity="0"/></radialGradient>
+<pattern id="mesh" width="72" height="72" patternUnits="userSpaceOnUse"><path d="M72 0H0V72" fill="none" stroke="#5ce8ff" stroke-opacity=".13"/><circle cx="0" cy="0" r="2" fill="#5ce8ff" fill-opacity=".37"/></pattern>
+<filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="920" height="1160" fill="url(#sky)"/>
+<rect width="920" height="1160" fill="url(#mesh)"/>
+<ellipse cx="490" cy="414" rx="470" ry="490" fill="url(#aura)"/>
+<g stroke="#5ce8ff" stroke-opacity=".38" fill="none"><circle cx="494" cy="452" r="318" stroke-width="2"/><circle cx="494" cy="452" r="345" stroke-dasharray="3 26"/><path d="M494 55V166M494 737V895M104 452H218M770 452H852" stroke-width="3"/></g>
+<g opacity=".5" fill="none" stroke="#5ce8ff" stroke-width="2"><path d="M50 1020H210L288 932H353 M867 995H756L675 925H605 M44 258H153L241 338 M865 232H759L692 291"/><circle cx="288" cy="932" r="5" fill="#5ce8ff"/><circle cx="759" cy="232" r="5" fill="#5ce8ff"/></g>
+<g>
+<path d="M133 1160 155 980Q216 864 354 815L426 754 494 770 566 749 648 814Q784 860 836 980L868 1160Z" fill="url(#metal)" stroke="#4e88ff" stroke-width="10"/>
+<path d="M155 1024 333 869 403 913 359 1160H114Z M842 1024 661 868 593 908 635 1160H883Z" fill="#1e2e40" stroke="#4e88ff" stroke-width="8"/>
+<path d="M393 798 496 863 598 799 655 890 610 1160H382L335 891Z" fill="url(#gold)" stroke="#4e88ff" stroke-width="9"/>
+<path d="M496 867 550 953 497 1082 443 956Z" fill="#092438" stroke="#5ce8ff" stroke-width="7"/>
+<path d="M496 919 526 971 498 1041 469 971Z" fill="#5ce8ff" fill-opacity=".6" filter="url(#glow)"/>
+<path d="M214 971 328 950 350 995 253 1054Z M778 971 662 950 641 995 738 1054Z" fill="url(#gold)" stroke="#4e88ff" stroke-width="5"/>
+<path d="M420 741 432 831 497 868 568 828 578 743Z" fill="#344c59" stroke="#4e88ff" stroke-width="7"/>
+
+<path d="M367 376Q397 333 492 335Q601 334 625 380L615 547 582 644 503 695 419 647 382 559Z" fill="url(#metal)" stroke="#78b8d0" stroke-width="8"/>
+<path d="M384 471 438 447 481 464 455 482 409 492Z M602 470 555 446 512 462 543 485 584 489Z" fill="#09233d" stroke="#5ce8ff" stroke-width="4"/>
+<path d="M412 476 458 470 M531 471 582 474" stroke="#b6f8ff" stroke-width="7" filter="url(#glow)"/>
+<path d="M495 480 474 567 505 584 527 568Z" fill="#527c8e" stroke="#92dde2" stroke-opacity=".5"/>
+<path d="M451 610Q501 624 551 606L543 626 463 631Z" fill="#376379" stroke="#5ce8ff" stroke-width="2"/>
+<path d="M393 508 423 551 445 561 M603 508 579 550 551 560" fill="none" stroke="#5ce8ff" stroke-width="3" stroke-opacity=".6"/>
+<path d="M417 644 504 697 579 641 565 694 496 731 432 695Z" fill="url(#gold)"/>
+
+<path d="M333 351 367 253 444 293 468 212 496 286 551 221 591 293 642 275 671 369 609 331 551 349 470 333 398 363Z" fill="url(#gold)" stroke="#5ce8ff" stroke-width="4"/>
+<path d="M304 370Q275 520 310 668L357 717 362 501 344 369Z M682 370Q711 528 676 669L629 717 625 501 645 369Z" fill="url(#metal)" stroke="#5ce8ff" stroke-opacity=".5" stroke-width="2"/>
+<path d="M462 251 495 209 526 248 501 276Z" fill="#5ce8ff" filter="url(#glow)"/>
+<path d="M272 829 311 753 370 747 M719 823 678 751 615 747" fill="none" stroke="#5ce8ff" stroke-opacity=".67" stroke-width="5"/>
+</g>
+<g fill="none" stroke="#5ce8ff" stroke-width="2" stroke-opacity=".72"><path d="M73 95H191M73 95V200M843 95H724M843 95V200M73 1060V966M73 1060H200M843 1060V966M843 1060H724"/><path d="M114 165H209M705 165H799M114 1098H209M705 1098H799" stroke-dasharray="4 10"/></g>
+<g font-family="Arial,sans-serif" fill="#5ce8ff" letter-spacing="5" font-size="18"><text x="72" y="71">ATHENA // DIGITAL REALM</text><text x="72" y="1111">INTELLIGENCE / GUARDIAN</text></g>
+</svg>
