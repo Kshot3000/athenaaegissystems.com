@@ -110,6 +110,7 @@ try {
     assert.equal(shared.searchParams.get("mode"),"aegis");
     assert.equal(shared.searchParams.get("device"),"mobile");
     assert.ok(!shared.href.includes("draft"));
+    assert.match(await page.locator("#preview-access").getAttribute("href"),/interest=android#contact$/);
     await page.locator("#mode-switch [data-mode=athena]").click();
     assert.equal(await page.locator("#terminal-response-text").innerText(),answer);
     await page.goBack();
@@ -124,7 +125,16 @@ try {
     await page.locator("#terminal-input").fill("Hello, how much is the subscription?");
     await page.locator("#terminal-compose-form button[type=submit]").click();
     assert.match(await page.locator("#terminal-response-text").innerText(),/\$19\.99/);
-    console.log("PASS all four preview combinations, local drafts, history, shared URL, keyboard focus and pricing");
+    assert.match(await page.locator("#preview-access").getAttribute("href"),/interest=windows#contact$/);
+    for (const mode of ["athena","aegis"]) {
+      await page.locator("#mode-switch [data-mode="+mode+"]").click();
+      await page.locator("#terminal-voice").click();
+      await page.getByText("Playing prerecorded voice sample").waitFor({timeout:5000});
+      assert.equal(await page.locator("#terminal-voice").getAttribute("aria-pressed"),"true");
+      await page.locator("#terminal-voice").click();
+      await page.getByText("Voice sample stopped").waitFor();
+    }
+    console.log("PASS all four preview combinations, local drafts, history, shared URL, keyboard focus, pricing and both recorded voices");
   }catch(err){failures.push("terminal interactions: "+err.message);console.log("FAIL terminal interactions",err.message.slice(0,400));}
   try{
     await page.goto(ORIGIN+"/index.html",{waitUntil:"load"});
@@ -206,6 +216,21 @@ try {
     assert.equal(await page.evaluate(()=>getSelection().toString()),await page.locator("#code-verify").textContent());
     console.log("PASS keyboard access to commands, clipboard copy and manual selection");
   } catch(err) {failures.push("developer guide: "+err.message);console.log("FAIL developer guide",err.message.slice(0,400));}
+  try {
+    await page.goto(ORIGIN+"/aegis.html");
+    await page.locator("[data-gate-example=safe]").click();
+    assert.equal(await page.locator("#gate-verdict").innerText(),"NO PATTERN FLAGGED");
+    assert.equal(await page.locator("[data-gate-example=safe]").getAttribute("aria-pressed"),"true");
+    await page.getByRole("link",{name:"Request an Aegis pilot"}).click();
+    await page.locator("#inquiry-form").waitFor({state:"visible"});
+    assert.equal(await page.locator("#inquiry-plan").inputValue(),"Aegis Security");
+    await page.goto(ORIGIN+"/experience.html");
+    await page.locator("[data-topic=integrations]").click();
+    assert.match(await page.locator("#script-body").innerText(),/Subscriptions are available through Stripe/);
+    await page.locator("[data-topic=trust]").click();
+    assert.equal(await page.locator("#script-title").innerText(),"Trust must be earned.");
+    console.log("PASS Aegis example and pilot destination, Athena transcripts and pricing");
+  } catch(err) {failures.push("persona pages: "+err.message);console.log("FAIL persona pages",err.message);}
   try {
     const offline=await browser.newContext({viewport:{width:360,height:800},javaScriptEnabled:false});
     const plain=await offline.newPage();

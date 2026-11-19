@@ -50,6 +50,10 @@ function stopVoice() {
 }
 function renderView() {
   body.dataset.previewDevice = device;
+  const access = $("#preview-access");
+  const desktop = device === "desktop";
+  access.href = "./index.html?interest=" + (desktop ? "windows" : "android") + "#contact";
+  access.textContent = (desktop ? "Ask about Windows PC access" : "Ask about Android access") + " ↗";
   $$(".preview-select[data-device]").forEach(button => {
     const active = button.dataset.device === device;
     button.classList.toggle("is-active", active);
@@ -69,7 +73,7 @@ function renderMode() {
     button.setAttribute("aria-pressed", String(active));
   });
   const isAthena = mode === "athena";
-  $("#terminal-portrait").src = isAthena ? "./assets/athena-canon.jpg" : "./assets/aegis-canon.jpg";
+  $("#terminal-portrait").src = isAthena ? "./assets/athena-avatar.webp" : "./assets/aegis-avatar.webp";
   $("#terminal-portrait").alt = isAthena ? "Athena in luminous marble and gold armor - concept portrait" : "Aegis Spartan guardian in bronze armor - concept portrait";
   $("#terminal-kicker").textContent = isAthena ? "THE DIGITAL ACROPOLIS" : "THE SPARTAN CITADEL";
   $("#terminal-heading").innerHTML = isAthena ? "Athena <span>Intelligence mode</span>" : "Aegis <span>Security mode</span>";
