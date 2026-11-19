@@ -1,0 +1,306 @@
+/* ATHENA / DIGITAL WATER | AEGIS / DIGITAL FIRE
+ * Uses the owner's selected matched high-resolution portraits (1122×1402).
+ * No low-resolution upscale, no CSS blur on character pixels.
+ * Motion is decorative and opt-out; Muse owns all voice/TTS implementation.
+ */
+:root {
+  --water-azure:#08bcff;
+  --water-ice:#8eeaff;
+  --water-blue:#054783;
+  --fire-red:#fd4938;
+  --fire-bronze:#f5a06c;
+  --fire-ember:#ffbd6e;
+}
+
+/* Live, balanced color across the whole site (without noise overlays on faces). */
+.world-site.home-world {
+  background:
+    radial-gradient(ellipse 70% 37% at -10% 10%,rgba(5,106,194,.2),transparent 75%),
+    radial-gradient(ellipse 70% 42% at 110% 60%,rgba(149,30,29,.17),transparent 75%),
+    #070d18;
+}
+.home-world .site-sky {
+  background:
+    radial-gradient(ellipse 42% 68% at 3% 32%,rgba(0,110,231,.15),transparent 74%),
+    radial-gradient(ellipse 43% 80% at 97% 37%,rgba(235,46,37,.12),transparent 74%),
+    repeating-linear-gradient(0deg,transparent 0 79px,rgba(120,185,217,.019) 80px,transparent 81px),
+    #080e18;
+}
+.realm-page-athena .site-sky {
+  background:
+    radial-gradient(ellipse 80% 63% at 77% 12%,rgba(9,136,235,.22),transparent 67%),
+    radial-gradient(ellipse 75% 60% at 10% 93%,rgba(0,96,178,.14),transparent 72%),
+    #071421;
+}
+.realm-page-aegis .site-sky {
+  background:
+    radial-gradient(ellipse 80% 60% at 90% 11%,rgba(243,65,47,.2),transparent 71%),
+    radial-gradient(ellipse 65% 72% at -4% 95%,rgba(152,34,29,.13),transparent 74%),
+    #120f17;
+}
+
+/* Homepage: prominent high-quality matching character portraits, not flat
+   fortress-only backgrounds. Dark center maintains headline readability. */
+.home-world .threshold-hero {
+  background:#070e18;
+  box-shadow:inset 0 -40px 90px rgba(4,10,18,.6);
+}
+.home-world .threshold-half {
+  filter:none;
+  width:53%;
+  background-repeat:no-repeat;
+  background-size:cover;
+  animation:living-portal-drift 24s ease-in-out infinite alternate;
+  will-change:auto;
+}
+.home-world .threshold-athena {
+  left:0;
+  background-image:
+    linear-gradient(to right,rgba(3,13,32,.05),rgba(3,13,32,.13) 47%,rgba(3,13,32,.69)),
+    url('./assets/athena-water.webp');
+  background-position:center,50% 34%;
+}
+.home-world .threshold-aegis {
+  right:0;
+  background-image:
+    linear-gradient(to left,rgba(31,6,12,.06),rgba(31,6,12,.16) 47%,rgba(17,7,15,.75)),
+    url('./assets/aegis-fire.webp');
+  background-position:center,50% 29%;
+  animation-direction:alternate-reverse;
+}
+.home-world .threshold-hero::before {
+  background:
+    linear-gradient(90deg,rgba(5,14,29,.12),rgba(3,11,23,.62) 36%,rgba(5,11,20,.81) 50%,rgba(20,8,15,.65) 64%,rgba(29,7,14,.13)),
+    linear-gradient(0deg,#060b14 0%,rgba(4,11,20,.18) 30%,transparent 72%,#060c17be 100%);
+}
+.home-world .hero-constellation {
+  opacity:.19;
+  background-size:157px 147px,217px 229px;
+}
+.home-world .threshold-inner h1 {
+  text-shadow:0 6px 46px #02070df2,0 0 42px #030b19c7;
+}
+.home-world .threshold-lede {text-shadow:0 3px 15px #020914,0 5px 25px #020914;}
+.home-world .threshold-actions .world-button {backdrop-filter:blur(8px);}
+.home-world .hero-duality b {text-shadow:0 4px 18px #03101b;}
+/* Delicate water glow / heat behind the portal lettering. */
+.home-world .threshold-hero::after {
+  box-shadow:0 0 42px rgba(208,187,156,.22);
+}
+
+/* Under the portals the new characters stay visible; descriptions have
+   independent dark gradients for contrast and readability. */
+.realm-card-athena .realm-card-scene {
+  background-image:url('./assets/athena-water.webp');
+  background-position:50% 29%;
+}
+.realm-card-aegis .realm-card-scene {
+  background-image:url('./assets/aegis-fire.webp');
+  background-position:50% 29%;
+}
+.realm-card-athena .realm-card-athena-portrait {
+  position:absolute;inset:0;z-index:-3;
+  width:100%;height:100%;object-fit:cover;object-position:50% 29%;
+  filter:none;transition:transform 8s ease-out;
+}
+.realm-card-athena:hover .realm-card-athena-portrait {transform:scale(1.025);}
+.realm-card-athena::before {
+  background:linear-gradient(0deg,rgba(3,12,28,.99) 0%,rgba(3,13,30,.97) 32%,rgba(3,18,39,.55) 63%,rgba(5,16,36,.02) 91%);
+}
+.realm-card-aegis::before {
+  background:linear-gradient(0deg,rgba(22,7,14,.99) 0%,rgba(24,8,16,.97) 32%,rgba(28,10,17,.56) 64%,rgba(33,10,14,.03) 91%);
+}
+.realm-card-warrior {background-image:url('./assets/aegis-fire.webp');}
+.realm-card-aegis .realm-card-warrior img,
+.citadel-art-warrior picture img {
+  filter:none;
+  object-position:50% 31%;
+  transform:scale(1.002);
+}
+.realm-card-aegis:hover .realm-card-warrior img,
+.citadel-art-warrior:hover picture img {transform:scale(1.025);}
+.realm-card .realm-card-content {z-index:3;position:relative;}
+.realm-card .realm-index {text-shadow:0 3px 18px #000;}
+.realm-card .realm-qualities {text-shadow:0 3px 14px #000;}
+.realm-card-athena .realm-card-symbol {
+  box-shadow:0 0 27px rgba(56,194,251,.3),inset 0 0 20px rgba(56,194,251,.12);
+}
+.realm-card-aegis .realm-card-symbol {
+  box-shadow:0 0 27px rgba(248,72,52,.25),inset 0 0 20px rgba(248,72,52,.1);
+}
+
+/* Editorial scenes: preserve crisp imagery, add native-color atmospheric light. */
+.philosophy-art {
+  background:radial-gradient(ellipse at 55% 35%,#154981,#041321 73%);
+  border-color:rgba(92,198,245,.55);
+  box-shadow:0 28px 80px #0009,0 0 80px rgba(22,157,235,.17);
+}
+.philosophy-art::before {
+  background-image:url('./assets/digital-acropolis.svg');
+  filter:none;opacity:.19;
+}
+.philosophy-art img {
+  object-position:50% 26%;
+  filter:none;
+  mask-image:linear-gradient(to bottom,#000 0%,#000 86%,transparent 100%);
+}
+.philosophy-art .art-caption {z-index:8;text-shadow:0 3px 16px #00172a;}
+.citadel-art-warrior {
+  background:url('./assets/aegis-fire.webp') center 35%/cover;
+  border-color:rgba(249,98,61,.55);
+  box-shadow:0 28px 80px #0009,0 0 80px rgba(251,60,48,.14);
+}
+.citadel-art-warrior::after {
+  background:linear-gradient(100deg,transparent 43%,rgba(250,88,52,.03) 48%,rgba(255,166,96,.16) 50%,transparent 57%);
+}
+.citadel-guardian-caption {z-index:8;}
+
+/* Dedicated realms: a clear environmental identity and sharper portrait crop. */
+.realm-page-athena .realm-page-hero::before {
+  background-image:
+    linear-gradient(90deg,rgba(4,13,29,.1),rgba(2,28,58,.15)),
+    url('./assets/digital-acropolis.svg');
+  opacity:.28;
+  filter:none;
+}
+.realm-page-aegis .realm-page-hero::before {
+  background-image:
+    linear-gradient(90deg,rgba(17,8,15,.15),rgba(56,15,15,.3)),
+    url('./assets/digital-sparta.svg');
+  opacity:.36;
+  filter:none;
+}
+.realm-page-athena .realm-page-hero::after {
+  background:linear-gradient(90deg,#071321 2%,rgba(6,16,35,.93) 36%,transparent 90%),linear-gradient(0deg,#071321 0%,transparent 32%);
+}
+.realm-page-aegis .realm-page-hero::after {
+  background:linear-gradient(90deg,#140e17 2%,rgba(18,10,18,.93) 36%,transparent 90%),linear-gradient(0deg,#110d16 0%,transparent 32%);
+}
+.realm-page-athena .realm-hero-figure {
+  overflow:hidden;border:1px solid rgba(60,205,255,.54);border-radius:10px;
+  background:#0a1c36;
+  box-shadow:0 28px 85px #0009,0 0 85px rgba(0,129,237,.15);
+}
+.realm-page-athena .realm-hero-figure img {
+  object-position:50% 30%;
+  filter:none;
+  border:0;border-radius:0;
+  mask-image:none;
+  box-shadow:none;
+}
+.realm-page-athena .realm-hero-figure .realm-figure-halo {
+  border-color:rgba(111,224,255,.69);
+  box-shadow:0 0 75px rgba(27,180,250,.27),inset 0 0 55px rgba(19,137,237,.11);
+  z-index:2;
+}
+.realm-page-aegis .aegis-guardian-stage {
+  background:#170e18;
+  border:1px solid rgba(253,99,75,.65);
+  box-shadow:0 35px 100px #0009,0 0 95px rgba(250,57,38,.16);
+}
+.aegis-guardian-stage .guardian-architecture {
+  filter:none;opacity:.17;
+}
+.realm-page-aegis .guardian-portrait img {
+  object-position:50% 30%;
+  filter:none;
+  mask-image:linear-gradient(to bottom,#000 0%,#000 89%,rgba(0,0,0,.82) 100%);
+}
+.aegis-guardian-stage .guardian-halo {
+  border-color:rgba(255,130,79,.65);
+  box-shadow:0 0 80px rgba(251,73,49,.28),inset 0 0 45px rgba(245,83,39,.13);
+}
+.aegis-guardian-stage .guardian-arc {
+  border-top-color:rgba(255,115,68,.64);
+  box-shadow:0 0 25px rgba(242,56,37,.2);
+}
+.aegis-guardian-stage .guardian-scan {
+  background:linear-gradient(110deg,transparent 46%,rgba(255,68,39,.03) 49%,rgba(255,191,119,.15) 50%,rgba(255,63,49,.02) 51%,transparent 54%);
+}
+.realm-page-aegis .guardian-data span:last-child {color:#ffb39b;}
+
+/* Existing Athena voice experience uses the same selected persona portrait.
+   Narration, scripts and microphone permissions remain unchanged. */
+.experience-page .oracle-stage {
+  background:radial-gradient(circle at 64% 25%,#154d7d,#07172e 68%,#06111e);
+  border-color:rgba(50,203,255,.55);
+}
+.experience-page .oracle-portrait img {
+  object-position:50% 30%;
+  filter:none;
+}
+.experience-page .oracle-glow {
+  background:radial-gradient(ellipse at 64% 30%,rgba(0,156,255,.23),transparent 45%);
+}
+.experience-page .oracle-light-beam {opacity:.56;}
+.editions-realm .edition-hero-art img {filter:none;object-position:50% 29%;}
+
+/* Distinct in-world effects are foreground-only transparent canvas layers;
+   all portrait and content remains usable when the canvas is absent. */
+.realm-canvas {
+  position:absolute;inset:0;display:block;
+  width:100%;height:100%;
+  pointer-events:none!important;
+  z-index:4;
+  opacity:.66;
+  mix-blend-mode:screen;
+}
+.threshold-canvas {z-index:0;opacity:.45;}
+.realm-card-canvas {z-index:2;opacity:.5;}
+.realm-portrait-canvas {z-index:5;opacity:.65;}
+.realm-page-athena .realm-portrait-canvas {z-index:5;opacity:.52;}
+.realm-page-aegis .realm-portrait-canvas {z-index:5;opacity:.5;}
+.realm-oracle-canvas {z-index:5;opacity:.4;}
+.citadel-art-warrior .realm-portrait-canvas {z-index:2;opacity:.48;}
+.realm-card .realm-card-canvas {z-index:1;}
+
+/* Static CSS environment as fallback when canvas is off, and supplemental
+   slow ambient motion when allowed. */
+.realm-page-athena .realm-page-hero {
+  background:radial-gradient(ellipse 52% 75% at 83% 38%,rgba(13,153,255,.13),transparent 80%);
+}
+.realm-page-aegis .realm-page-hero {
+  background:radial-gradient(ellipse 52% 75% at 87% 39%,rgba(255,57,46,.12),transparent 80%);
+}
+.realm-page-athena .world-pillar {border-color:rgba(72,176,227,.29);}
+.realm-page-aegis .world-pillar {border-color:rgba(227,100,70,.26);}
+.realm-page-athena .world-text-link {color:#a8e9ff;}
+.realm-page-aegis .world-text-link {color:#ffbba1;}
+
+/* Keeping hover/ambient effects light prevents scaling a 1122px image
+   beyond its useful resolution on large retina displays. */
+@keyframes living-portal-drift {
+  from {transform:scale(1.002) translate3d(0,0,0);}
+  to {transform:scale(1.025) translate3d(0,-3px,0);}
+}
+.world-paused .threshold-half,
+.world-paused .realm-card-athena-portrait,
+.world-paused .citadel-art-warrior img,
+.world-paused .realm-card-warrior img {
+  animation:none!important;transition:none!important;transform:none!important;
+}
+@media(max-width:960px) {
+  .home-world .threshold-half {width:55%;}
+  .realm-card-athena .realm-card-athena-portrait {object-position:50% 23%;}
+}
+@media(max-width:680px) {
+  .home-world .threshold-hero {min-height:760px;}
+  .home-world .threshold-half {width:100%;top:0;bottom:35%;background-size:cover;}
+  .home-world .threshold-athena {background-position:center,43% 22%;}
+  .home-world .threshold-aegis {background-position:center,57% 22%;}
+  .home-world .threshold-hero::before {
+    background:linear-gradient(0deg,#060c16 0%,rgba(4,10,20,.89) 28%,rgba(4,9,19,.71) 48%,rgba(5,10,18,.25) 100%);
+  }
+  .realm-card-athena .realm-card-athena-portrait {object-position:50% 24%;}
+  .realm-page-athena .realm-hero-figure {height:clamp(410px,115vw,590px);}
+  .realm-page-aegis .aegis-guardian-stage {height:clamp(410px,115vw,590px);}
+  .threshold-canvas {opacity:.32;}
+  .realm-portrait-canvas {opacity:.38;}
+}
+@media(prefers-reduced-motion:reduce) {
+  .home-world .threshold-half,
+  .realm-card-athena .realm-card-athena-portrait,
+  .realm-card-warrior img,
+  .citadel-art-warrior img {animation:none!important;transition:none!important;transform:none!important;}
+  .realm-canvas {display:none!important;}
+}

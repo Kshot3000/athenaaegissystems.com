@@ -105,22 +105,38 @@ from this design branch. Hosting should isolate the static site from the
 private Python repo and all credentials.
 
 
-## Aegis Spartan guardian character (WEB-AEGIS-CHAR-1)
+## Blue Digital Water / Red Digital Fire — selected paired character art
 
-The approved digital Spartan guardian artwork is available as
-`website/assets/aegis-spartan-guardian.avif` (480 × 600, about 8 KB).
-It is an optimized derivative of the original generated project artwork,
-`digital_sparta_guardian.png`, and is used on the Aegis hero, the
-homepage Aegis realm card and its citadel showcase. The existing
-`digital-sparta.svg` image is the browser fallback and architecture
-layer. Aegis is now a character counterpart to the digital goddess Athena,
-rather than a shield-only visualization.
+The website uses the owner's **last two approved high-resolution images**:
 
-`website/guardian.css` implements light sweeps, rotating shield-like
-rings and minimal slow movement. These are *2D decorative CSS effects*,
-not a rigged/live Spartan avatar. Pausing the world's animation or choosing
-a reduced-motion preference stops the motion. The artwork doesn't
-change Aegis Python screening, security guarantees, voice or customer data.
+- `website/assets/athena-water.webp` — Athena with sapphire digital water,
+  a luminous owl, and the Acropolis.
+- `website/assets/aegis-fire.webp` — Aegis as a bronze-armored Spartan
+  guardian with dark red digital fire, spear and shield.
 
-When publishing, confirm actual AVIF support and fallback rendering in
-target browsers and devices. No network image dependency is introduced.
+Both are 1122 × 1402 WebP images, approximately 325–356 KB. These replace
+the small 480 × 600 Aegis image in every prominent hero and homepage
+appearance, and they replace the previous Athena portrait in the main
+showcase and voice-preview scene. No CSS blur is applied to character
+pixels and image scales are kept restrained for sharpness.
+
+`website/living-realms.css` gives the two realms separate identities:
+cool water glows and liquid ambience versus dark-crimson ember energy.
+`website/living-realms.js` draws transparent currents and embers on
+a canvas overlay with no network calls. It caps its drawing to around
+30fps on desktop or 19fps on mobile, limits pixel density and particle
+count, stops when out of view, and obeys reduced-motion and the existing
+pause button. All character images remain visible if JavaScript is off.
+The original Acropolis and Citadel SVGs still support architectural
+backdrops. Muse's voice/AI audio code is unchanged.
+
+**Important distinction:** these are high-resolution cinematic artworks
+enhanced by interactive *2D* environmental motion. They are not
+photorealistic video, skeletal 3D avatars, or lip-synced AI characters.
+For truly lifelike facial animation, a separately licensed video or
+rigged-character pipeline still needs to be integrated and tested.
+
+Run the website tests and syntax checks in GitHub Actions. Real mobile
+GPU/battery behavior, browser visual quality and screen-reader review
+remain separate pre-launch checks. Public DNS, payment and app deployment
+are intentionally outside this visual change.
