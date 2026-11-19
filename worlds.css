@@ -225,6 +225,10 @@
 .inquiry-draft textarea {resize:vertical;line-height:1.5;}
 .draft-actions {display:flex;gap:.6rem;flex-wrap:wrap;}
 .draft-actions .world-button {min-height:44px;justify-content:center;}
+.world-form-card .world-button:hover {transform:none;}
+@media (max-width:450px) {
+  .draft-actions {display:grid;grid-template-columns:1fr;}
+}
 
 /* Footer */
 .world-footer {border-top:1px solid #d4b78532;background:#070d17;}

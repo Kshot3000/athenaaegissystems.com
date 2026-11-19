@@ -172,7 +172,25 @@ try {
     assert.match(await faq.locator("p").innerText(),/signed Windows installer/);
     assert.equal(new URL(await page.locator("#pricing a[href*='stripe.com']").getAttribute("href")).origin,"https://buy.stripe.com");
     console.log("PASS both edition inquiries, prepared email, clipboard and manual copy, FAQ and checkout destination");
-  } catch(err) {failures.push("visitor access: "+err.message);console.log("FAIL visitor access",err.message.slice(0,400));}
+  } catch(err) {
+    failures.push("visitor access: "+err.message);
+    console.log("FAIL visitor access",err.message);
+    await page.screenshot({path:"qa-screenshots/failed-inquiry.png",animations:"disabled"});
+    const samples=await page.evaluate(async ()=>{
+      const target=document.getElementById("inquiry-copy");
+      if (!target) return {url:location.href};
+      const samples=[];
+      for (let i=0;i<3;i++) {
+        await new Promise(resolve=>requestAnimationFrame(resolve));
+        const bounds=target.getBoundingClientRect();
+        samples.push({top:bounds.top,height:bounds.height,width:bounds.width,scrollY,
+          pageHeight:document.documentElement.scrollHeight,transform:getComputedStyle(target).transform,
+          focus:document.activeElement.id,status:document.getElementById("inquiry-feedback").textContent});
+      }
+      return samples;
+    });
+    console.log("Inquiry layout at failure",JSON.stringify(samples));
+  }
   try {
     await page.goto(ORIGIN+"/integration.html");
     const block=page.getByRole("region",{name:"Installation commands"});
