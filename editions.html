@@ -15,12 +15,15 @@
   <script src="./app.js" defer></script>
   <link rel="stylesheet" href="./worlds.css">
   <link rel="stylesheet" href="./living-realms.css">
+  <meta property="og:title" content="Athena Editions — Desktop and Mobile Preview">
+  <meta property="og:description" content="Athena and Aegis are being developed for PC and Android. Explore the planned Qwen-first Windows and Android editions, including their bundled local models and proposed direct downloads.">
   <link rel="canonical" href="https://athenaaegissystems.com/editions.html">
   <meta property="og:url" content="https://athenaaegissystems.com/editions.html">
   <meta property="og:site_name" content="Athena Aegis Systems">
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://athenaaegissystems.com/assets/athena-aegis-share-card.webp?v=2">
+  <meta property="og:image:alt" content="Athena and Aegis, the intelligence and protection modes of Athena Aegis Systems">
   <link rel="stylesheet" href="./showcase-marketing.css">
   <link rel="stylesheet" href="./sol-gallery.css">
   <link rel="stylesheet" href="./canonical-worlds.css">
@@ -31,30 +34,27 @@
     <div class="nav-wrap shell">
       <a class="brand world-brand" href="./index.html" aria-label="Athena Aegis Systems home"><span class="brand-symbol" aria-hidden="true"><img src="./assets/emblem.webp" alt="" width="34" height="34"></span><span class="brand-lockup"><b><span class="wm-athena">ATHENA</span><span class="brand-dot">.</span><span class="wm-aegis">AEGIS</span></b><small class="wm-systems">SYSTEMS</small></span></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
-      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
-        <a href="./index.html">Home</a>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
         <a href="./athena.html">Athena</a>
         <a href="./aegis.html">Aegis</a>
-        <a href="./editions.html">Editions</a>
+        <a href="./terminal-preview.html">App preview</a>
+        <a href="./editions.html" aria-current="page">Editions</a>
         <a href="./integration.html">Integrate</a>
-        <a class="button button-sm button-outline" href="./index.html#contact">Request access ↗</a>
+        <a href="./index.html#pricing">Pricing</a>
+        <a class="button button-sm button-outline" href="./index.html#contact">Request access</a>
       </nav>
     </div>
   </header>
   <main id="main">
     <section class="edition-hero shell">
       <div class="edition-hero-copy">
-        <p class="overline">THE ATHENA PRODUCT FAMILY / IN DEVELOPMENT</p>
-        <h1>Two experiences.<br><span class="text-gradient">One standard for trust.</span></h1>
-        <p>Athena combines a model-powered assistant with her Aegis security layer. We're building a more capable PC edition and an Android edition designed for mobile use, each with a different Qwen model.</p>
-        <div class="edition-actions"><a class="button button-primary" href="./index.html#contact">Discuss a pilot ↗</a><a class="button button-quiet" href="./experience.html">Meet the digital goddess ↗</a></div>
-        <p class="edition-disclaimer">Development roadmap, not a product launch. The signed Windows installer and Android APK are in development. Release testing includes a first conversation with the bundled model while offline.</p>
+        <p class="overline">WINDOWS &amp; ANDROID / IN DEVELOPMENT</p>
+        <h1>Choose your<br><span class="text-gradient">edition.</span></h1>
+        <p>Both editions pair Athena and Aegis. Windows is designed for a larger local model. Android uses a smaller model for work on the move.</p>
+        <div class="edition-actions"><a class="button button-primary" href="#desktop">Windows PC <span aria-hidden="true">↓</span></a><a class="button button-quiet" href="#mobile">Android <span aria-hidden="true">↓</span></a></div>
+        <p class="edition-disclaimer">Both downloads are in development. You can <a href="./terminal-preview.html#preview-lab-title">try the scripted app preview</a> today.</p>
       </div>
       <div class="edition-hero-art"><img src="./assets/athena-throne-intelligence.webp" alt="Athena in a futuristic Greek chamber holding a holographic strategy scroll beside her owl" width="1122" height="1402"></div>
-    </section>
-
-    <section class="shell sol-editions-poster" aria-label="Athena Aegis editions concept poster">
-      <figure class="sol-figure reveal"><img src="./assets/athena-aegis-platform-promo.webp" alt="Athena Aegis Systems platform promo: Athena Mode and Aegis Mode across PC and mobile applications, powered by Qwen models, running local" width="1400" height="933" loading="lazy" decoding="async"></figure>
     </section>
 
     <section class="section shell" aria-labelledby="editions-heading">
@@ -65,19 +65,23 @@
           <h3>Athena and Aegis for PC.</h3>
           <p class="edition-model">Qwen3.8-27B <span>included in the PC release</span></p>
           <p>The standard PC download will be one signed Windows installer. It includes Athena, Aegis and their shared local Qwen model. Open the installer once to set up both modes.</p>
-          <ul><li>Windows PC edition in development</li><li>Model weights and inference runtime included</li><li>Evidence-linked improvement workflows</li><li>Aegis security screening and approval controls</li><li>First offline conversation verified before release</li></ul>
-          <a class="button button-card" href="./index.html#contact">Request PC preview ↗</a>
+          <ul><li>Windows PC edition in development</li><li>Model weights and inference runtime included</li><li>Evidence-linked improvement workflows</li><li>Aegis security screening and approval controls</li><li>Planned release test: first conversation offline</li></ul>
+          <a class="button button-card" href="./index.html?interest=windows#contact">Ask about the PC edition ↗</a>
         </article>
         <article id="mobile" class="edition-card">
           <div class="edition-icon" aria-hidden="true">▯</div><p class="overline">02 / ANDROID EDITION</p>
-          <h3>Athena for mobile.</h3>
+          <h3>Athena and Aegis for Android.</h3>
           <p class="edition-model">Qwen3.5-4B <span>planned model</span></p>
           <p>Designed as a Qwen-first Athena experience for Android, with Aegis included and a mobile-first interface. Direct website distribution, model packaging and real-device performance still need testing.</p>
           <ul><li>Android application in development</li><li>Direct download from this website planned, not yet available</li><li>Planned Qwen3.5-4B model integration</li><li>Mobile-first Athena interface and privacy controls</li><li>Real-device, battery, memory and installer-security testing pending</li></ul>
-          <a class="button button-card" href="./index.html#contact">Ask about Android early access ↗</a>
+          <a class="button button-card" href="./index.html?interest=android#contact">Ask about the Android edition ↗</a>
         </article>
       </div>
       <p class="edition-sources">Qwen models are developed by the Qwen team, not by Athena. <a href="https://huggingface.co/Qwen/Qwen3.8-27B" target="_blank" rel="noopener noreferrer">Desktop model reference</a> · <a href="https://huggingface.co/Qwen/Qwen3.5-4B" target="_blank" rel="noopener noreferrer">Mobile model reference</a>. Model licensing, distribution requirements, and integration terms will be reviewed before a commercial release.</p>
+    </section>
+
+    <section class="shell sol-editions-poster" aria-label="Athena Aegis editions concept poster">
+      <figure class="sol-figure reveal"><img src="./assets/athena-aegis-platform-promo.webp" alt="Athena Aegis Systems platform promo: Athena Mode and Aegis Mode across PC and mobile applications, powered by Qwen models, running local" width="1400" height="933" loading="lazy" decoding="async"></figure>
     </section>
 
     <section class="mode-marketing" id="app-showcase" aria-labelledby="app-showcase-heading">
@@ -88,18 +92,18 @@
       <p>Preview Athena intelligence and Aegis protection on both Windows and Android. Each concept shares a Greek-futurist design language with different capabilities and visual identities.</p>
     </div>
     <div class="mode-gallery">
-      <article class="mode-card"><div class="mode-visual athena-pc" role="img" aria-label="Illustrated blue cybernetic Athena in a digital Greek sanctuary"><span>WINDOWS / ATHENA</span></div><div class="mode-details"><h3>Athena for PC</h3><p>Research, code, create and reason with a Qwen-first desktop workspace.</p><a href="./terminal-preview.html?device=desktop&amp;mode=athena">Explore Athena PC ↗</a></div></article>
-      <article class="mode-card"><div class="mode-visual aegis-pc" role="img" aria-label="Illustrated crimson cybernetic Aegis Spartan guardian"><span>WINDOWS / AEGIS</span></div><div class="mode-details"><h3>Aegis for PC</h3><p>Review permissions, evaluate actions and strengthen defense boundaries.</p><a href="./terminal-preview.html?device=desktop&amp;mode=aegis">Explore Aegis PC ↗</a></div></article>
-      <article class="mode-card"><div class="mode-visual athena-mobile" role="img" aria-label="Artistic portrait of Athena used for an Android edition concept"><span>ANDROID / ATHENA</span></div><div class="mode-details"><h3>Athena for Mobile</h3><p>A sapphire-themed companion for research, projects and creative work.</p><a href="./terminal-preview.html?device=mobile&amp;mode=athena">Explore Athena Mobile ↗</a></div></article>
-      <article class="mode-card"><div class="mode-visual aegis-mobile" role="img" aria-label="Artistic Spartan guardian used for an Android edition concept"><span>ANDROID / AEGIS</span></div><div class="mode-details"><h3>Aegis for Mobile</h3><p>A crimson security-focused experience with guarded workflows.</p><a href="./terminal-preview.html?device=mobile&amp;mode=aegis">Explore Aegis Mobile ↗</a></div></article>
+      <article class="mode-card"><div class="mode-visual athena-pc" role="img" aria-label="Illustrated blue cybernetic Athena in a digital Greek sanctuary"><span>WINDOWS / ATHENA</span></div><div class="mode-details"><h3>Athena for PC</h3><p>Research, code, create and reason with a Qwen-first desktop workspace.</p><a href="./terminal-preview.html?device=desktop&amp;mode=athena#preview-lab-title">Explore Athena PC ↗</a></div></article>
+      <article class="mode-card"><div class="mode-visual aegis-pc" role="img" aria-label="Illustrated crimson cybernetic Aegis Spartan guardian"><span>WINDOWS / AEGIS</span></div><div class="mode-details"><h3>Aegis for PC</h3><p>Review permissions, evaluate actions and strengthen defense boundaries.</p><a href="./terminal-preview.html?device=desktop&amp;mode=aegis#preview-lab-title">Explore Aegis PC ↗</a></div></article>
+      <article class="mode-card"><div class="mode-visual athena-mobile" role="img" aria-label="Artistic portrait of Athena used for an Android edition concept"><span>ANDROID / ATHENA</span></div><div class="mode-details"><h3>Athena for Mobile</h3><p>A sapphire-themed companion for research, projects and creative work.</p><a href="./terminal-preview.html?device=mobile&amp;mode=athena#preview-lab-title">Explore Athena Mobile ↗</a></div></article>
+      <article class="mode-card"><div class="mode-visual aegis-mobile" role="img" aria-label="Artistic Spartan guardian used for an Android edition concept"><span>ANDROID / AEGIS</span></div><div class="mode-details"><h3>Aegis for Mobile</h3><p>A crimson security-focused experience with guarded workflows.</p><a href="./terminal-preview.html?device=mobile&amp;mode=aegis#preview-lab-title">Explore Aegis Mobile ↗</a></div></article>
     </div>
-    <div class="mode-footer"><a href="./terminal-preview.html">Launch the interactive concept ↗</a><a href="./editions.html">Windows &amp; Android roadmap ↗</a></div>
+    <div class="mode-footer"><a href="./terminal-preview.html">Launch the interactive concept ↗</a><a href="#editions-heading">Compare the editions ↗</a></div>
     <p class="mode-fineprint">Visual concepts only. The interactive preview uses prepared examples; live Qwen inference, app installation and production security features are not available here yet.</p>
   </div>
 </section>
 
     <section class="section edition-security" id="security">
-      <div class="shell security-layout"><div><p class="overline">BUNDLED IN THE VISION</p><h2>Meet Aegis.<br><span class="text-gradient">Athena's protective layer.</span></h2><p>Both editions are intended to include Aegis. Its safety policies, input screening, output checks, and action gating are built to help reduce known risks without claiming universal protection.</p><a class="button button-outline" href="./index.html#security">Explore Aegis capabilities ↗</a></div><div class="security-stack" aria-label="Aegis safeguards"><div><span>01</span><strong>Input screening</strong><small>Inspect known attack shapes</small></div><div><span>02</span><strong>Constrained actions</strong><small>Check sensitive operations</small></div><div><span>03</span><strong>Output checks</strong><small>Flag potential secret exposure</small></div><div><span>04</span><strong>Human oversight</strong><small>Keep consequential actions reviewable</small></div></div></div>
+      <div class="shell security-layout"><div><p class="overline">BUNDLED IN THE VISION</p><h2>Meet Aegis.<br><span class="text-gradient">Athena's protective layer.</span></h2><p>Both editions are intended to include Aegis. Its safety policies, input screening, output checks, and action gating are built to help reduce known risks without claiming universal protection.</p><a class="button button-outline" href="./aegis.html#defenses">Explore Aegis capabilities ↗</a></div><div class="security-stack" aria-label="Aegis safeguards"><div><span>01</span><strong>Input screening</strong><small>Inspect known attack shapes</small></div><div><span>02</span><strong>Constrained actions</strong><small>Check sensitive operations</small></div><div><span>03</span><strong>Output checks</strong><small>Flag potential secret exposure</small></div><div><span>04</span><strong>Human oversight</strong><small>Keep consequential actions reviewable</small></div></div></div>
     </section>
 
     <section class="section shell edition-closing"><p class="overline">WHERE WE ARE NOW</p><h2>Building for real use.<br><span class="text-gradient">Releasing after verification.</span></h2><p>The Python framework already has evaluation and agent infrastructure. The desktop and mobile apps are separate product-development efforts. Hardware specifications, APK availability, installer signing, optional store publication, and supported workflows will be documented when validated.</p><div class="edition-actions"><a class="button button-primary" href="./index.html#contact">Get in touch ↗</a><a class="button button-quiet" href="./integration.html">Existing developer integration ↗</a></div></section>

@@ -30,3 +30,13 @@
 /* Show the complete device silhouette without cropping the preview artwork. */
 .mode-marketing .mode-visual {background-size: cover, contain;background-repeat: no-repeat;background-color:#06101e}
 .mode-marketing .mode-visual.athena-mobile,.mode-marketing .mode-visual.aegis-mobile{background-size:cover,auto 110%;background-position:center,center 40%}
+@media(max-width:560px) {
+  .mode-marketing .mode-gallery {grid-template-columns:1fr;}
+  .mode-marketing .mode-card {display:grid;grid-template-columns:clamp(5.5rem,27vw,8.5rem) minmax(0,1fr);min-height:0;}
+  .mode-marketing .mode-visual {height:100%;min-height:120px;}
+  .mode-marketing .mode-visual>span {inset:auto .25rem .45rem;text-align:center;font-size:.54rem;padding:.25rem;letter-spacing:.04em;}
+  .mode-marketing .mode-details {padding:.85rem 1rem .4rem;}
+  .mode-marketing .mode-details h3 {font-size:1.05rem;}
+  .mode-marketing .mode-details p {font-size:.88rem;line-height:1.45;margin-bottom:.35rem;}
+  .mode-marketing .mode-details a {font-size:.83rem;min-height:44px;}
+}

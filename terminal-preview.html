@@ -11,6 +11,7 @@
   <meta property="og:title" content="Athena & Aegis — Explore the Application">
   <meta property="og:description" content="Two modes. Two devices. One digital Acropolis. Experience the planned Athena and Aegis workspace.">
   <meta property="og:image" content="https://athenaaegissystems.com/assets/athena-aegis-share-card.webp?v=2">
+  <meta property="og:image:alt" content="Athena and Aegis, the intelligence and protection modes of Athena Aegis Systems">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://athenaaegissystems.com/terminal-preview.html">
   <link rel="icon" type="image/png" href="./assets/emblem.png">
@@ -22,7 +23,7 @@
   <link rel="stylesheet" href="./preview-stage.css?v=2">
   <link rel="stylesheet" href="./preview-rich.css?v=3">
   <script src="./app.js" defer></script>
-  <script src="./terminal-preview.js?v=4" defer></script>
+  <script src="./terminal-preview.js?v=6" defer></script>
   <title>Explore the Athena & Aegis App — Desktop and Mobile Concepts</title>
 </head>
 <body class="world-site terminal-preview-page" data-preview-mode="athena" data-preview-device="desktop">
@@ -31,8 +32,14 @@
   <a class="brand world-brand" href="./index.html" aria-label="Athena Aegis Systems home"><span class="brand-symbol" aria-hidden="true"><img src="./assets/emblem.webp" alt="" width="34" height="34"></span><span class="brand-lockup"><b><span class="wm-athena">ATHENA</span><span class="brand-dot">.</span><span class="wm-aegis">AEGIS</span></b><small class="wm-systems">SYSTEMS</small></span></a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
   <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
-    <a href="./index.html">Home</a><a href="./athena.html">Athena</a><a href="./aegis.html">Aegis</a><a href="./editions.html">Editions</a><a href="./terminal-preview.html">App preview</a><a href="./integration.html">Integrate</a><a class="button button-sm button-outline" href="./index.html#contact">Request access</a>
-  </nav>
+        <a href="./athena.html">Athena</a>
+        <a href="./aegis.html">Aegis</a>
+        <a href="./terminal-preview.html" aria-current="page">App preview</a>
+        <a href="./editions.html">Editions</a>
+        <a href="./integration.html">Integrate</a>
+        <a href="./index.html#pricing">Pricing</a>
+        <a class="button button-sm button-outline" href="./index.html#contact">Request access</a>
+      </nav>
 </div></header>
 <main id="main">
 <section class="preview-hero shell" aria-labelledby="preview-title">
@@ -42,7 +49,7 @@
   <div class="preview-note" role="note"><span aria-hidden="true">◇</span> Interactive <strong>design prototype</strong> with prepared examples—not a live AI model, installed application, threat scan or downloadable product.</div>
 </section>
 <section class="preview-lab shell" aria-labelledby="preview-lab-title">
-  <div class="preview-lab-top"><div><p class="preview-eyebrow">INTERACTIVE PREVIEW / FOUR EXPERIENCES</p><h2 id="preview-lab-title">Enter the terminal.</h2></div><p>Select your device, summon a mode, then try a sample workflow.</p></div>
+  <div class="preview-lab-top"><div><p class="preview-eyebrow">INTERACTIVE PREVIEW / FOUR EXPERIENCES</p><h2 id="preview-lab-title" tabindex="-1">Enter the terminal.</h2></div><p>Choose a device and a mode to try a scripted conversation.</p></div>
   <div class="preview-controls" aria-label="Preview settings">
     <fieldset class="preview-select-set"><legend>Choose a device</legend><div class="preview-select-group" id="device-switch">
       <button type="button" class="preview-select is-active" data-device="desktop" aria-pressed="true"><span aria-hidden="true">▣</span> Windows PC</button>
@@ -81,7 +88,7 @@
           </div>
           <div class="terminal-scroll">
             <div class="terminal-intro">
-              <div class="terminal-avatar-frame"><img id="terminal-portrait" src="./assets/athena-canon.jpg" alt="Athena in luminous marble and gold armor - concept portrait" width="1229" height="1536"></div>
+              <div class="terminal-avatar-frame"><img id="terminal-portrait" src="./assets/athena-avatar.webp" loading="lazy" alt="Athena in luminous marble and gold armor - concept portrait" width="256" height="320"></div>
               <span class="terminal-kicker" id="terminal-kicker">THE DIGITAL ACROPOLIS</span>
               <h3 id="terminal-heading">Athena <span>Intelligence mode</span></h3>
               <p id="terminal-subtitle">Research with purpose. Create with precision. Build on evidence.</p>
@@ -121,7 +128,7 @@
     <button type="button" class="preview-matrix-card preview-matrix-red" data-device="mobile" data-mode="aegis"><span>04 / ANDROID</span><b>AEGIS / MOBILE</b><small>Guard · monitor · review</small><span class="preview-open">Explore this view ↗</span></button>
   </div>
 </section>
-<section class="preview-roadmap shell" aria-labelledby="preview-roadmap-heading"><div><p class="preview-eyebrow">PRODUCT ROADMAP</p><h2 id="preview-roadmap-heading">Designed for Qwen.<br><em>Guarded by Aegis.</em></h2><p>PC and Android editions are being developed as Qwen-first applications with local model distribution planned. The visual concept here previews the experience only; installation packages, real model inference, cross-device features and security integration remain subject to implementation and testing.</p></div><div class="preview-roadmap-actions"><a class="world-button world-button-gold" href="./editions.html">Desktop &amp; Android roadmap ↗</a><a class="world-button world-button-iron" href="./index.html#contact">Ask about early access ↗</a></div></section>
+<section class="preview-roadmap shell" aria-labelledby="preview-roadmap-heading"><div><p class="preview-eyebrow">PRODUCT ROADMAP</p><h2 id="preview-roadmap-heading">Designed for Qwen.<br><em>Guarded by Aegis.</em></h2><p>PC and Android editions are being developed as Qwen-first applications with local model distribution planned. The visual concept here previews the experience only; installation packages, real model inference, cross-device features and security integration remain subject to implementation and testing.</p></div><div class="preview-roadmap-actions"><a class="world-button world-button-gold" href="./editions.html">Desktop &amp; Android roadmap ↗</a><a class="world-button world-button-iron" id="preview-access" href="./index.html?interest=windows#contact">Ask about Windows PC access ↗</a></div></section>
 </main>
 <footer class="site-footer"><div class="shell preview-footer"><a href="./index.html">ATHENA AEGIS SYSTEMS</a><span>© <span id="year">2026</span> · Experience design concept · No live model calls</span><a href="./legal.html">Legal &amp; preview terms</a></div></footer>
 </body>
