@@ -103,3 +103,24 @@ The owner controls athenaaegissystems.com and Muse manages DNS.
 Do not modify DNS, public deployment, Stripe billing or Muse-owned audio
 from this design branch. Hosting should isolate the static site from the
 private Python repo and all credentials.
+
+
+## Aegis Spartan guardian character (WEB-AEGIS-CHAR-1)
+
+The approved digital Spartan guardian artwork is available as
+`website/assets/aegis-spartan-guardian.avif` (480 × 600, about 8 KB).
+It is an optimized derivative of the original generated project artwork,
+`digital_sparta_guardian.png`, and is used on the Aegis hero, the
+homepage Aegis realm card and its citadel showcase. The existing
+`digital-sparta.svg` image is the browser fallback and architecture
+layer. Aegis is now a character counterpart to the digital goddess Athena,
+rather than a shield-only visualization.
+
+`website/guardian.css` implements light sweeps, rotating shield-like
+rings and minimal slow movement. These are *2D decorative CSS effects*,
+not a rigged/live Spartan avatar. Pausing the world's animation or choosing
+a reduced-motion preference stops the motion. The artwork doesn't
+change Aegis Python screening, security guarantees, voice or customer data.
+
+When publishing, confirm actual AVIF support and fallback rendering in
+target browsers and devices. No network image dependency is introduced.

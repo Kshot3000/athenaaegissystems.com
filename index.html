@@ -16,6 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./worlds.css">
+  <link rel="stylesheet" href="./guardian.css">
   <script src="./app.js" defer></script>
   <script src="./worlds.js" defer></script>
 </head>
@@ -87,6 +88,10 @@
         </article>
         <article class="realm-card realm-card-aegis reveal">
           <div class="realm-card-scene" aria-hidden="true"></div>
+          <picture class="realm-card-warrior" aria-hidden="true">
+            <source srcset="./assets/aegis-spartan-guardian.avif" type="image/avif">
+            <img src="./assets/digital-sparta.svg" width="480" height="600" alt="" role="presentation" loading="lazy" decoding="async">
+          </picture>
           <div class="realm-card-content">
             <span class="realm-index">02 — THE SPARTAN CITADEL</span>
             <div class="realm-card-symbol shield-symbol">⛨</div>
@@ -123,7 +128,13 @@
     <section class="world-section citadel-teaser" id="security" aria-labelledby="citadel-title">
       <div class="shell citadel-teaser-layout">
         <div class="reveal"><p class="world-kicker bronze">III / THE SPARTAN DISCIPLINE</p><h2 id="citadel-title">Built to think.<br><em>Trained to question.</em></h2><p>Aegis adds a protective layer around AI workflows: a versioned instruction pack, pattern-based input screening, action gates and output checks. The goal is defense in depth, not a promise that anything is unbreakable.</p><div class="citadel-badges"><span>INPUT SCREEN</span><span>ACTION GATE</span><span>OUTPUT SCAN</span></div><a class="world-button world-button-iron" href="./aegis.html">Enter the Citadel <span aria-hidden="true">↗</span></a></div>
-        <div class="citadel-art reveal" role="img" aria-label="A bronze Spartan shield guarding a futuristic cyber-fortress"></div>
+        <div class="citadel-art citadel-art-warrior reveal" role="img" aria-label="A Spartan guardian with an illuminated shield stands before a futuristic Greek citadel">
+          <picture aria-hidden="true">
+            <source srcset="./assets/aegis-spartan-guardian.avif" type="image/avif">
+            <img src="./assets/digital-sparta.svg" width="480" height="600" alt="" role="presentation" loading="lazy" decoding="async">
+          </picture>
+          <div class="citadel-guardian-caption" aria-hidden="true"><span>THE GUARDIAN</span><span>THE SPARTAN CITADEL</span></div>
+        </div>
       </div>
     </section>
 

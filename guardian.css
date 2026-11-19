@@ -1,0 +1,158 @@
+/* AEGIS / DIGITAL SPARTAN GUARDIAN
+ * Character illustration is original project-generated art.
+ * An ornamental 2D visual presentation, not real-time animated human footage.
+ * All motion respects the site's user pause switch and reduced-motion media query.
+ */
+.realm-page-aegis .aegis-guardian-stage {
+  isolation:isolate;
+  overflow:hidden;
+  border:1px solid rgba(240,186,113,.61);
+  border-radius:8px;
+  background:radial-gradient(ellipse at 55% 25%,#254058,#121a28 68%,#0b111b);
+  box-shadow:0 45px 115px rgba(0,0,0,.67),0 0 65px rgba(206,115,58,.17);
+}
+.aegis-guardian-stage::before {
+  content:"";position:absolute;inset:0;z-index:5;pointer-events:none;
+  border:1px solid rgba(255,220,157,.25);
+  box-shadow:inset 0 0 74px rgba(12,16,27,.38);
+  background:linear-gradient(0deg,rgba(6,11,20,.74),transparent 26%,transparent 79%,rgba(10,12,20,.31));
+}
+.guardian-architecture {
+  position:absolute;inset:-6%;z-index:0;
+  background:url("./assets/digital-sparta.svg") center/cover no-repeat;
+  filter:blur(3px) saturate(.83);
+  opacity:.66;
+}
+.guardian-portrait {
+  display:block;position:absolute;inset:-1%;z-index:2;
+  overflow:hidden;
+  transform-origin:55% 28%;
+  animation:guardian-presence 10s ease-in-out infinite alternate;
+}
+.realm-page-aegis .guardian-portrait img {
+  display:block;width:100%;height:100%;
+  object-fit:cover;object-position:50% 29%;
+  border:0;border-radius:0;box-shadow:none;
+  mask-image:linear-gradient(to bottom,#000 0%,#000 77%,transparent 100%);
+  filter:contrast(1.07) saturate(1.05);
+}
+.guardian-halo {
+  position:absolute;inset:3% 10% 17%;z-index:1;
+  border-radius:50%;border:1px solid rgba(246,196,125,.5);
+  box-shadow:0 0 65px rgba(239,181,107,.19),inset 0 0 70px rgba(115,179,236,.11);
+  animation:guardian-halo-pulse 8s ease-in-out infinite alternate;
+}
+.guardian-arc {
+  position:absolute;z-index:4;pointer-events:none;border-radius:50%;
+  aspect-ratio:1;border:1px solid rgba(234,183,119,.3);
+  box-shadow:0 0 25px rgba(93,177,239,.13);
+}
+.guardian-arc-one {
+  width:69%;left:16%;top:5%;
+  border-top-color:rgba(244,191,117,.76);
+  border-bottom-color:transparent;
+  animation:guardian-orbit 42s linear infinite;
+}
+.guardian-arc-two {
+  width:84%;left:8%;top:0;
+  border-left-color:transparent;
+  border-right-color:rgba(122,201,253,.5);
+  animation:guardian-orbit 65s linear infinite reverse;
+}
+.guardian-scan {
+  position:absolute;inset:-45%;z-index:4;pointer-events:none;
+  background:linear-gradient(110deg,transparent 46%,rgba(116,204,252,.05) 49%,rgba(255,215,154,.2) 50%,rgba(116,204,252,.06) 51%,transparent 54%);
+  transform:translateX(-80%);
+  animation:guardian-scan 15s ease-in-out infinite;
+}
+.guardian-data {
+  position:absolute;bottom:1rem;left:1.15rem;right:1.15rem;
+  z-index:6;display:flex;justify-content:space-between;gap:1rem;
+  color:rgba(246,225,185,.88);
+  font:700 .57rem/1.35 ui-monospace,Consolas,monospace;
+  letter-spacing:.11em;text-shadow:0 3px 12px rgba(0,0,0,.9);
+}
+.guardian-data span:last-child{color:#a9c5da;}
+/* In the homepage portal, the warrior replaces an empty fortress-only panel.
+ * Existing near-black text gradient always remains ABOVE the image. */
+.realm-card-aegis .realm-card-scene{z-index:-4;}
+.realm-card-warrior {
+  display:block;position:absolute;inset:0;z-index:-3;
+  overflow:hidden;pointer-events:none;
+  background:url("./assets/digital-sparta.svg") center/cover;
+}
+.realm-card-warrior img {
+  width:100%;height:100%;display:block;
+  object-fit:cover;object-position:50% 31%;
+  filter:saturate(.98) contrast(1.07);
+  transform:scale(1.015);
+  transition:transform 7s ease-out;
+}
+.realm-card-aegis:hover .realm-card-warrior img {transform:scale(1.075);}
+.realm-card-aegis::before {
+  background:linear-gradient(0deg,rgba(13,9,18,.99) 0%,rgba(13,10,18,.97) 35%,rgba(9,10,21,.68) 61%,rgba(9,10,21,.02) 92%);
+}
+/* Home features the guardian as an editorial image too. */
+.citadel-art-warrior picture {
+  display:block;position:absolute;inset:0;overflow:hidden;z-index:0;
+}
+.citadel-art-warrior picture img {
+  display:block;width:100%;height:100%;
+  object-fit:cover;object-position:50% 31%;
+  transform:scale(1.035);
+  transition:transform 8s ease-out;
+  filter:saturate(.95) contrast(1.05);
+}
+.citadel-art-warrior:hover picture img{transform:scale(1.085);}
+.citadel-art-warrior::before {
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(0deg,rgba(11,13,22,.85),transparent 43%,rgba(10,12,24,.12));
+}
+.citadel-art-warrior::after {z-index:2;}
+.citadel-guardian-caption {
+  position:absolute;z-index:3;bottom:1.25rem;left:1.25rem;right:1.25rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  color:#f6d7ad;text-shadow:0 4px 16px #060a10;
+  font:800 .62rem/1.2 "Manrope",sans-serif;letter-spacing:.16em;
+}
+@keyframes guardian-presence {
+  from {transform:translate3d(0,2px,0) scale(1.015);}
+  to {transform:translate3d(0,-5px,0) scale(1.045);}
+}
+@keyframes guardian-orbit {to{transform:rotate(360deg)}}
+@keyframes guardian-halo-pulse {
+  from{opacity:.46;transform:scale(.98);}
+  to{opacity:.83;transform:scale(1.035);}
+}
+@keyframes guardian-scan {
+  0%,15%{transform:translateX(-90%);opacity:0;}
+  40%{opacity:.66;}
+  65%,100%{transform:translateX(85%);opacity:0;}
+}
+.world-paused .guardian-portrait,
+.world-paused .guardian-halo,
+.world-paused .guardian-arc,
+.world-paused .guardian-scan {
+  animation:none!important;transform:none!important;
+}
+.world-paused .realm-card-warrior img,
+.world-paused .citadel-art-warrior picture img {
+  transform:none!important;transition:none!important;
+}
+@media(max-width:960px) {
+  .realm-page-aegis .aegis-guardian-stage {width:min(100%,620px);}
+  .guardian-portrait img {object-position:50% 27%;}
+}
+@media(max-width:680px) {
+  .realm-page-aegis .aegis-guardian-stage {
+    height:clamp(370px,115vw,580px);
+    width:100%;max-width:580px;
+  }
+  .guardian-data {font-size:.53rem;bottom:.7rem;left:.85rem;right:.85rem;}
+  .guardian-data span:last-child {display:none;}
+  .citadel-guardian-caption {font-size:.54rem;letter-spacing:.08em;}
+}
+@media(prefers-reduced-motion:reduce) {
+  .guardian-portrait,.guardian-halo,.guardian-arc,.guardian-scan {animation:none!important;transform:none!important;}
+  .realm-card-warrior img,.citadel-art-warrior picture img {transition:none!important;transform:none!important;}
+}

@@ -10,7 +10,7 @@
   <link rel="icon" type="image/svg+xml" href="./assets/mark.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css"><link rel="stylesheet" href="./worlds.css"><link rel="stylesheet" href="./citadel.css">
+  <link rel="stylesheet" href="./styles.css"><link rel="stylesheet" href="./worlds.css"><link rel="stylesheet" href="./citadel.css"><link rel="stylesheet" href="./guardian.css">
   <script src="./app.js" defer></script><script src="./worlds.js" defer></script>
 </head>
 <body class="world-site realm-page-aegis">
@@ -23,7 +23,18 @@
   <main id="main">
     <section class="realm-page-hero shell" aria-labelledby="aegis-title">
       <div class="reveal"><p class="world-kicker bronze">THE SECOND REALM / THE SPARTAN CITADEL</p><h1 id="aegis-title">Aegis.<br><em>Defense with discipline.</em></h1><p>Inspired by Spartan resolve. Built for modern AI systems. Aegis is Athena's protective security harness, designed to identify known threats, review risky actions, inspect output and preserve human authority.</p><div class="realm-page-hero-actions"><a class="world-button world-button-iron" href="#test-gate">Explore the gate ↗</a><a class="world-button world-button-gold" href="./index.html#contact">Request an Aegis pilot ↗</a></div><button id="world-motion-toggle" class="world-motion-toggle" type="button" aria-pressed="false">Pause ambient motion</button><p class="world-page-small-note" style="margin-top:1.2rem">Security is a process, not an invincibility claim. Aegis reduces known risks; it does not guarantee safety against every attack.</p></div>
-      <div class="realm-hero-figure reveal" role="img" aria-label="Glowing bronze Spartan shield before a digital fortress"><div class="realm-figure-halo" aria-hidden="true"></div><div class="shield-figure" aria-hidden="true"></div></div>
+      <div class="realm-hero-figure aegis-guardian-stage reveal">
+        <div class="guardian-architecture" aria-hidden="true"></div>
+        <div class="guardian-halo" aria-hidden="true"></div>
+        <picture class="guardian-portrait">
+          <source type="image/avif" srcset="./assets/aegis-spartan-guardian.avif">
+          <img src="./assets/digital-sparta.svg" width="480" height="600" fetchpriority="high" alt="Aegis visualized as a futuristic Spartan guardian with ornate bronze armor, a spear, an illuminated shield, and digital Greek architecture">
+        </picture>
+        <div class="guardian-arc guardian-arc-one" aria-hidden="true"></div>
+        <div class="guardian-arc guardian-arc-two" aria-hidden="true"></div>
+        <div class="guardian-scan" aria-hidden="true"></div>
+        <div class="guardian-data" aria-hidden="true"><span>AEGIS / DEFENSE LAYER</span><span>SCREEN • REVIEW • GUARD</span></div>
+      </div>
     </section>
     <div class="world-ticker"><div class="shell"><span>◆ INPUT SCREENING</span><span>✧ ACTION GATING</span><span>◆ OUTPUT CHECKS</span><span>✧ LEAST PRIVILEGE</span></div></div>
     <section class="world-section shell" id="defenses" aria-labelledby="aegis-capabilities">
