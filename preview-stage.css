@@ -1,0 +1,21 @@
+/* Device stage (2026-11-19): Sol's transparent concept cutouts above the
+   interactive terminal. Pure CSS - reacts to the body data attributes the
+   preview's own render() already maintains. Concept art only. */
+.preview-stage{position:relative;margin:.4rem 0 1.6rem;min-height:400px}
+.preview-stage:before{content:"";position:absolute;left:50%;bottom:2%;transform:translateX(-50%);width:min(700px,88%);height:56px;border-radius:50%;background:radial-gradient(ellipse,rgba(0,0,0,.55),transparent 70%)}
+body[data-preview-device="mobile"] .preview-stage{min-height:520px}
+.stage-device{position:absolute;bottom:0;left:50%;transform:translateX(-50%);opacity:0;transition:opacity .45s ease;pointer-events:none;filter:drop-shadow(0 24px 32px rgba(0,0,0,.45))}
+.stage-athena-desktop,.stage-aegis-desktop{width:min(680px,94%);height:auto}
+.stage-athena-mobile{width:min(225px,55%);height:auto}
+.stage-aegis-mobile{width:min(212px,52%);height:auto}
+body[data-preview-mode="athena"][data-preview-device="desktop"] .stage-athena-desktop,
+body[data-preview-mode="aegis"][data-preview-device="desktop"] .stage-aegis-desktop,
+body[data-preview-mode="athena"][data-preview-device="mobile"] .stage-athena-mobile,
+body[data-preview-mode="aegis"][data-preview-device="mobile"] .stage-aegis-mobile{opacity:1}
+@media(max-width:680px){
+  .preview-stage{min-height:250px}
+  body[data-preview-device="mobile"] .preview-stage{min-height:420px}
+  .stage-athena-mobile{width:min(180px,60%)}
+  .stage-aegis-mobile{width:min(170px,58%)}
+}
+@media (prefers-reduced-motion: reduce){.stage-device{transition:none}}
