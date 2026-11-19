@@ -22,3 +22,7 @@
 .preview-matrix-blue{background:linear-gradient(0deg,rgba(5,18,34,.93),rgba(9,52,94,.55)),url("./assets/athena-pc-concept.webp") center/cover}
 .preview-matrix-red{background:linear-gradient(0deg,rgba(30,7,18,.94),rgba(112,32,32,.5)),url("./assets/aegis-pc-concept.webp") center/cover}
 .preview-scene:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 42%,transparent 55%,rgba(2,6,12,.5));z-index:1}
+.terminal-voice{margin-top:.7rem;display:inline-flex;align-items:center;gap:.45rem;padding:.5rem 1.05rem;border-radius:40px;border:1px solid #e7c78e88;background:rgba(8,14,26,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#f2d492;font:700 .68rem Manrope,sans-serif;letter-spacing:.14em;cursor:pointer;transition:border-color .2s,box-shadow .2s}
+.terminal-voice:hover,.terminal-voice:focus-visible{border-color:var(--glow);box-shadow:0 0 16px var(--soft-glow)}
+.terminal-voice span[aria-hidden="true"]{font-size:.85rem}
+.terminal-voice.is-playing{border-color:var(--glow);box-shadow:0 0 18px var(--soft-glow);color:#fff}

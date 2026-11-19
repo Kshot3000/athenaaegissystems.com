@@ -26,6 +26,9 @@ const params = new URLSearchParams(window.location.search);
 let mode = params.get("mode") === "aegis" ? "aegis" : "athena";
 let device = params.get("device") === "mobile" ? "mobile" : "desktop";
 let workflow = mode === "aegis" ? "research" : "build";
+const voiceAudio = new Audio();
+voiceAudio.preload = "none";
+function stopVoice() { if (!voiceAudio.paused) voiceAudio.pause(); voiceAudio.currentTime = 0; $("#terminal-voice").classList.remove("is-playing"); }
 function render() {
   body.dataset.previewMode = mode;
   body.dataset.previewDevice = device;
@@ -48,6 +51,8 @@ function render() {
   $("#terminal-subtitle").textContent = isAthena ? "Research with purpose. Create with precision. Build on evidence." : "Review risky operations. Keep humans in command. Defend in depth.";
   $("#terminal-input").placeholder = isAthena ? "Ask Athena anything…" : "Ask Aegis anything…";
   $("#terminal-assistant-label").textContent = (isAthena ? "◈ ATHENA" : "⛨ AEGIS") + " / ILLUSTRATIVE RESPONSE";
+  stopVoice();
+  $("#terminal-voice-label").textContent = isAthena ? "Hear Athena" : "Hear Aegis";
   $("#preview-live-label").textContent = (device === "desktop" ? "Windows PC" : "Android mobile") + " concept · " + (isAthena ? "Athena" : "Aegis") + " Mode";
   $("#terminal-actions").replaceChildren(...workflowLabels[mode].map(item => {
     const button = document.createElement("button");
@@ -89,6 +94,12 @@ $$(".preview-matrix-card").forEach(button => button.addEventListener("click", ()
   render();
   $("#preview-lab-title").scrollIntoView({behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",block:"start"});
 }));
+$("#terminal-voice").addEventListener("click", () => {
+  if (!voiceAudio.paused) { stopVoice(); return; }
+  voiceAudio.src = mode === "aegis" ? "./assets/aegis-voice.mp3" : "./assets/athena-voice.mp3";
+  voiceAudio.play().then(() => $("#terminal-voice").classList.add("is-playing")).catch(() => {});
+});
+voiceAudio.addEventListener("ended", () => $("#terminal-voice").classList.remove("is-playing"));
 $("#terminal-compose-form").addEventListener("submit", event => {
   event.preventDefault();
   const input = $("#terminal-input");
