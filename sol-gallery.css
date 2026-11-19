@@ -1,0 +1,9 @@
+/* Sol concept gallery (2026-11-19): owner-supplied Athena/Aegis concept renders. */
+.sol-gallery .sol-figure{margin:0}
+.sol-gallery img,.sol-editions-poster img{display:block;width:100%;height:auto;border:1px solid #dcb77e3d;border-radius:10px;box-shadow:0 24px 60px #0007}
+.sol-figure-wide{margin-bottom:1rem}
+.sol-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;align-items:stretch}
+.sol-row-fill .sol-figure img{height:100%;object-fit:cover}
+.sol-fineprint{color:#9fb0c9;font-size:.8rem;text-align:center}
+.sol-editions-poster{margin-top:1rem}
+@media(max-width:700px){.sol-row{grid-template-columns:1fr}}

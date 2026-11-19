@@ -121,7 +121,7 @@ class SiteIntegrity(unittest.TestCase):
         scenery = (ROOT / "living-realms.css").read_text(encoding="utf-8")
         self.assertIn("athena-cybernetic.svg", home)
         self.assertIn("aegis-cybernetic.svg", home)
-        self.assertIn("aegis-spartan-guardian.avif", home)
+        self.assertIn("aegis-spartan-patrol.jpg", home)
         self.assertIn("athena-goddess.webp", home)
         self.assertIn("athena-water.webp", scenery)
         self.assertIn("aegis-fire.webp", scenery)
