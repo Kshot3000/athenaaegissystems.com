@@ -180,8 +180,9 @@ try {
     const faq=page.locator("#faq details").last();
     await faq.locator("summary").click();
     assert.match(await faq.locator("p").innerText(),/signed Windows installer/);
-    assert.equal(new URL(await page.locator("#pricing a[href*='stripe.com']").getAttribute("href")).origin,"https://buy.stripe.com");
-    console.log("PASS both edition inquiries, prepared email, clipboard and manual copy, FAQ and checkout destination");
+    assert.equal(await page.locator("#pricing a[href*='stripe.com']").count(),0);
+    assert.equal(await page.locator("#pricing .purchase-card a").getAttribute("href"),"#contact");
+    console.log("PASS both edition inquiries, prepared email, clipboard and manual copy, FAQ and sales-paused pricing (no checkout link)");
   } catch(err) {
     failures.push("visitor access: "+err.message);
     console.log("FAIL visitor access",err.message);
