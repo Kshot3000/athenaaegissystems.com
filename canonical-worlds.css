@@ -203,24 +203,6 @@
 .realm-page-athena .realm-figure-halo {border-color:rgba(127,227,255,.7);}
 .realm-page-aegis .guardian-halo {border-color:rgba(255,139,97,.7);}
 
-/* Rich energy in the ambient page backing, but no mask/blur of faces. */
-.realm-page-athena .site-sky::before,
-.realm-page-aegis .site-sky::before {
-  content:"";
-  position:absolute;
-  inset:-20%;
-  pointer-events:none;
-  background:
-    radial-gradient(ellipse 52% 33% at 68% 25%,rgba(0,183,255,.24),transparent 76%),
-    radial-gradient(ellipse 46% 30% at 16% 78%,rgba(0,88,211,.19),transparent 76%);
-  animation:canon-water-float 11s ease-in-out infinite alternate;
-}
-.realm-page-aegis .site-sky::before {
-  background:
-    radial-gradient(ellipse 52% 33% at 68% 25%,rgba(254,63,48,.2),transparent 75%),
-    radial-gradient(ellipse 46% 30% at 16% 78%,rgba(184,44,28,.16),transparent 77%);
-  animation:canon-fire-float 10s ease-in-out infinite alternate;
-}
 .realm-page-athena .world-section-head h2 em {color:#a4ecff;}
 .realm-page-aegis .world-section-head h2 em {color:#ffb38e;}
 .realm-page-athena .world-bridge {background:radial-gradient(ellipse at center,rgba(14,104,191,.16),transparent 68%),#0c1723;}
@@ -270,7 +252,6 @@
 .world-paused .threshold-half,
 .world-paused .threshold-half::after,
 .world-paused .realm-page-hero::before,
-.world-paused .site-sky::before,
 .world-paused .guardian-portrait {
   animation:none!important;
   transition:none!important;
@@ -315,8 +296,6 @@
   .home-world .threshold-half,
   .home-world .threshold-half::after,
   .realm-page-hero::before,
-  .realm-page-athena .site-sky::before,
-  .realm-page-aegis .site-sky::before,
   .realm-page-aegis .guardian-portrait {animation:none!important;transition:none!important;transform:none!important;}
   .realm-canvas {display:none!important;}
 }

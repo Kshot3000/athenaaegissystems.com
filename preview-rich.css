@@ -4,18 +4,14 @@
    glass UI panels. Keyed off the body data attributes render() maintains.
    Concept art only - not product screenshots. */
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-.preview-screen-glow{opacity:1;background:linear-gradient(180deg,rgba(3,10,20,.42),rgba(3,10,20,.78) 58%,rgba(3,10,20,.9)),url("./assets/athena-goddess.webp") center 28%/cover}
-.terminal-preview-page[data-preview-mode="aegis"] .preview-screen-glow{background:linear-gradient(180deg,rgba(14,4,8,.42),rgba(14,4,8,.78) 58%,rgba(14,4,8,.9)),url("./assets/aegis-spartan-patrol.jpg") center 28%/cover}
-.terminal-preview-page[data-preview-device="mobile"][data-preview-mode="athena"] .preview-screen-glow{background:linear-gradient(180deg,rgba(3,10,20,.4),rgba(3,10,20,.76) 58%,rgba(3,10,20,.9)),url("./assets/athena-android-oracle.jpg") center 22%/cover}
-.terminal-preview-page[data-preview-device="mobile"][data-preview-mode="aegis"] .preview-screen-glow{background:linear-gradient(180deg,rgba(14,4,8,.4),rgba(14,4,8,.76) 58%,rgba(14,4,8,.9)),url("./assets/aegis-android-sentinel.jpg") center 22%/cover}
 .preview-frame{box-shadow:0 8px 0 #2c2f36,0 30px 60px #000d,0 0 70px var(--soft-glow),inset 0 0 0 1px #f2d49233}
-.terminal-sidebar{background:linear-gradient(180deg,rgba(6,14,26,.8),rgba(5,9,17,.74));backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3)}
-.terminal-toolbar{background:rgba(5,10,20,.6);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3)}
-.terminal-quick-actions button{background:linear-gradient(145deg,rgba(38,58,86,.68),rgba(8,14,26,.62));backdrop-filter:blur(10px) saturate(1.25);-webkit-backdrop-filter:blur(10px) saturate(1.25);box-shadow:inset 0 0 18px #ffffff10,0 10px 22px rgba(0,0,0,.35)}
-.terminal-user-chat{background:rgba(30,44,68,.74);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.terminal-assistant-chat{backdrop-filter:blur(10px) saturate(1.2);-webkit-backdrop-filter:blur(10px) saturate(1.2);box-shadow:0 0 22px var(--soft-glow),0 12px 26px rgba(0,0,0,.35)}
-.terminal-response-cards span{background:rgba(38,60,88,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.terminal-compose{background:rgba(10,18,32,.8);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.terminal-sidebar{background:var(--terminal-rail)}
+.terminal-toolbar{background:#07101bed}
+.terminal-quick-actions button{background:linear-gradient(145deg,#263a56ea,#080e1ae5);box-shadow:inset 0 0 18px #ffffff10,0 10px 22px rgba(0,0,0,.35)}
+.terminal-user-chat{background:#1e2c44}
+.terminal-assistant-chat{background:var(--terminal-reply);box-shadow:0 0 22px var(--soft-glow),0 12px 26px rgba(0,0,0,.35)}
+.terminal-response-cards span{background:#263c58}
+.terminal-compose{background:#0a1220}
 .terminal-avatar-frame{border:2px solid #e7c78e;box-shadow:0 0 0 4px rgba(231,199,142,.18),0 0 34px var(--soft-glow),0 14px 28px rgba(0,0,0,.45)}
 .terminal-intro h3{text-shadow:0 2px 22px rgba(0,0,0,.65),0 0 34px var(--soft-glow)}
 .terminal-intro p{color:#cfdde9;text-shadow:0 1px 10px rgba(0,0,0,.6)}

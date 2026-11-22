@@ -136,6 +136,49 @@ try {
     }
     console.log("PASS all four preview combinations, local drafts, history, shared URL, keyboard focus, pricing and both recorded voices");
   }catch(err){failures.push("terminal interactions: "+err.message);console.log("FAIL terminal interactions",err.message.slice(0,400));}
+  try {
+    await page.emulateMedia({reducedMotion:"no-preference"});
+    await page.goto(ORIGIN+"/terminal-preview.html",{waitUntil:"load"});
+    const motion = page.locator("#world-motion-toggle");
+    const scene = page.locator(".terminal-scene");
+    const style = property => scene.evaluate((element,key) =>
+      getComputedStyle(element,"::before")[key],property);
+    const waitForMotion = state => page.waitForFunction(expected =>
+      getComputedStyle(document.querySelector(".terminal-scene"),"::before").animationPlayState===expected,state);
+    await waitForMotion("paused");
+    await scene.scrollIntoViewIfNeeded();
+    await waitForMotion("running");
+    assert.match(await style("backgroundImage"),/athena-current\.webp/);
+    assert.equal(await style("animationName"),"water-current");
+    await page.locator("#mode-switch [data-mode=aegis]").click();
+    await page.locator("#device-switch [data-device=mobile]").click();
+    assert.match(await style("backgroundImage"),/aegis-flame\.webp/);
+    assert.equal(await style("animationName"),"fire-current");
+    await motion.click();
+    assert.equal(await motion.getAttribute("aria-pressed"),"true");
+    await scene.scrollIntoViewIfNeeded();
+    await waitForMotion("paused");
+    await page.reload({waitUntil:"load"});
+    assert.equal(await motion.getAttribute("aria-pressed"),"true");
+    await motion.click();
+    await scene.scrollIntoViewIfNeeded();
+    await waitForMotion("running");
+    await page.emulateMedia({reducedMotion:"reduce"});
+    assert.equal(await style("animationName"),"none");
+    await page.locator("#world-motion-toggle:disabled").waitFor();
+    for (const [persona, art] of [["athena","athena-current.webp"],["aegis","aegis-flame.webp"]]) {
+      await page.goto(ORIGIN+"/"+persona+".html",{waitUntil:"load"});
+      const sky = await page.locator(".site-sky.elemental-scene").evaluate(element =>
+        getComputedStyle(element,"::before").backgroundImage);
+      assert.ok(sky.includes(art),sky);
+    }
+    console.log("PASS shared persona backgrounds, mode switch, off-screen pause, persisted pause, and reduced motion");
+  } catch(err) {
+    failures.push("elemental scenes: "+err.message);
+    console.log("FAIL elemental scenes",err.message.slice(0,400));
+  } finally {
+    await page.emulateMedia({reducedMotion:"reduce"});
+  }
   try{
     await page.goto(ORIGIN+"/index.html",{waitUntil:"load"});
     await page.locator(".nav-toggle").click();
