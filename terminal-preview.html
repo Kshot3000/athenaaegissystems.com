@@ -22,7 +22,9 @@
   <link rel="stylesheet" href="./terminal-preview.css?v=2">
   <link rel="stylesheet" href="./preview-stage.css?v=2">
   <link rel="stylesheet" href="./preview-rich.css?v=3">
+  <link rel="stylesheet" href="./elemental-scenes.css">
   <script src="./app.js" defer></script>
+  <script src="./worlds.js" defer></script>
   <script src="./terminal-preview.js?v=6" defer></script>
   <title>Explore the Athena & Aegis App — Desktop and Mobile Concepts</title>
 </head>
@@ -59,6 +61,7 @@
       <button type="button" class="preview-select is-active" data-mode="athena" aria-pressed="true"><span aria-hidden="true">◈</span> Athena</button>
       <button type="button" class="preview-select" data-mode="aegis" aria-pressed="false"><span aria-hidden="true">⛨</span> Aegis</button>
     </div></fieldset>
+    <button id="world-motion-toggle" class="world-motion-toggle" type="button" aria-pressed="false" hidden>Pause ambient motion</button>
   </div>
   <div class="preview-stage" aria-hidden="true">
     <img class="stage-device stage-athena-desktop" src="./assets/athena-pc-transparent.webp" alt="" width="1637" height="915" loading="lazy" decoding="async">
@@ -70,7 +73,7 @@
     <div class="preview-frame" id="preview-device">
       <div class="preview-frame-cap"><span class="preview-camera" aria-hidden="true"></span></div>
       <div class="preview-screen">
-        <div class="preview-screen-glow" aria-hidden="true"></div>
+        <div class="elemental-scene terminal-scene" aria-hidden="true"><span class="elemental-light"></span></div>
         <aside class="terminal-sidebar" aria-label="Application navigation example">
           <div class="terminal-brand"><span class="terminal-brand-symbol">Α</span><span><b>ATHENA AEGIS</b><small>SYSTEMS / PREVIEW</small></span></div>
           <span class="terminal-sidebar-title">WORKSPACE</span>

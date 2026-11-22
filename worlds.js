@@ -29,7 +29,27 @@
     document.body.classList.add("world-motion");
   }
 
-  // Optional decorative motion switch. No network, storage, or microphone.
+  // Pause the new background scenes off-screen and in hidden tabs.
+  var scenes = document.querySelectorAll(".elemental-scene");
+  if (scenes.length) {
+    function syncSceneVisibility() {
+      document.body.classList.toggle("scenes-hidden", document.hidden);
+    }
+    document.addEventListener("visibilitychange", syncSceneVisibility);
+    syncSceneVisibility();
+    if ("IntersectionObserver" in window) {
+      var sceneObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          entry.target.classList.toggle("scene-visible", entry.isIntersecting);
+        });
+      });
+      scenes.forEach(function (scene) { sceneObserver.observe(scene); });
+    } else {
+      scenes.forEach(function (scene) { scene.classList.add("scene-visible"); });
+    }
+  }
+
+  // Remember the visitor's decorative motion preference locally.
   var motionToggle = document.getElementById("world-motion-toggle");
   if (motionToggle) {
     var motionKey = "athena-aegis-ambient-motion-paused";
@@ -61,6 +81,7 @@
       else if (reduceMotion.addListener) reduceMotion.addListener(onPreferenceChange);
     }
     updateMotion();
+    motionToggle.hidden = false;
   }
 
   // Aegis preview is a curated static illustration, not a live call to

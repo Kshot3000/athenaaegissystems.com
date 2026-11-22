@@ -1,0 +1,102 @@
+/* The same landscape artwork and light motion used by the native workspace. */
+.realm-page-athena,
+.terminal-preview-page[data-preview-mode="athena"] {
+  --element-art: url("./assets/athena-current.webp");
+  --element-position: center;
+  --element-texture: water-current 17s ease-in-out infinite alternate;
+  --element-light: water-light 11s ease-in-out infinite alternate;
+  --element-colors:
+    radial-gradient(ellipse 45% 14% at 33% 54%, #eec96f58, transparent),
+    radial-gradient(ellipse 46% 21% at 60% 69%, #1b93ff46, transparent),
+    radial-gradient(ellipse 22% 8% at 72% 43%, #f8c96342, transparent);
+  --element-scrim: linear-gradient(180deg, #04102486, #06101d29 56%, #06101d5c);
+  --terminal-rail: linear-gradient(90deg, #050c1ad6, #060d1abf 60%, #050b17e3);
+  --terminal-reply: #101d2d;
+}
+.realm-page-aegis,
+.terminal-preview-page[data-preview-mode="aegis"] {
+  --element-art: url("./assets/aegis-flame.webp");
+  --element-position: right center;
+  --element-texture: fire-current 13s ease-in-out infinite alternate;
+  --element-light: fire-light 8s ease-in-out infinite alternate;
+  --element-colors:
+    radial-gradient(ellipse 19% 42% at 29% 72%, #ed2b244a, transparent),
+    radial-gradient(ellipse 19% 37% at 70% 58%, #db352638, transparent),
+    radial-gradient(ellipse 9% 23% at 54% 78%, #ff6e3b49, transparent);
+  --element-scrim: linear-gradient(180deg, #19080e87, #17091025 56%, #17091063);
+  --terminal-rail: linear-gradient(90deg, #190d16d4, #140b13bf 60%, #140b13e2);
+  --terminal-reply: #251921;
+}
+
+.elemental-scene {
+  --element-play: paused;
+  overflow: hidden;
+  pointer-events: none;
+}
+.elemental-scene.scene-visible { --element-play: running; }
+.world-paused .elemental-scene,
+.scenes-hidden .elemental-scene { --element-play: paused; }
+.elemental-scene::before {
+  content: "";
+  position: absolute;
+  inset: -6%;
+  background: var(--element-art) var(--element-position) / cover no-repeat;
+  animation: var(--element-texture);
+  animation-play-state: var(--element-play);
+}
+.elemental-light {
+  position: absolute;
+  inset: 20% -6% -8%;
+  opacity: .55;
+  background: var(--element-colors);
+  animation: var(--element-light);
+  animation-play-state: var(--element-play);
+}
+.elemental-scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--element-scrim);
+}
+.site-sky.elemental-scene::after {
+  background: linear-gradient(180deg, #080e18a8, #080e18ca 70%), var(--element-scrim);
+}
+.terminal-scene { position: absolute; inset: 0; z-index: -1; }
+.terminal-preview-page[data-preview-device="mobile"] .terminal-scene {
+  --element-position: 76% center;
+}
+.preview-controls .world-motion-toggle {
+  align-self: end;
+  min-height: 44px;
+  padding: .55rem .8rem;
+  color: #e7d0a8;
+  background: #111b2d;
+  border: 1px solid #d7b78578;
+  border-radius: 8px;
+  font: inherit;
+  font-size: .8rem;
+}
+.preview-controls .world-motion-toggle:hover:not(:disabled) { border-color: #eec96f; }
+.preview-controls .world-motion-toggle[hidden] { display: none; }
+
+@keyframes water-current {
+  from { transform: translate3d(-2.8%, 1.4%, 0) scale(1.025); }
+  to { transform: translate3d(2.8%, -1.6%, 0) scale(1.08); }
+}
+@keyframes fire-current {
+  from { transform: translate3d(-1.6%, 2.9%, 0) scale(1.04); }
+  to { transform: translate3d(1.6%, -3.6%, 0) scale(1.10); }
+}
+@keyframes water-light {
+  from { opacity: .45; transform: translate3d(-18%, 9%, 0) rotate(-15deg); }
+  to { opacity: .92; transform: translate3d(17%, -12%, 0) rotate(-9deg); }
+}
+@keyframes fire-light {
+  0% { opacity: .26; transform: translate3d(-5%, 16%, 0) scale(.94, 1); }
+  52% { opacity: .86; transform: translate3d(3%, -7%, 0) scale(1, 1.07); }
+  100% { opacity: .36; transform: translate3d(6%, -23%, 0) scale(1.05, 1.15); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .elemental-scene::before,
+  .elemental-light { animation: none; }
+}
